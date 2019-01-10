@@ -1,0 +1,92 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+workspace(name = "ubuntu1604_bazel_docker_gcloud")
+
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive",
+    "http_file",
+)
+
+http_archive(
+    name = "bazel_toolchains",
+    sha256 = "07a81ee03f5feae354c9f98c884e8e886914856fb2b6a63cba4619ef10aaaf0b",
+    strip_prefix = "bazel-toolchains-31b5dc8c4e9c7fd3f5f4d04c6714f2ce87b126c1",
+    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/31b5dc8c4e9c7fd3f5f4d04c6714f2ce87b126c1.tar.gz"],
+)
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "f3e5c0500533d58be079db1a24ac909f2e0cd98c9d760f5e506e4d05b56c42dd",
+    strip_prefix = "rules_docker-a9bb1dab84cdf46e34d1b34b53a17bda129b5eba",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/a9bb1dab84cdf46e34d1b34b53a17bda129b5eba.tar.gz"],
+)
+
+http_archive(
+    name = "base_images_docker",
+    sha256 = "7d34d78c604472c33c4206a59b15cc3fdbc27df90d5bfa983af1844481d4602b",
+    strip_prefix = "base-images-docker-4bb703bcc40dc9ca320ea2fb4c37e0ea31a565d4",
+    urls = ["https://github.com/GoogleCloudPlatform/base-images-docker/archive/4bb703bcc40dc9ca320ea2fb4c37e0ea31a565d4.tar.gz"],
+)
+
+http_archive(
+    name = "layer_definitions",
+    sha256 = "d01786d6ec75f1ca6e0d605bf61af3283bbbc9b2e94a223cee9519c00a3561ed",
+    strip_prefix = "layer-definitions-5a9522ad5d4211722503fb37718da69254c655ee",
+    urls = ["https://github.com/GoogleCloudPlatform/layer-definitions/archive/5a9522ad5d4211722503fb37718da69254c655ee.tar.gz"],
+)
+
+http_archive(
+    name = "bazel_skylib",
+    # Commit c00ef493869e2966d47508e8625aae723a4a3054 of 2018-12-10
+    sha256 = "7363ae6721c1648017e23a200013510c9e71ca69f398d52886ee6af7f26af436",
+    strip_prefix = "bazel-skylib-c00ef493869e2966d47508e8625aae723a4a3054",
+    urls = ["https://github.com/bazelbuild/bazel-skylib/archive/c00ef493869e2966d47508e8625aae723a4a3054.tar.gz"],
+)
+
+load(
+    "@io_bazel_rules_docker//container:container.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load("@layer_definitions//layers/ubuntu1604/base:deps.bzl", ubuntu1604_base_deps = "deps")
+
+ubuntu1604_base_deps()
+
+load("@layer_definitions//layers/ubuntu1604/bazel:deps.bzl", bazel_deps = "deps")
+
+bazel_deps()
+
+load("@layer_definitions//layers/ubuntu1604/clang:deps.bzl", clang_deps = "deps")
+
+clang_deps()
+
+load("@layer_definitions//layers/ubuntu1604/docker:deps.bzl", docker_deps = "deps")
+
+docker_deps()
+
+load("@layer_definitions//layers/ubuntu1604/gcloud:deps.bzl", gcloud_deps = "deps")
+
+gcloud_deps()
+
+load("@layer_definitions//layers/ubuntu1604/java:deps.bzl", java8_deps = "deps")
+
+java8_deps()
+
+load("@layer_definitions//layers/ubuntu1604/python:deps.bzl", python_deps = "deps")
+
+python_deps()
