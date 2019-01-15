@@ -54,10 +54,10 @@ container_test(
     name = "image-test",
     configs = [
         ":tests.yaml",
+        "@layer_definitions//layers/ubuntu1604/bazel:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/clang:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/python:tests.yaml",
-        "@layer_definitions//layers/ubuntu1604/bazel:tests.yaml",
     ],
     image = ":image",
     verbose = True,
