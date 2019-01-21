@@ -43,9 +43,9 @@ http_archive(
 
 http_archive(
     name = "layer_definitions",
-    sha256 = "ea3c2f5194ab6d58ae04d00a15602029eaaf4dda0a57eb7e578cff727740ec52",
-    strip_prefix = "layer-definitions-fea36a9c217653b327a9da8fbc0d92f70290989f",
-    urls = ["https://github.com/GoogleCloudPlatform/layer-definitions/archive/fea36a9c217653b327a9da8fbc0d92f70290989f.tar.gz"],
+    sha256 = "d565547576a278f715c939627dba642781ea5f01f7dd9ab6147112c5cba3cd0f",
+    strip_prefix = "layer-definitions-0e6d8b3cb400d1ea2e03fddc148c55161510495f",
+    urls = ["https://github.com/GoogleCloudPlatform/layer-definitions/archive/0e6d8b3cb400d1ea2e03fddc148c55161510495f.tar.gz"],
 )
 
 http_archive(
