@@ -45,14 +45,25 @@ steps:
     id: 'structure-test'
     waitFor: ['container-build']
 
-# Step: tag the image
+# Step: tag the image, first as the backup image.
+  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+    # TODO(xingao): change to actual container url.
+    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain-backup/xingao-test:rbe']
+    id: 'backup-container-tag'
+    waitFor: ['structure-test']
+
+# Step: tag the image again with the final location.
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
     # TODO(xingao): change to actual container url.
     args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain/xingao-test:rbe']
     id: 'container-tag'
-    waitFor: ['structure-test']
+    waitFor: ['backup-container-tag']
 
-# Push the new container.
+# Push the new image and its backup.
+# Push by using the `images` field here so they will show up in the build results
+# or the GCB Build information page.
+# https://cloud.google.com/cloud-build/docs/configuring-builds/store-images-artifacts
 images:
   # TODO(xingao): change to actual container url.
   - 'gcr.io/asci-toolchain/xingao-test:rbe'
+  - 'gcr.io/asci-toolchain-backup/xingao-test:rbe'
