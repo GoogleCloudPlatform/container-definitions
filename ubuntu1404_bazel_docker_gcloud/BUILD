@@ -48,6 +48,7 @@ container_test(
     name = "image-test",
     configs = [
         ":tests.yaml",
+        "@layer_definitions//layers/ubuntu1404/base:tests.yaml",
         "@layer_definitions//layers/ubuntu1404/bazel:tests.yaml",
         "@layer_definitions//layers/ubuntu1404/docker:tests.yaml",
         "@layer_definitions//layers/ubuntu1404/gcc:tests.yaml",

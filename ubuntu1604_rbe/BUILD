@@ -56,6 +56,7 @@ container_test(
     name = "image-test",
     configs = [
         ":tests.yaml",
+        "@layer_definitions//layers/ubuntu1604/base:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/clang:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/go:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
