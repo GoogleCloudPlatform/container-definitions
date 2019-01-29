@@ -29,6 +29,7 @@ env:
   - CONTAINER=ubuntu1604_bazel
   - CONTAINER=ubuntu1604_bazel_docker_gcloud
   - CONTAINER=ubuntu1604_rbe
+  - CONTAINER=ubuntu1404_bazel_docker_gcloud
 
 script:
    # Check for issues with the format of our bazel config files.
