@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-licenses(["notice"])  # Apache 2.0
-
-package(default_visibility = ["//visibility:public"])
-
 load(
     "@bazel_toolchains//rules/container:docker_toolchains.bzl",
     "toolchain_container",
 )
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
+
+licenses(["notice"])  # Apache 2.0
+
+package(default_visibility = ["//visibility:public"])
 
 # Generate the container with Bazel, Docker and basic Gcloud installed.
 toolchain_container(

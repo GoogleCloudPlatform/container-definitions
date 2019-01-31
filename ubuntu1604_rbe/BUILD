@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-licenses(["notice"])  # Apache 2.0
-
-package(default_visibility = ["//visibility:public"])
-
 load(
     "@bazel_toolchains//rules/container:docker_toolchains.bzl",
     "toolchain_container",
 )
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
+
+licenses(["notice"])  # Apache 2.0
+
+package(default_visibility = ["//visibility:public"])
 
 # Generate the container with clang, java, python2, python3, go toolchain and
 # some basic linux tools.
@@ -33,12 +33,12 @@ toolchain_container(
         "/bin/bash",
     ],
     env = {
-        # PATH envvar is a special case, and currently only the one in the
-        # topmost layer is set. So that we override it here to include all.
-        "PATH": "$PATH:/opt/python3.6/bin:/usr/local/go/bin",
         "LANG": "C.UTF-8",
         "LANGUAGE": "C.UTF-8",
         "LC_ALL": "C.UTF-8",
+        # PATH envvar is a special case, and currently only the one in the
+        # topmost layer is set. So that we override it here to include all.
+        "PATH": "$PATH:/opt/python3.6/bin:/usr/local/go/bin",
     },
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
