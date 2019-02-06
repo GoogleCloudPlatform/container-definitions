@@ -63,7 +63,7 @@ steps:
       path: '/project_src'
     dir: '/project_src'
     id: 'integration-test'
-    waitFor: ['container-build']
+    waitFor: ['container-build', 'clone-project']
 
 # Step: tag the image, first as the backup image.
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'

@@ -23,6 +23,16 @@ steps:
     id: 'version'
     waitFor: ['-']   # wait for nothing - start immediately
 
+# Step: Clone the bazel-toolchains project to /project_src folder to be used as the
+# testing project for the new RBE container.
+  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+    args: ['git', 'clone', 'https://github.com/xingao267/bazel-toolchains.git', '/project_src']
+    volumes:
+    - name: 'project_src'
+      path: '/project_src'
+    id: 'clone-project'
+    waitFor: ['-']   # wait for nothing - start immediately
+
 # Step: build the image
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
     # Set Bazel output_base to /workspace, which is a mounted directory on Google Cloud Builder.
@@ -45,11 +55,61 @@ steps:
     id: 'structure-test'
     waitFor: ['container-build']
 
+# Step: tag the image as the intermediate testing image.
+  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain/test-rbe-ubuntu16_04:latest']
+    id: 'testing-container-tag'
+    waitFor: ['container-build']
+
+# Step: push the intermediate testing image.
+  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+    args: ['docker', 'push', 'gcr.io/asci-toolchain/test-rbe-ubuntu16_04:latest']
+    id: 'testing-container-push'
+    waitFor: ['testing-container-tag']
+
+# Step: build a sample project using the new RBE container.
+# Platform generated in @rbe_ubuntu1604_test points to the new
+# gcr.io/asci-toolchain/test-rbe-ubuntu16_04:latest container.
+  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+    args: [
+        'bazel',
+        '--output_base=/workspace/ubuntu1604_rbe',
+        'test',
+        '--remote_instance_name=projects/cst-c-prod-0/instances/default_instance',
+        '--crosstool_top=@rbe_ubuntu1604_test//rbe_config_cc:toolchain',
+        '--host_javabase=@rbe_ubuntu1604_test//config:jdk',
+        '--javabase=@rbe_ubuntu1604_test//config:jdk',
+        '--extra_execution_platforms=@rbe_ubuntu1604_test//config:platform',
+        '--host_platform=@rbe_ubuntu1604_test//config:platform',
+        '--platforms=@rbe_ubuntu1604_test//config:platform',
+        '--extra_toolchains=@rbe_ubuntu1604_test//config:cc-toolchain',
+        '--action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1',
+        '--host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8',
+        '--java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8',
+        '--spawn_strategy=remote',
+        '--strategy=Javac=remote',
+        '--strategy=Closure=remote',
+        '--genrule_strategy=remote',
+        '--define=EXECUTOR=remote',
+        '--remote_cache=remotebuildexecution.googleapis.com',
+        '--remote_executor=remotebuildexecution.googleapis.com',
+        '--tls_enabled=true',
+        '--remote_timeout=3600',
+        '--auth_enabled=true',
+        '//examples/remotebuildexecution/hello_world/cc:say_hello_test'
+    ]
+    volumes:
+    - name: 'project_src'
+      path: '/project_src'
+    dir: '/project_src'
+    id: 'integration-test'
+    waitFor: ['testing-container-push', 'clone-project']
+
 # Step: tag the image, first as the backup image.
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
     args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain-backup/rbe-ubuntu16_04:latest']
     id: 'backup-container-tag'
-    waitFor: ['structure-test']
+    waitFor: ['structure-test', 'integration-test']
 
 # Step: tag the image again with the final location.
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
