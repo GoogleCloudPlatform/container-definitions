@@ -46,7 +46,7 @@ toolchain_container(
         "@layer_definitions//layers/ubuntu1604/clang:clang-ltl",
         "@layer_definitions//layers/ubuntu1604/go:go-ltl",
         "@layer_definitions//layers/ubuntu1604/java:java-ltl",
-        "@layer_definitions//layers/ubuntu1604/java:java10-ltl",
+        "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
         "@layer_definitions//layers/ubuntu1604/python_rbe:python-rbe-ltl",
         "@layer_definitions//layers/ubuntu1604/rbe_tools:rbe-tools-ltl",
     ],
