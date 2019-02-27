@@ -36,7 +36,7 @@ toolchain_container(
     language_layers = [
         "@layer_definitions//layers/ubuntu1404/gcc:gcc-ltl",
         "@layer_definitions//layers/ubuntu1404/java:java-ltl",
-        "@layer_definitions//layers/ubuntu1404/java:java10-ltl",
+        "@layer_definitions//layers/ubuntu1404/java:java11-ltl",
         "@layer_definitions//layers/ubuntu1404/python:python-ltl",
         "@layer_definitions//layers/ubuntu1404/bazel:bazel-ltl",
         "@layer_definitions//layers/ubuntu1404/docker:docker-ltl",
