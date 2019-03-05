@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-workspace(name = "ubuntu1604_bazel")
+workspace(name = "ubuntu1604_rbe")
 
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
