@@ -18,7 +18,8 @@ githubRepoDeps:
 
   # GoogleCloudPlatform/layer-definitions GitHub repo.
   - name: "LAYER_DEFINITIONS"
-    owner: "GoogleCloudPlatform"
-    repo: "layer-definitions"
+    repoSpec:
+      owner: "GoogleCloudPlatform"
+      repository: "layer-definitions"
+      branch: "master"
     updateType: "commit"
-    branch: "master"
