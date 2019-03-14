@@ -40,6 +40,8 @@ toolchain_container(
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
         "@layer_definitions//layers/ubuntu1604/clang:clang-ltl",
+        "@layer_definitions//layers/ubuntu1604/java:java-ltl",
+        "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
         "@layer_definitions//layers/ubuntu1604/python_rbe:python-rbe-ltl",
         "@layer_definitions//layers/ubuntu1604/rbe_tools:rbe-tools-ltl",
         "@layer_definitions//layers/ubuntu1604/webtest:webtest-ltl",
@@ -52,6 +54,7 @@ container_test(
         ":tests.yaml",
         "@layer_definitions//layers/ubuntu1604/base:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/clang:tests.yaml",
+        "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/python_rbe:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/rbe_tools:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/webtest:tests.yaml",
