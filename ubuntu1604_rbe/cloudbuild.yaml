@@ -113,7 +113,7 @@ steps:
 
 # Step: tag the image again with the final location.
   - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain/rbe-ubuntu16_04:staging']
+    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain/rbe-ubuntu16_04:latest']
     id: 'container-tag'
     waitFor: ['backup-container-tag']
 
@@ -122,5 +122,5 @@ steps:
 # or the GCB Build information page.
 # https://cloud.google.com/cloud-build/docs/configuring-builds/store-images-artifacts
 images:
-  - 'gcr.io/asci-toolchain/rbe-ubuntu16_04:staging'
+  - 'gcr.io/asci-toolchain/rbe-ubuntu16_04:latest'
   - 'gcr.io/asci-toolchain-backup/rbe-ubuntu16_04:latest'
