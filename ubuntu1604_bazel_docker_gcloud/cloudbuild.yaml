@@ -14,73 +14,85 @@
 
 timeout: 21600s
 options:
-    machineType: 'N1_HIGHCPU_32'
+    machineType: "N1_HIGHCPU_32"
 
 steps:
 # Step: print the bazel version for record
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['bazel', 'version']
-    id: 'version'
-    waitFor: ['-']   # wait for nothing - start immediately
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
+    args: ["bazel", "version"]
+    id: "version"
+    waitFor: ["-"]   # wait for nothing - start immediately
 
 # Step: Clone a simple project to /project_src folder to be used as the
 # testing project for the new Bazel container.
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['git', 'clone', 'https://github.com/bazelbuild/bazel.git', '/project_src']
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
+    args: ["git", "clone", "https://github.com/bazelbuild/bazel.git", "/project_src"]
     volumes:
-    - name: 'vol1'
-      path: '/project_src'
-    id: 'clone-project'
-    waitFor: ['-']   # wait for nothing - start immediately
+    - name: "vol1"
+      path: "/project_src"
+    id: "clone-project"
+    waitFor: ["-"]   # wait for nothing - start immediately
 
 # Step: build the image
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
     # Set Bazel output_base to /workspace, which is a mounted directory on Google Cloud Builder.
     # This is to make sure Bazel generated files can be accessed by multiple containers.
     # TODO(xingao) Remove --loading_phase_threads=1. There is some race condition happening
     # when multiple `gsutil cp` commands are called (by the gcs_file repository rule).
-    args: ['bazel', '--output_base=/workspace/ubuntu1604_bazel_docker_gcloud', 'run', '//:image', '--loading_phase_threads=1']
+    args: ["bazel", "--output_base=/workspace/ubuntu1604_bazel_docker_gcloud", "run", "//:image", "--loading_phase_threads=1"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
-    dir: 'ubuntu1604_bazel_docker_gcloud'
-    id: 'container-build'
-    waitFor: ['version']
+    dir: "ubuntu1604_bazel_docker_gcloud"
+    id: "container-build"
+    waitFor: ["version"]
 
 # Step: run structure tests on the new image
 # We use container_test rule, which is a Bazel wrapper of container_structure_test.
 # https://github.com/bazelbuild/rules_docker/blob/master/contrib/test.bzl
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['bazel', '--output_base=/workspace/ubuntu1604_bazel_docker_gcloud', 'test', '//:image-test']
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
+    args: ["bazel", "--output_base=/workspace/ubuntu1604_bazel_docker_gcloud", "test", "//:image-test"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
-    dir: 'ubuntu1604_bazel_docker_gcloud'
-    id: 'structure-test'
-    waitFor: ['container-build']
+    dir: "ubuntu1604_bazel_docker_gcloud"
+    id: "structure-test"
+    waitFor: ["container-build"]
 
 # Step: `bazel build` the testing project in the new container.
-  - name: 'bazel:image'
-    args: ['bazel', 'build', '//src:bazel']
+  - name: "bazel:image"
+    args: ["bazel", "build", "//src:bazel"]
     volumes:
-    - name: 'vol1'
-      path: '/project_src'
-    dir: '/project_src'
-    id: 'integration-test'
-    waitFor: ['container-build', 'clone-project']
+    - name: "vol1"
+      path: "/project_src"
+    dir: "/project_src"
+    id: "integration-test"
+    waitFor: ["container-build", "clone-project"]
 
-# Step: tag the image, first as the backup image.
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain-backup/nosla-ubuntu16_04-bazel-docker-gcloud:latest']
-    id: 'backup-container-tag'
-    waitFor: ['structure-test', 'integration-test']
+# Step: get the Bazel version from the new container to use as the tag.
+  - name: "bazel:image"
+    entrypoint: "sh"
+    args: ["-c", "bazel version | grep 'Build label' | cut -d ':' -f2 | xargs > /workspace/bazel_version"]
+    id: "get-version"
+    waitFor: ["structure-test", "integration-test"]
 
-# Step: tag the image again with the final location.
-  - name: 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
-    args: ['docker', 'tag', 'bazel:image', 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:staging']
-    id: 'container-tag'
-    waitFor: ['backup-container-tag']
+# Step: tag the image with Bazel version at final location.
+# Note that we do not tag this image with `latest` to avoid causing race condition with
+# the current and other GCB jobs that use
+# gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest image.
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
+    entrypoint: "sh"
+    args: ["-c", "docker tag bazel:image gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:$(cat /workspace/bazel_version)"]
+    id: "container-tag-version"
+    waitFor: ["get-version"]
+
+# Step: tag the image with Bazel version at backup location.
+  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
+    entrypoint: "sh"
+    args: ["-c", "docker tag bazel:image gcr.io/asci-toolchain-backup/nosla-ubuntu16_04-bazel-docker-gcloud:$(cat /workspace/bazel_version)"]
+    id: "backup-container-tag"
+    waitFor: ["get-version"]
 
 # Push the new image and its backup.
 # Push by using the `images` field here so they will show up in the build results
 # or the GCB Build information page.
 # https://cloud.google.com/cloud-build/docs/configuring-builds/store-images-artifacts
 images:
-  - 'gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:staging'
-  - 'gcr.io/asci-toolchain-backup/nosla-ubuntu16_04-bazel-docker-gcloud:latest'
+  - "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud"
+  - "gcr.io/asci-toolchain-backup/nosla-ubuntu16_04-bazel-docker-gcloud"
