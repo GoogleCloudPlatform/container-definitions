@@ -25,6 +25,6 @@ gcsDeps:
   # The Debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 container.
   - name: "DEBS_TARBALL"
     bucket: "container-deps"
-    versionRegex: "\\d{8}(\\d{6})?"
-    fileRegex: "^ubuntu1604/debs/\\d{8}(\\d{6})?_debs\\.tar$"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^ubuntu1604/debs/\\d{8,}_debs\\.tar$"
     startsWith: "ubuntu1604/debs/"
