@@ -13,7 +13,7 @@
 # limitations under the License.
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
-load(":revisions.bzl", "UBUNTU1804_TAR")
+load(":revisions.bzl", "DEBS_TARBALL", "UBUNTU1804_TAR")
 
 def deps():
     """Download dependencies required to use this layer."""
@@ -27,5 +27,15 @@ def deps():
             sha256 = UBUNTU1804_TAR.sha256,
             urls = [
                 "https://storage.googleapis.com/ubuntu_tar/" + UBUNTU1804_TAR.revision + "/ubuntu-bionic-core-cloudimg-amd64-root.tar.gz",
+            ],
+        )
+
+    if "ubuntu1804_debs" not in excludes:
+        http_file(
+            name = "ubuntu1804_debs",
+            downloaded_file_path = DEBS_TARBALL.revision + "_debs.tar",
+            sha256 = DEBS_TARBALL.sha256,
+            urls = [
+                "https://storage.googleapis.com/container-deps/ubuntu1804/debs/" + DEBS_TARBALL.revision + "_debs.tar",
             ],
         )

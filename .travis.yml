@@ -27,12 +27,13 @@ install:
 # Parallelize tests across virtual machines.
 # https://docs.travis-ci.com/user/speeding-up-the-build/#parallelizing-your-builds-across-virtual-machines
 env:
+  - CONTAINER=ubuntu1404_bazel_docker_gcloud
   - CONTAINER=ubuntu1604
   - CONTAINER=ubuntu1604_bazel
   - CONTAINER=ubuntu1604_bazel_docker_gcloud
   - CONTAINER=ubuntu1604_rbe
   - CONTAINER=ubuntu1604_webtest
-  - CONTAINER=ubuntu1404_bazel_docker_gcloud
+  - CONTAINER=ubuntu1804
 
 script:
   - set -e

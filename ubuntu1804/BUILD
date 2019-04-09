@@ -13,7 +13,12 @@
 # limitations under the License.
 
 load("@base_images_docker//package_managers:download_pkgs.bzl", "download_pkgs")
+load(
+    "@bazel_toolchains//rules/container:docker_toolchains.bzl",
+    "toolchain_container",
+)
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 
 licenses(["notice"])  # Apache 2.0
 
@@ -39,4 +44,26 @@ download_pkgs(
         "libc-bin",
         "netbase",
     ],
+)
+
+# Generate the container.
+toolchain_container(
+    name = "image",
+    base = ":ubuntu1804_vanilla.tar",
+    cmd = [
+        "/bin/sh",
+        "-c",
+    ],
+    env = UBUNTU_ENV,
+    installables_tar = "@ubuntu1804_debs//file",
+    installation_cleanup_commands = "apt-get clean",
+)
+
+container_test(
+    name = "image-test",
+    configs = [
+        ":tests.yaml",
+    ],
+    image = ":image",
+    verbose = True,
 )
