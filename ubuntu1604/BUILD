@@ -46,8 +46,7 @@ download_pkgs(
     ],
 )
 
-# Generate the container with clang, java, python2, python3, go toolchain and
-# some basic linux tools.
+# Generate the container.
 toolchain_container(
     name = "image",
     base = ":ubuntu1604_vanilla.tar",
