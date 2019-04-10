@@ -23,12 +23,12 @@
 
 # Ubuntu1804 base additional debian package tarball.
 - triggerFile:
-    target: //:debs.tar
-    bucket: container-deps
-    dir: ubuntu1804/debs
+    target: "//:debs.tar"
+    bucket: "container-deps"
+    dir: "ubuntu1804/debs"
 
 # Ubuntu1804 base image tarball.
 - triggerFile:
-    target: @ubuntu1804_tar_latest//file:file
-    bucket: container-deps
-    dir: ubuntu1804/tar
+    target: "@ubuntu1804_tar_latest//file:ubuntu1804.tar.gz"
+    bucket: "container-deps"
+    dir: "ubuntu1804/tar"

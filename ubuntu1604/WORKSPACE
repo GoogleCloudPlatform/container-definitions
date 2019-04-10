@@ -50,8 +50,11 @@ http_archive(
 )
 
 # Non-deterministic latest version of ubuntu1604 base tarball. This is used by
-# File Update Service to archive each versions in our managed GCS bucket, and
-# should NOT used by container release directly.
+# File Update Service to archive each version in our managed GCS bucket, and
+# should NOT be used by container release directly.
+# Note that this relies on that https://partner-images.canonical.com/core/bionic/current/...
+# always hosts the latest version of the tarball, and we intentionally do not include
+# sha256 in this http_file target as the file downloaded are not deterministic.
 http_file(
     name = "ubuntu1604_tar_latest",
     downloaded_file_path = "ubuntu1604.tar.gz",

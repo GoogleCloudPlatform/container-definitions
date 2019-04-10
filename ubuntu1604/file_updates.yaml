@@ -23,12 +23,12 @@
 
 # Ubuntu1604 base additional debian package tarball.
 - triggerFile:
-    target: //:debs.tar
-    bucket: container-deps
-    dir: ubuntu1604/debs
+    target: "//:debs.tar"
+    bucket: "container-deps"
+    dir: "ubuntu1604/debs"
 
 # Ubuntu1604 base image tarball.
 - triggerFile:
-    target: @ubuntu1604_tar_latest//file:file
-    bucket: container-deps
-    dir: ubuntu1604/tar
+    target: "@ubuntu1604_tar_latest//file:ubuntu1604.tar.gz"
+    bucket: "container-deps"
+    dir: "ubuntu1604/tar"
