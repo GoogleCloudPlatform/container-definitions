@@ -23,10 +23,10 @@ def deps():
     if "ubuntu1804_tar" not in excludes:
         http_file(
             name = "ubuntu1804_tar",
-            downloaded_file_path = "ubuntu-bionic-core-cloudimg-amd64-root.tar.gz",
+            downloaded_file_path = UBUNTU1804_TAR.revision + "_ubuntu1804.tar.gz",
             sha256 = UBUNTU1804_TAR.sha256,
             urls = [
-                "https://storage.googleapis.com/ubuntu_tar/" + UBUNTU1804_TAR.revision + "/ubuntu-bionic-core-cloudimg-amd64-root.tar.gz",
+                "https://storage.googleapis.com/container-deps/ubuntu1804/tar/" + UBUNTU1804_TAR.revision + "_ubuntu1804.tar.gz",
             ],
         )
 

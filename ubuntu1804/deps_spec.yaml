@@ -18,9 +18,10 @@ gcsDeps:
 
   # Base Ubuntu1804 tarball.
   - name: "UBUNTU1804_TAR"
-    bucket: "ubuntu_tar"
-    versionRegex: "\\d{8}"
-    fileRegex: "^\\d{8}/ubuntu-bionic-core-cloudimg-amd64-root\\.tar\\.gz$"
+    bucket: "container-deps"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^ubuntu1804/tar/\\d{8,}_ubuntu1804\\.tar\\.gz$"
+    startsWith: "ubuntu1804/tar/"
 
   # The Debian packages tarball pulled from the GCS bucket required for the Ubuntu1804 container.
   - name: "DEBS_TARBALL"

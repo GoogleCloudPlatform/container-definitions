@@ -18,9 +18,10 @@ gcsDeps:
 
   # Base Ubuntu1604 tarball.
   - name: "UBUNTU1604_TAR"
-    bucket: "ubuntu_tar"
-    versionRegex: "\\d{8}"
-    fileRegex: "^\\d{8}/ubuntu-xenial-core-cloudimg-amd64-root\\.tar\\.gz$"
+    bucket: "container-deps"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^ubuntu1604/tar/\\d{8,}_ubuntu1604\\.tar\\.gz$"
+    startsWith: "ubuntu1604/tar/"
 
   # The Debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 container.
   - name: "DEBS_TARBALL"

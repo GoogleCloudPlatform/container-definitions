@@ -23,10 +23,10 @@ def deps():
     if "ubuntu1604_tar" not in excludes:
         http_file(
             name = "ubuntu1604_tar",
-            downloaded_file_path = "ubuntu-xenial-core-cloudimg-amd64-root.tar.gz",
+            downloaded_file_path = UBUNTU1604_TAR.revision + "_ubuntu1604.tar.gz",
             sha256 = UBUNTU1604_TAR.sha256,
             urls = [
-                "https://storage.googleapis.com/ubuntu_tar/" + UBUNTU1604_TAR.revision + "/ubuntu-xenial-core-cloudimg-amd64-root.tar.gz",
+                "https://storage.googleapis.com/container-deps/ubuntu1604/tar/" + UBUNTU1604_TAR.revision + "_ubuntu1604.tar.gz",
             ],
         )
 
