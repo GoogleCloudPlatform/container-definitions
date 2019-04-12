@@ -49,7 +49,7 @@ steps:
 # We use container_test rule, which is a Bazel wrapper of container_structure_test.
 # https://github.com/bazelbuild/rules_docker/blob/master/contrib/test.bzl
   - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
-    args: ["bazel", "--output_base=/workspace/ubuntu1604_bazel", "test", "//:image-test"]
+    args: ["bazel", "--output_base=/workspace/ubuntu1604_bazel", "test", "//:image-test", "--test_output=errors"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
     dir: "ubuntu1604_bazel"
     id: "structure-test"
