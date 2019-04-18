@@ -23,4 +23,4 @@ steps:
     - "--loading_phase_threads=1"
     - "--test_output=errors"
     - "//:image-test"
-    dir: "ubuntu1604_1804"
+    dir: "ubuntu1804"
