@@ -13,6 +13,8 @@
 # limitations under the License.
 
 timeout: "600s"
+options:
+    machineType: "N1_HIGHCPU_32"
 
 steps:
   - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
