@@ -34,7 +34,7 @@ toolchain_container(
         "LANG": "C.UTF-8",
         "LANGUAGE": "C.UTF-8",
         "LC_ALL": "C.UTF-8",
-        "PATH": "$PATH:/opt/python3.6/bin",
+        "PATH": "$$PATH:/opt/python3.6/bin",
     },
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",

@@ -23,7 +23,6 @@ metadataTest:
   env:
     - key: 'PATH'
       value: '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/python3.6/bin'
-  env:
     - key: 'LANG'
       value: 'C.UTF-8'
     - key: 'LANGUAGE'

@@ -38,7 +38,7 @@ toolchain_container(
         "LC_ALL": "C.UTF-8",
         # PATH envvar is a special case, and currently only the one in the
         # topmost layer is set. So that we override it here to include all.
-        "PATH": "$PATH:/opt/python3.6/bin:/usr/local/go/bin",
+        "PATH": "$$PATH:/opt/python3.6/bin:/usr/local/go/bin",
     },
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
