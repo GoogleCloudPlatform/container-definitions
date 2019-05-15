@@ -75,6 +75,10 @@ load("@layer_definitions//layers/ubuntu1604/clang:deps.bzl", clang_deps = "deps"
 
 clang_deps()
 
+load("@layer_definitions//layers/ubuntu1604/docker:deps.bzl", docker_deps = "deps")
+
+docker_deps()
+
 load("@layer_definitions//layers/ubuntu1604/java:deps.bzl", java8_deps = "deps")
 
 java8_deps()

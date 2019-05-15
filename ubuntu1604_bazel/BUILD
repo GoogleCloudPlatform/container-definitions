@@ -35,6 +35,7 @@ toolchain_container(
         "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
         "@layer_definitions//layers/ubuntu1604/python:python-ltl",
         "@layer_definitions//layers/ubuntu1604/bazel:bazel-ltl",
+        "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
     ],
 )
 
@@ -57,6 +58,7 @@ container_test(
         "@layer_definitions//layers/ubuntu1604/base:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/bazel:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/clang:tests.yaml",
+        "@layer_definitions//layers/ubuntu1604/docker:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
         "@layer_definitions//layers/ubuntu1604/python:tests.yaml",
     ],
