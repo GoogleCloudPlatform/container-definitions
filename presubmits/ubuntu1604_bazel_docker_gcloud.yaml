@@ -17,12 +17,10 @@ options:
     machineType: "N1_HIGHCPU_32"
 
 steps:
-  - name: "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"
-    entrypoint: "bazel"
+  - name: "l.gcr.io/google/bazel"
     args:
     - "--output_user_root=/workspace/ubuntu1604_bazel_docker_gcloud"
     - "test"
-    - "--loading_phase_threads=1"
     - "--test_output=errors"
     - "//:image-test"
     dir: "ubuntu1604_bazel_docker_gcloud"
