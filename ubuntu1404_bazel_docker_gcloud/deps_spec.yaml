@@ -27,4 +27,4 @@ githubRepoDeps:
     releasePolicies:
       - tag: "default"
         # Every Wednesday at 5am.
-        schedule: "0 5 * * Wed"
+        schedule: "0 0 5 * * Wed"
