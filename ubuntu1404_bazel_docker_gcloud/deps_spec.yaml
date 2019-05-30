@@ -26,5 +26,7 @@ githubRepoDeps:
     updateType: "commit"
     releasePolicies:
       - tag: "default"
-        # Every Wednesday at 5am.
-        schedule: "0 0 5 * * Wed"
+        # Every weekday at 7am UTC which is 12pm Eastern.
+        # The layer updates are scheduled for 5am Eastern and thus this allows
+        # enough time for that change to be reviewed & merged.
+        schedule: "0 0 7 * * Mon-Fri"
