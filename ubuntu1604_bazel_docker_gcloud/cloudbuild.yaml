@@ -65,6 +65,13 @@ steps:
     id: "integration-test"
     waitFor: ["container-build", "clone-project"]
 
+# Step: tag the image with `latest` at final location.
+  - name: "l.gcr.io/google/bazel"
+    entrypoint: "docker"
+    args: ["tag", "bazel:image", "gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest"]
+    id: "container-tag-latest"
+    waitFor: ["structure-test", "integration-test"]
+
 # Step: get the Bazel version from the new container to use as the tag.
   - name: "bazel:image"
     entrypoint: "sh"
@@ -73,9 +80,6 @@ steps:
     waitFor: ["structure-test", "integration-test"]
 
 # Step: tag the image with Bazel version at final location.
-# Note that we do not tag this image with `latest` to avoid causing race condition with
-# the current and other GCB jobs that use
-# gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:latest image.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "sh"
     args: ["-c", "docker tag bazel:image gcr.io/asci-toolchain/nosla-ubuntu16_04-bazel-docker-gcloud:$(cat /workspace/bazel_version)"]

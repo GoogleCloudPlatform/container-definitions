@@ -65,6 +65,13 @@ steps:
     id: "integration-test"
     waitFor: ["container-build", "clone-project"]
 
+# Step: tag the image with `latest` at final location.
+  - name: "l.gcr.io/google/bazel"
+    entrypoint: "docker"
+    args: ["tag", "bazel:image", "gcr.io/asci-toolchain/nosla-ubuntu16-04-bazel:latest"]
+    id: "container-tag-latest"
+    waitFor: ["structure-test", "integration-test"]
+
 # Step: get the Bazel version from the new container to use as the tag.
   - name: "bazel:image"
     entrypoint: "sh"
@@ -73,8 +80,6 @@ steps:
     waitFor: ["structure-test", "integration-test"]
 
 # Step: tag the image with Bazel version at final location.
-# Note that we do not tag this image with `latest` to avoid auto-syncing to Cloud Marketplace.
-# (Images with tags (e.g. `latest`) that are versioned on Cloud Marketplace will be auto-synced.)
   - name: "l.gcr.io/google/bazel"
     entrypoint: "sh"
     args: ["-c", "docker tag bazel:image gcr.io/asci-toolchain/nosla-ubuntu16-04-bazel:$(cat /workspace/bazel_version)"]
