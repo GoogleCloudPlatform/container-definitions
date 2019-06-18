@@ -22,5 +22,6 @@ steps:
     - "--output_user_root=/workspace/ubuntu1604_bazel_docker_gcloud"
     - "test"
     - "--test_output=errors"
+    - "--host_force_python=PY2"
     - "//:image-test"
     dir: "ubuntu1604_bazel_docker_gcloud"
