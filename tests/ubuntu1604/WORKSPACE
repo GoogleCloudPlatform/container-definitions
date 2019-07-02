@@ -29,9 +29,9 @@ http_archive(
 
 http_archive(
     name = "base_images_docker",
-    sha256 = "16da54ef0734a0658d7006bc8bf6b9be26b963edec497b13974a1bfb46cefc41",
-    strip_prefix = "base-images-docker-7fdd2bb83a6957fe66712bd5238087b257b04378",
-    urls = ["https://github.com/GoogleContainerTools/base-images-docker/archive/7fdd2bb83a6957fe66712bd5238087b257b04378.tar.gz"],
+    sha256 = "0319ed0e058ec57cb15240cad44b52743b68239e5875fa41db51a6f6ac8e67be",
+    strip_prefix = "base-images-docker-d6f2757c3c48bd6c08e6484d02b84ed123d50ffa",
+    urls = ["https://github.com/GoogleContainerTools/base-images-docker/archive/d6f2757c3c48bd6c08e6484d02b84ed123d50ffa.tar.gz"],
 )
 
 # Non-deterministic latest version of ubuntu1604 base tarball. This is used by
@@ -56,3 +56,25 @@ container_repositories()
 load(":deps.bzl", "deps")
 
 deps()
+
+# Load python & pip dependencies needed by by the @base_images_docker//package_mangers
+# package.
+http_archive(
+    name = "io_bazel_rules_python",
+    sha256 = "9a3d71e348da504a9c4c5e8abd4cb822f7afb32c613dc6ee8b8535333a81a938",
+    strip_prefix = "rules_python-fdbb17a4118a1728d19e638a5291b4c4266ea5b8",
+    urls = ["https://github.com/bazelbuild/rules_python/archive/fdbb17a4118a1728d19e638a5291b4c4266ea5b8.tar.gz"],
+)
+
+load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
+
+pip_repositories()
+
+pip_import(
+    name = "pip_deps",
+    requirements = "@base_images_docker//package_managers:requirements-pip.txt",
+)
+
+load("@pip_deps//:requirements.bzl", "pip_install")
+
+pip_install()
