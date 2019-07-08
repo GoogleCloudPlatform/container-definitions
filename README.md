@@ -1,7 +1,3 @@
-Travis CI
-:---:
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/container-definitions.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/container-definitions)
-
 # Container Definitions
 
 This repository contains Bazel targets for Google-maintained common container
