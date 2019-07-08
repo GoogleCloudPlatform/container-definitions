@@ -27,7 +27,7 @@ steps:
 # testing project for the new RBE container.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "git"
-    args: ["clone", "https://github.com/xingao267/bazel-toolchains.git", "/project_src"]
+    args: ["clone", "https://github.com/bazelbuild/bazel-toolchains.git", "/project_src"]
     volumes:
     - name: "project_src"
       path: "/project_src"
