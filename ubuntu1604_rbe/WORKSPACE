@@ -29,16 +29,9 @@ http_archive(
 
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "9fec5e921ca318736fb25acdfdc9a5b425837790c08a525398908b5f8951190d",
-    strip_prefix = "rules_docker-8dda5776426f8c742f0bfc230fa455c841afec83",
-    urls = ["https://github.com/bazelbuild/rules_docker/archive/8dda5776426f8c742f0bfc230fa455c841afec83.tar.gz"],
-)
-
-http_archive(
-    name = "base_images_docker",
-    sha256 = "0319ed0e058ec57cb15240cad44b52743b68239e5875fa41db51a6f6ac8e67be",
-    strip_prefix = "base-images-docker-d6f2757c3c48bd6c08e6484d02b84ed123d50ffa",
-    urls = ["https://github.com/GoogleContainerTools/base-images-docker/archive/d6f2757c3c48bd6c08e6484d02b84ed123d50ffa.tar.gz"],
+    sha256 = "13cf6418c480a37e6f18c1ca68ce39fa0d19bed6e2ca06c9be61f53bd710f361",
+    strip_prefix = "rules_docker-1be7690d6a61b55ff4929d71c14a45b4ab58c0a3",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/1be7690d6a61b55ff4929d71c14a45b4ab58c0a3.tar.gz"],
 )
 
 http_archive(
@@ -62,6 +55,10 @@ load(
 )
 
 container_repositories()
+
+load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+
+container_deps()
 
 load("@layer_definitions//layers/ubuntu1604/base:deps.bzl", ubuntu1604_base_deps = "deps")
 
@@ -90,25 +87,3 @@ python_rbe_deps()
 load("@layer_definitions//layers/ubuntu1604/rbe_tools:deps.bzl", rbe_tools_deps = "deps")
 
 rbe_tools_deps()
-
-# Load python & pip dependencies needed by by the @base_images_docker//package_mangers
-# package.
-http_archive(
-    name = "io_bazel_rules_python",
-    sha256 = "9a3d71e348da504a9c4c5e8abd4cb822f7afb32c613dc6ee8b8535333a81a938",
-    strip_prefix = "rules_python-fdbb17a4118a1728d19e638a5291b4c4266ea5b8",
-    urls = ["https://github.com/bazelbuild/rules_python/archive/fdbb17a4118a1728d19e638a5291b4c4266ea5b8.tar.gz"],
-)
-
-load("@io_bazel_rules_python//python:pip.bzl", "pip_import", "pip_repositories")
-
-pip_repositories()
-
-pip_import(
-    name = "pip_deps",
-    requirements = "@base_images_docker//package_managers:requirements-pip.txt",
-)
-
-load("@pip_deps//:requirements.bzl", "pip_install")
-
-pip_install()

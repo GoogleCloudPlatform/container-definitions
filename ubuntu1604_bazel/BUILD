@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load(
-    "@bazel_toolchains//rules/container:docker_toolchains.bzl",
-    "toolchain_container",
-)
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
+load(
+    "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
+    "toolchain_container",
+)
 
 licenses(["notice"])  # Apache 2.0
 
