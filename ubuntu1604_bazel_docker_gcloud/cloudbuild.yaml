@@ -54,6 +54,14 @@ steps:
     id: "structure-test"
     waitFor: ["container-build"]
 
+# Step: run reproduction tests on the new image
+  - name: "l.gcr.io/google/bazel"
+    args: ["--output_base=/workspace/output_base_repro_test", "test", "//:img_repro_test", "--test_output=errors"]
+    # This is needed for GCB to correctly build/test targets in the Bazel project.
+    dir: "ubuntu1604_bazel_docker_gcloud"
+    id: "repro-test"
+    waitFor: ["version"]
+
 # Step: `bazel build` the testing project in the new container.
   - name: "bazel:image"
     entrypoint: "bazel"
@@ -70,14 +78,14 @@ steps:
     entrypoint: "docker"
     args: ["tag", "bazel:image", "${_IMG_DEST}:latest"]
     id: "container-tag-latest"
-    waitFor: ["structure-test", "integration-test"]
+    waitFor: ["structure-test", "repro-test", "integration-test"]
 
 # Step: get the Bazel version from the new container to use as the tag.
   - name: "bazel:image"
     entrypoint: "sh"
     args: ["-c", "bazel version | grep 'Build label' | cut -d ':' -f2 | xargs > /workspace/bazel_version"]
     id: "get-version"
-    waitFor: ["structure-test", "integration-test"]
+    waitFor: ["structure-test", "repro-test", "integration-test"]
 
 # Step: tag the image with Bazel version at final location.
   - name: "l.gcr.io/google/bazel"

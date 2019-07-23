@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@io_bazel_rules_docker//contrib:repro_test.bzl", "container_repro_test")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
     "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
@@ -60,4 +61,10 @@ container_test(
     ],
     image = ":image",
     verbose = True,
+)
+
+container_repro_test(
+    name = "img_repro_test",
+    image = ":image",
+    workspace_file = "//:WORKSPACE",
 )
