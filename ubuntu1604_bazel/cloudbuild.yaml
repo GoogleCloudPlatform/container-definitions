@@ -34,6 +34,16 @@ steps:
     id: "clone-project"
     waitFor: ["-"]   # wait for nothing - start immediately
 
+# Step: copy the bazel project into a separate dir to run repro tests in parallel.
+  - name: "l.gcr.io/google/bazel"
+    entrypoint: "sh"
+    args: ["-c", "cp -a ubuntu1604_bazel /repro_test/ubuntu1604_bazel"]
+    volumes:
+      - name: "repro_vol"
+        path: "/repro_test"
+    id: "copy-to-reproduce"
+    waitFor: ["-"]   # wait for nothing - start immediately
+
 # Step: build the image
   - name: "l.gcr.io/google/bazel"
     # Set Bazel output_base to /workspace, which is a mounted directory on Google Cloud Builder.
@@ -56,11 +66,13 @@ steps:
 
 # Step: run reproduction tests on the new image
   - name: "l.gcr.io/google/bazel"
-    args: ["--output_base=/workspace/output_base_repro_test", "test", "//:img_repro_test", "--test_output=errors"]
-    # This is needed for GCB to correctly build/test targets in the Bazel project.
-    dir: "ubuntu1604_bazel"
+    args: ["--output_base=/repro_test/output_base", "test", "//:img_repro_test", "--test_output=errors"]
+    dir: "/repro_test/ubuntu1604_bazel"
+    volumes:
+      - name: "repro_vol"
+        path: "/repro_test"
     id: "repro-test"
-    waitFor: ["version"]
+    waitFor: ["version", "copy-to-reproduce"]
 
 # Step: `bazel build` the testing project in the new container.
   - name: "bazel:image"
