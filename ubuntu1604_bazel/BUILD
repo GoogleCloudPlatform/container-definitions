@@ -13,6 +13,10 @@
 # limitations under the License.
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
+    "configs_test",
+)
 load("@io_bazel_rules_docker//contrib:repro_test.bzl", "container_repro_test")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
@@ -71,4 +75,9 @@ container_repro_test(
     name = "img_repro_test",
     image = ":image",
     workspace_file = "//:WORKSPACE",
+)
+
+configs_test(
+    name = "configs_test",
+    dependency_update_specs = ["deps_spec.yaml"],
 )
