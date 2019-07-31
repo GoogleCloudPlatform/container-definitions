@@ -134,7 +134,7 @@ steps:
 # Step: tag the image, first as the backup image.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "docker"
-    args: ["tag", "bazel:image", "g${_IMG_BACKUP_DEST}"]
+    args: ["tag", "bazel:image", "${_IMG_BACKUP_DEST}"]
     id: "backup-container-tag"
     waitFor: ["structure-test", "repro-test", "integration-test"]
 
