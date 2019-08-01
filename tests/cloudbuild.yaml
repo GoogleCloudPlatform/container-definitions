@@ -1,0 +1,35 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+timeout: 600s
+
+steps:
+# Step: print the bazel version for record
+  - name: "l.gcr.io/google/bazel"
+    args: ["version"]
+    id: "version"
+    waitFor: ["-"]   # wait for nothing - start immediately
+
+# Pull the semantic checker image used by the //:configs-test target.
+  - name: gcr.io/cloud-builders/docker
+    args: ["pull", "gcr.io/asci-toolchain/container_release_tools/dependency_update/validators/semantics:latest"]
+    id: "pull_validator"
+    waitFor: ["-"]   # wait for nothing - start immediately
+
+# Step: Run all tests.
+  - name: "l.gcr.io/google/bazel"
+    args: ["--output_base=/workspace/output_base", "test", "--test_output=errors", "..."]
+    dir: "tests"
+    id: "tests"
+    waitFor: ["version", "pull_validator"]
