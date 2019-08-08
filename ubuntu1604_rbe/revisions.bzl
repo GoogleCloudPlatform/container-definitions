@@ -16,6 +16,6 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 LAYER_DEFINITIONS = struct(
-    commit = "2cd5050f81aba9e89a18ba9a1d2522b50cd1227e",
-    sha256 = "8485e0123ba6f3d079c2984e6c3ea308109a90c5ae7177566bfc23ac8e2d0c49",
+    commit = "a8dfda9de289c68d217a15904f8a6500dcce7c88",
+    sha256 = "cbdc9cc06bb0755b0e5caae40b7cbd20d4f5b19d860de02e983586df3e7894ec",
 )
