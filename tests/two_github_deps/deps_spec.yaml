@@ -12,18 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""
-This package contains a dependency update YAML spec defining a dependency on a
-docker image on GCR to be used to run integration tests on the dependency update
-service.
-"""
+revisionsFilePath: "tests/two_github_deps/revisions.bzl"
 
-load(
-    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
-    "configs_test",
-)
+githubRepoDeps:
+  - name: "COMMIT"
+    repoSpec:
+      owner: "GoogleCloudPlatform"
+      repository: "container-definitions"
+      branch: "master"
+    updateType: "commit"
 
-configs_test(
-    name = "configs_test",
-    dependency_update_specs = ["deps_spec.yaml"],
-)
+  - name: "RELEASE"
+    repoSpec:
+      owner: "bazelbuild"
+      repository: "rules_docker"
+    updateType: "release"

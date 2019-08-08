@@ -13,9 +13,9 @@
 # limitations under the License.
 
 """
-This package contains a dependency update YAML spec defining a dependency on a
-docker image on GCR to be used to run integration tests on the dependency update
-service.
+This package contains a dependency update YAML spec defining dependencies on
+two Github repositories to be used to run integration tests on the
+dependency update service.
 """
 
 load(

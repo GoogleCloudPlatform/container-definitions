@@ -14,8 +14,8 @@
 
 """
 This package contains a dependency update YAML spec defining a dependency on a
-docker image on GCR to be used to run integration tests on the dependency update
-service.
+GCS object managed by the file update service to be used to run integration
+tests on the dependency update service.
 """
 
 load(

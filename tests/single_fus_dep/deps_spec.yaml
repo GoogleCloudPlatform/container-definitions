@@ -12,18 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""
-This package contains a dependency update YAML spec defining a dependency on a
-docker image on GCR to be used to run integration tests on the dependency update
-service.
-"""
+revisionsFilePath: "tests/single_fus_dep/revisions.bzl"
 
-load(
-    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
-    "configs_test",
-)
-
-configs_test(
-    name = "configs_test",
-    dependency_update_specs = ["deps_spec.yaml"],
-)
+gcsDeps:
+  - name: "FILE_0"
+    bucket: "file-update-service-test"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^container_definitions/tests/{BUILD_ID}/file_0/\\d{8,}_file_with_0\\.txt$"
+    startsWith: "container_definitions/tests/{BUILD_ID}/"
