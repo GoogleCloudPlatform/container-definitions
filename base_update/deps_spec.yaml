@@ -14,7 +14,7 @@
 
 revisionsFilePath: "tests/e2e/base_update/revisions.bzl"
 
- gcrDeps:
+gcrDeps:
 
   # Google managed base image: gcr.io/gcp-runtimes/ubuntu_16_0_4.
   # https://cloud.google.com/container-registry/docs/managed-base-images.
