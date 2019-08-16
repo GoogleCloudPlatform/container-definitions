@@ -16,13 +16,13 @@ steps:
   # Step: build the image.
   - name: "l.gcr.io/google/bazel"
     args: ["run", "//:image"]
-    dir: "tests/e2e/base_update"
+    dir: "base_update"
     id: "container_build"
 
   # Step: run structure tests on the built image.
   - name: "l.gcr.io/google/bazel"
     args: ["test", "//:image_test", "--test_output=errors"]
-    dir: "tests/e2e/base_update"
+    dir: "base_update"
     id: "structure_test"
     waitFor: ["container_build"]
 
