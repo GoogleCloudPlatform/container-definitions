@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-workspace(name = "container_definitions_tests")
+workspace(name = "e2e_test_base_update")
 
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
@@ -36,3 +36,7 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
+
+load("//:deps.bzl", base_update_deps = "deps")
+
+base_update_deps()

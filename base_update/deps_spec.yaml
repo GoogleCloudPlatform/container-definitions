@@ -12,18 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""
-This package contains a dependency update YAML spec defining dependencies on
-two Github repositories to be used to run integration tests on the
-dependency update service.
-"""
+revisionsFilePath: "tests/e2e/base_update/revisions.bzl"
 
-load(
-    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
-    "configs_test",
-)
+ gcrDeps:
 
-configs_test(
-    name = "configs_test",
-    dependency_update_specs = ["deps_spec.yaml"],
-)
+  # Google managed base image: gcr.io/gcp-runtimes/ubuntu_16_0_4.
+  # https://cloud.google.com/container-registry/docs/managed-base-images.
+  - name: "IMAGE"
+    location: "gcr.io/gcp-runtimes/ubuntu_16_0_4"
+    tag: "latest"

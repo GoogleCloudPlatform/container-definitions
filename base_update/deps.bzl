@@ -12,18 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""
-This package contains a dependency update YAML spec defining a dependency on a
-GCS object managed by the file update service to be used to run integration
-tests on the dependency update service.
-"""
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+load(":revisions.bzl", "IMAGE")
 
-load(
-    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
-    "configs_test",
-)
+def deps():
+    """Download dependencies required to use this layer."""
+    excludes = native.existing_rules().keys()
 
-configs_test(
-    name = "configs_test",
-    dependency_update_specs = ["deps_spec.yaml"],
-)
+    if "fus_managed_ubuntu1604" not in excludes:
+        container_pull(
+            name = "fus_managed_ubuntu1604",
+            digest = IMAGE.sha256,
+            registry = "gcr.io",
+            repository = "gcp-runtimes/ubuntu_16_0_4",
+        )
