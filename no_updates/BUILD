@@ -19,6 +19,6 @@ load(
 
 toolchain_container(
     name = "image",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     installables_tar = "@image_debs//file",
 )

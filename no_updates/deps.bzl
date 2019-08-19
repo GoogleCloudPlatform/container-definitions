@@ -19,9 +19,9 @@ load(":revisions.bzl", "DEBS_TARBALL", "IMAGE")
 def deps():
     excludes = native.existing_rules().keys()
 
-    if "ubuntu1604" not in excludes:
+    if "fus_managed_ubuntu1604" not in excludes:
         container_pull(
-            name = "ubuntu1604",
+            name = "fus_managed_ubuntu1604",
             digest = IMAGE.sha256,
             registry = "gcr.io",
             repository = "asci-toolchain/container_release_tools_e2e_tests/no_updates/ubuntu1604",
