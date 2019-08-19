@@ -12,16 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-load(":revisions.bzl", "IMAGE")
+revisionsFilePath: "no_updates/revisions.bzl"
 
-def deps():
-    excludes = native.existing_rules().keys()
+gcrDeps:
 
-    if "fus_managed_ubuntu1604" not in excludes:
-        container_pull(
-            name = "fus_managed_ubuntu1604",
-            digest = IMAGE.sha256,
-            registry = "gcr.io",
-            repository = "gcp-runtimes/ubuntu_16_0_4",
-        )
+  - name: "IMAGE"
+    location: "gcr.io/asci-toolchain/container_release_tools_e2e_tests/no_updates/ubuntu1604"
+    tag: "latest"
+
+gcsDeps:
+
+  - name: "DEBS_TARBALL"
+    bucket: "container_release_tools_e2e_tests"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^no_updates/debs/\\d{8,}_image_debs\\.tar$"
+    startsWith: "no_updates/debs/"

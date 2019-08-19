@@ -12,16 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-load(":revisions.bzl", "IMAGE")
+load(":revisions.bzl", "DEBS_TARBALL", "IMAGE")
 
 def deps():
     excludes = native.existing_rules().keys()
 
-    if "fus_managed_ubuntu1604" not in excludes:
+    if "ubuntu1604" not in excludes:
         container_pull(
-            name = "fus_managed_ubuntu1604",
+            name = "ubuntu1604",
             digest = IMAGE.sha256,
             registry = "gcr.io",
-            repository = "gcp-runtimes/ubuntu_16_0_4",
+            repository = "asci-toolchain/container_release_tools_e2e_tests/no_updates/ubuntu1604",
+        )
+
+    if "image_debs" not in excludes:
+        http_file(
+            name = "image_debs",
+            downloaded_file_path = DEBS_TARBALL.revision + "_image_debs.tar",
+            sha256 = DEBS_TARBALL.sha256,
+            urls = [
+                "https://storage.googleapis.com/container_release_tools_e2e_tests/no_updates/debs/" + DEBS_TARBALL.revision + "_image_debs.tar",
+            ],
         )

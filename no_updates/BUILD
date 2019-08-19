@@ -12,16 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-load(":revisions.bzl", "IMAGE")
+load(
+    "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
+    "toolchain_container",
+)
 
-def deps():
-    excludes = native.existing_rules().keys()
-
-    if "fus_managed_ubuntu1604" not in excludes:
-        container_pull(
-            name = "fus_managed_ubuntu1604",
-            digest = IMAGE.sha256,
-            registry = "gcr.io",
-            repository = "gcp-runtimes/ubuntu_16_0_4",
-        )
+toolchain_container(
+    name = "image",
+    base = "@ubuntu1604//image",
+    installables_tar = "@image_debs//file",
+)
