@@ -17,13 +17,13 @@ timeout: 1200s
 steps:
   # Step: build the image.
   - name: "l.gcr.io/google/bazel"
-    args: ["run", "//:image"]
+    args: ["--output_base=/workspace/output_base", "run", "//:image"]
     dir: "update_all_deps"
     id: "container_build"
 
   # Step: run structure tests on the built image.
   - name: "l.gcr.io/google/bazel"
-    args: ["test", "//:image_test", "--test_output=errors"]
+    args: ["--output_base=/workspace/output_base", "test", "//:image_test", "--test_output=errors"]
     dir: "update_all_deps"
     id: "structure_test"
     waitFor: ["container_build"]
