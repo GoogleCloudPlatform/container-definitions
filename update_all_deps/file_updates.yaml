@@ -21,3 +21,7 @@
     target: //:basic_debs.tar
     bucket: container_release_tools_e2e_tests
     dir: update_all_deps_test_copy/basic_debs/debs
+    metadata:
+        target: //:metadata.yaml
+        bucket: container_release_tools_e2e_tests
+        object: update_all_deps_test_copy/basic_debs/metadata/debs/metadata.yaml

@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
@@ -37,6 +38,13 @@ download_pkgs(
         "file",
         "git",
     ],
+)
+
+# Transform the packages metadata csv produced by download_pkgs into a YAML
+# file.
+packages_metadata(
+    name = "metadata",
+    metadata_csv = ":basic_debs_metadata.csv",
 )
 
 pkg_tar(

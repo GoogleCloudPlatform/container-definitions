@@ -30,6 +30,13 @@ load(
 )
 
 http_archive(
+    name = "bazel_toolchains",
+    sha256 = "9ee1e5c5f89100adea6656adef7c0137abcab268c2c3d6184e95f5b8264339d0",
+    strip_prefix = "bazel-toolchains-b71837681128e2a834814a3d0bf8c3213a3f2718",
+    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
+)
+
+http_archive(
     name = "io_bazel_rules_docker",
     sha256 = RULES_DOCKER.sha256,
     strip_prefix = "rules_docker-" + RULES_DOCKER.commit,
