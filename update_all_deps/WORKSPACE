@@ -66,6 +66,13 @@ container_deps()
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 
 container_pull(
+    name = "ubuntu1604",
+    registry = "gcr.io",
+    repository = "gcp-runtimes/ubuntu_16_0_4",
+    tag = "latest",
+)
+
+container_pull(
     name = "fus_managed_ubuntu1604",
     digest = IMAGE.sha256,
     registry = "gcr.io",

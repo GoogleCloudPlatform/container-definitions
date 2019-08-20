@@ -32,7 +32,7 @@ genrule(
 
 download_pkgs(
     name = "basic_debs",
-    image_tar = "@fus_managed_ubuntu1604//image",
+    image_tar = "@ubuntu1604//image",
     packages = [
         "curl",
         "file",
