@@ -25,7 +25,7 @@ load(
 
 genrule(
     name = "file",
-    outs = ["file"],
+    outs = ["file.txt"],
     cmd = "echo 'Hello world v3' > $@",
 )
 
