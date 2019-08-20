@@ -45,15 +45,15 @@ gcsDeps:
     startIndex: 0
 
   # Text file.
-  - name: "TETX_FILE"
+  - name: "TEXT_FILE"
     bucket: "container_release_tools_e2e_tests"
     versionRegex: "\\d{8,}"
-    fileRegex: "^update_all_deps/text_files/\\d{8,}_file\\.txt$"
-    startsWith: "update_all_deps/text_files/"
+    fileRegex: "^update_all_deps_test_copy/text_files/\\d{8,}_file\\.txt$"
+    startsWith: "update_all_deps_test_copy/text_files/"
 
   # The debian packages tarball pulled from the GCS bucket.
   - name: "DEBS_TARBALL"
     bucket: "container_release_tools_e2e_tests"
     versionRegex: "\\d{8,}"
-    fileRegex: "^update_all_deps/basic_debs/debs/\\d{8,}_basic_debs\\.tar$"
-    startsWith: "update_all_deps/basic_debs/debs/"
+    fileRegex: "^update_all_deps_test_copy/basic_debs/debs/\\d{8,}_basic_debs\\.tar$"
+    startsWith: "update_all_deps_test_copy/basic_debs/debs/"

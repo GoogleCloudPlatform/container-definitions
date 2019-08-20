@@ -17,7 +17,7 @@
     bucket: container_release_tools_e2e_tests
     dir: update_all_deps_test_copy/text_files
 
-# - triggerFile:
-#     target: //:basic_debs.tar
-#     bucket: container_release_tools_e2e_tests
-#     dir: update_all_deps/basic_debs/debs
+- triggerFile:
+    target: //:basic_debs.tar
+    bucket: container_release_tools_e2e_tests
+    dir: update_all_deps_test_copy/basic_debs/debs

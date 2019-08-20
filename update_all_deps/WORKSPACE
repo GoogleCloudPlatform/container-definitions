@@ -75,6 +75,6 @@ http_file(
     downloaded_file_path = DEBS_TARBALL.revision + "_basic_debs.tar",
     sha256 = DEBS_TARBALL.sha256,
     urls = [
-        "https://storage.googleapis.com/container_release_tools_e2e_tests/update_all_deps/basic_debs/debs/" + DEBS_TARBALL.revision + "_basic_debs.tar",
+        "https://storage.googleapis.com/container_release_tools_e2e_tests/update_all_deps_test_copy/basic_debs/debs/" + DEBS_TARBALL.revision + "_basic_debs.tar",
     ],
 )
