@@ -13,6 +13,7 @@
 # limitations under the License.
 
 revisionsFilePath: "update_all_deps/revisions.bzl"
+metadataSummaryFilePath: "update_all_deps/metadata_summary.yaml"
 
 githubRepoDeps:
 
@@ -57,3 +58,5 @@ gcsDeps:
     versionRegex: "\\d{8,}"
     fileRegex: "^update_all_deps_test_copy/basic_debs/debs/\\d{8,}_basic_debs\\.tar$"
     startsWith: "update_all_deps_test_copy/basic_debs/debs/"
+    fusMetadataBucket: "container_release_tools_e2e_tests"
+    fusMetadataObject: "update_all_deps_test_copy/basic_debs/metadata/debs/metadata.yaml"
