@@ -24,7 +24,7 @@ load(
 )
 
 genrule(
-    name = "generate_text_file",
+    name = "file",
     outs = ["file.txt"],
     cmd = "echo 'Hello world v3' > $@",
 )
