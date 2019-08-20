@@ -37,6 +37,12 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
-load("//:deps.bzl", base_update_deps = "deps")
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+load(":revisions.bzl", "IMAGE")
 
-base_update_deps()
+container_pull(
+    name = "fus_managed_ubuntu1604",
+    digest = IMAGE.sha256,
+    registry = "gcr.io",
+    repository = "gcp-runtimes/ubuntu_16_0_4",
+)

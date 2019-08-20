@@ -16,5 +16,5 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "invalid sha256 to be replaced by DUS",
+    sha256 = "invalid sha256 to be updated by DUS",
 )

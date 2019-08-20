@@ -31,8 +31,8 @@ steps:
   # Step: tag the image with `latest` at final location.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "docker"
-    args: ["tag", "bazel:image", "gcr.io/rbe-containers/e2e_tests/base_update:latest"]
+    args: ["tag", "bazel:image", "gcr.io/asci-toolchain/container_release_tools_e2e_tests/base_update:latest"]
     waitFor: ["structure_test"]
 
 images:
-  - "gcr.io/rbe-containers/e2e_tests/base_update:latest"
+  - "gcr.io/asci-toolchain/container_release_tools_e2e_tests/base_update:latest"
