@@ -67,7 +67,7 @@ http_file(
     name = "text_file",
     downloaded_file_path = "text_file.txt",
     sha256 = TEXT_FILE.sha256,
-    urls = ["https://storage.googleapis.com/container_release_tools_e2e_tests/update_all_deps/text_files/" + TEXT_FILE.revision + "_file.txt"],
+    urls = ["https://storage.googleapis.com/container_release_tools_e2e_tests/update_all_deps_test_copy/text_files/" + TEXT_FILE.revision + "_file.txt"],
 )
 
 http_file(
