@@ -1,0 +1,59 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+revisionsFilePath: "update_all_deps/revisions.bzl"
+
+githubRepoDeps:
+
+  # bazelbuild/rules_docker GitHub repo.
+  - name: "RULES_DOCKER"
+    repoSpec:
+      owner: "bazelbuild"
+      repository: "rules_docker"
+      branch: "master"
+    updateType: "commit"
+
+gcrDeps:
+
+  # Google managed base image: gcr.io/gcp-runtimes/ubuntu_16_0_4.
+  # https://cloud.google.com/container-registry/docs/managed-base-images.
+  - name: "IMAGE"
+    location: "gcr.io/gcp-runtimes/ubuntu_16_0_4"
+    tag: "latest"
+
+gcsDeps:
+
+  # Go installer.
+  - name: "GO_INSTALLER"
+    bucket: "golang"
+    versionRegex: "\\d+(\\.\\d+)*"
+    fileRegex: "^go\\d+(\\.\\d+)*\\.linux-amd64\\.tar\\.gz\\.sha256$"
+    excludes: "rc"
+    startsWith: "go"
+    readShaFromFile: true
+    startIndex: 0
+
+  # Text file.
+  - name: "TETX_FILE"
+    bucket: "container_release_tools_e2e_tests"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^update_all_deps/text_files/\\d{8,}_file\\.txt$"
+    startsWith: "update_all_deps/text_files/"
+
+  # The debian packages tarball pulled from the GCS bucket.
+  - name: "DEBS_TARBALL"
+    bucket: "container_release_tools_e2e_tests"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^update_all_deps/basic_debs/debs/\\d{8,}_basic_debs\\.tar$"
+    startsWith: "update_all_deps/basic_debs/debs/"
