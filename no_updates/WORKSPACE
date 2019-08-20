@@ -17,6 +17,7 @@ workspace(name = "e2e_test_no_updates")
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
+    "http_file",
 )
 
 http_archive(
@@ -37,6 +38,21 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
-load("//:deps.bzl", image_deps = "deps")
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+load(":revisions.bzl", "DEBS_TARBALL", "IMAGE")
 
-image_deps()
+container_pull(
+    name = "fus_managed_ubuntu1604",
+    digest = IMAGE.sha256,
+    registry = "gcr.io",
+    repository = "asci-toolchain/container_release_tools_e2e_tests/no_updates/ubuntu1604",
+)
+
+http_file(
+    name = "image_debs",
+    downloaded_file_path = DEBS_TARBALL.revision + "_image_debs.tar",
+    sha256 = DEBS_TARBALL.sha256,
+    urls = [
+        "https://storage.googleapis.com/container_release_tools_e2e_tests/no_updates/debs/" + DEBS_TARBALL.revision + "_image_debs.tar",
+    ],
+)
