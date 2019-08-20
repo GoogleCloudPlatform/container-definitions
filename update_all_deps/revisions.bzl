@@ -16,12 +16,12 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-	sha256 = "invalid sha256 to be updated by DUS",
+    sha256 = "invalid sha256 to be updated by DUS",
 )
 
 GO_INSTALLER = struct(
-	revision = "invalid revision to be updated by DUS",
-	sha256 = "invalid sha256 to be updated by DUS",
+    revision = "invalid revision to be updated by DUS",
+    sha256 = "invalid sha256 to be updated by DUS",
 )
 
 TEXT_FILE = struct(
@@ -35,6 +35,6 @@ DEBS_TARBALL = struct(
 )
 
 RULES_DOCKER = struct(
-	commit = "invalid commit sha to be updated by DUS",
-	sha256 = "invalid sha256 to be updated by DUS",
+    commit = "invalid commit sha to be updated by DUS",
+    sha256 = "invalid sha256 to be updated by DUS",
 )
