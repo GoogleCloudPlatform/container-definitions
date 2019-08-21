@@ -48,3 +48,13 @@
         target: //docker_layer:metadata.yaml
         bucket: container_release_tools_e2e_tests
         object: bazel_docker_gcloud_staging/docker/metadata/debs/metadata.yaml
+
+# Gcloud debian package tarball.
+- triggerFile:
+    target: //gcloud_layer:gcloud_debs.tar
+    bucket: container_release_tools_e2e_tests
+    dir: bazel_docker_gcloud_staging/gcloud/debs
+    metadata:
+        target: //gcloud_layer:metadata.yaml
+        bucket: container_release_tools_e2e_tests
+        object: bazel_docker_gcloud_staging/gcloud/metadata/debs/metadata.yaml
