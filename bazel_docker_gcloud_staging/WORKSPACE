@@ -64,3 +64,11 @@ bazel_deps()
 load("//clang_layer:deps.bzl", clang_deps = "deps")
 
 clang_deps()
+
+load("//docker_layer:deps.bzl", docker_deps = "deps")
+
+docker_deps()
+
+load("//gcloud_layer:deps.bzl", gcloud_deps = "deps")
+
+gcloud_deps()

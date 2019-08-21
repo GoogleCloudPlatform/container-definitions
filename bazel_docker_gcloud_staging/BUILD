@@ -36,8 +36,8 @@ toolchain_container(
     #     "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
     #     "@layer_definitions//layers/ubuntu1604/python:python-ltl",
         "//bazel_layer:bazel-ltl",
-    #     "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
-    #     "@layer_definitions//layers/ubuntu1604/gcloud:gcloud-ltl",
+        "//docker_layer:docker-ltl",
+        "//gcloud_layer:gcloud-ltl",
     ],
 )
 
@@ -48,6 +48,8 @@ metadata_merge(
     srcs = [
         "bazel_layer:bazel_debs_metadata.csv",
         "clang_layer:clang_debs_metadata.csv",
+        "docker_layer:docker_debs_metadata.csv",
+        "gcloud_layer:gcloud_debs_metadata.csv",
     ],
 )
 
@@ -58,8 +60,8 @@ container_test(
         "//base_layer:tests.yaml",
         "//bazel_layer:tests.yaml",
         "//clang_layer:tests.yaml",
-        # "@layer_definitions//layers/ubuntu1604/docker:tests.yaml",
-        # "@layer_definitions//layers/ubuntu1604/gcloud:tests.yaml",
+        "//docker_layer:tests.yaml",
+        "//gcloud_layer:tests.yaml",
         # "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
         # "@layer_definitions//layers/ubuntu1604/python:tests.yaml",
     ],

@@ -38,3 +38,13 @@
         target: //clang_layer:metadata.yaml
         bucket: container_release_tools_e2e_tests
         object: bazel_docker_gcloud_staging/clang/metadata/debs/metadata.yaml
+
+# Docker debian package tarball.
+- triggerFile:
+    target: //docker_layer:docker_debs.tar
+    bucket: container_release_tools_e2e_tests
+    dir: bazel_docker_gcloud_staging/docker/debs
+    metadata:
+        target: //docker_layer:metadata.yaml
+        bucket: container_release_tools_e2e_tests
+        object: bazel_docker_gcloud_staging/docker/metadata/debs/metadata.yaml

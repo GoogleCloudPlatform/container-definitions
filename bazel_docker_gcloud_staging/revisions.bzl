@@ -54,3 +54,17 @@ CLANG_DEBS_TARBALL = struct(
     revision = "1565701281",
     sha256 = "a7317352d7e2cf737567081d11c3302398754a58b51fd15622f8900dc7d4080e",
 )
+
+DOCKER_DEBS_TARBALL = struct(
+    # revision = "invalid revision to be replaced by DUS",
+    # sha256 = "invalid sha256 to be replaced by DUS",
+    revision = "1564102896",
+    sha256 = "5b5d9570ca8ce9fdc4bcfcef7237ef3fea79c4a004f3b3cee5631d4d6d7989a1",
+)
+
+GCLOUD_DEBS_TARBALL = struct(
+    # revision = "invalid revision to be replaced by DUS",
+    # sha256 = "invalid sha256 to be replaced by DUS",
+    revision = "1566316887",
+    sha256 = "11464fad29516c0ef8324996b45d9933438e09bb168942bfc99ee44f9e530f07",
+)
