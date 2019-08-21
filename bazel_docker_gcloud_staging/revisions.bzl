@@ -86,15 +86,15 @@ OPENJDK_SRC = struct(
 JAVA_DEBS_TARBALL = struct(
     # revision = "invalid revision to be replaced by DUS",
     # sha256 = "invalid sha256 to be replaced by DUS",
-    revision = "1566277286",
+    revision = "1566392443",
     sha256 = "c87774305ea93862c9a397dfa31a0d8fc386d058b7373610b875bda41aa87d2d",
 )
 
 CACERTS = struct(
     # revision = "invalid revision to be replaced by DUS",
     # sha256 = "invalid sha256 to be replaced by DUS",
-    revision = "1566277286",
-    sha256 = "36fe5fc3b2184469d5e807e892bf655ecbe9551cbf4bace486402c47539cb21a",
+    revision = "1566392443",
+    sha256 = "3e2c2fa876f9cdf98375d782f0a79b2d0d9d84580f27da71badcde7dfce97365",
 )
 
 PYTHON_DEBS_TARBALL = struct(

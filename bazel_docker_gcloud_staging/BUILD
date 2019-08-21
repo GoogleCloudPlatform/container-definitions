@@ -13,6 +13,11 @@
 # limitations under the License.
 
 load("@bazel_toolchains//rules/container:metadata_merge.bzl", "metadata_merge")
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
+    "configs_test",
+)
+load("@io_bazel_rules_docker//contrib:repro_test.bzl", "container_repro_test")
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
     "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
@@ -69,4 +74,15 @@ container_test(
     ],
     image = ":image",
     verbose = True,
+)
+
+container_repro_test(
+    name = "img_repro_test",
+    image = ":image",
+    workspace_file = "//:WORKSPACE",
+)
+
+configs_test(
+    name = "configs_test",
+    dependency_update_specs = ["deps_spec.yaml"],
 )
