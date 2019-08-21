@@ -93,3 +93,7 @@ docker_deps()
 load("//gcloud_layer:deps.bzl", gcloud_deps = "deps")
 
 gcloud_deps()
+
+load("//python_layer:deps.bzl", python_deps = "deps")
+
+python_deps()

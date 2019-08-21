@@ -68,3 +68,10 @@ GCLOUD_DEBS_TARBALL = struct(
     revision = "1566388549",
     sha256 = "11464fad29516c0ef8324996b45d9933438e09bb168942bfc99ee44f9e530f07",
 )
+
+PYTHON_DEBS_TARBALL = struct(
+    # revision = "invalid revision to be replaced by DUS",
+    # sha256 = "invalid sha256 to be replaced by DUS",
+    revision = "1565928075",
+    sha256 = "a65339a05b313cc338a21756b8b1bec68291abfa95273de7e557ff68e064f5a9",
+)
