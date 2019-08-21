@@ -26,6 +26,15 @@ http_archive(
     urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
 )
 
+# Used by FUS to run the metadata rules from bazel-toolchains.
+load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
+
+bazel_toolchains_repos()
+
+load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
+
+bazel_toolchains_go_repos()
+
 http_archive(
     name = "io_bazel_rules_docker",
     sha256 = "01f1826346a828410666d69df1a748f3a5a3b33924b9369c25064a7a553b133a",
