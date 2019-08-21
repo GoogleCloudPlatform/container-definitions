@@ -59,6 +59,21 @@
         bucket: container_release_tools_e2e_tests
         object: bazel_docker_gcloud_staging/gcloud/metadata/debs/metadata.yaml
 
+# Java debian package tarball and java cacerts file generated when
+# installing `ca-certificates-java`.
+- triggerFile:
+    target: //java_layer:java_debs.tar
+    bucket: container_release_tools_e2e_tests
+    dir: bazel_docker_gcloud_staging/java/debs
+    metadata:
+        target: //java_layer:metadata.yaml
+        bucket: container_release_tools_e2e_tests
+        object: bazel_docker_gcloud_staging/java/metadata/debs/metadata.yaml
+  extraFiles:
+    - target: //java_layer:cacerts_tar/cacerts.tar
+      bucket: container_release_tools_e2e_tests
+      dir: bazel_docker_gcloud_staging/java/cacerts
+
 # Python debian package tarball.
 - triggerFile:
     target: //python_layer:python_debs.tar

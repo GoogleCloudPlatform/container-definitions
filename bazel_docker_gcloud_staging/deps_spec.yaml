@@ -129,3 +129,53 @@ gcsDeps:
       - tag: "default"
         # Everyday weekday at 5am.
         schedule: "0 0 5 * * Mon-Fri"
+
+  # OpenJDK 11 installer.
+  - name: "OPENJDK_INSTALLER"
+    bucket: "bazel-mirror"
+    versionRegex: "11.*linux_x64-allmodules-[a-z0-9]+-\\d+"
+    fileRegex: "^openjdk\\/azul-zulu11.*linux_x64-allmodules.*.tar.gz$"
+    startsWith: "openjdk/azul-zulu"
+    releasePolicies:
+      - tag: "default"
+        # Everyday weekday at 5am.
+        schedule: "0 0 5 * * Mon-Fri"
+
+  # OpenJDK 11 source code. (needed for licensing reason)
+  - name: "OPENJDK_SRC"
+    bucket: "bazel-mirror"
+    versionRegex: "11.*zsrc.*11\\.\\d+\\.\\d+"
+    fileRegex: "^openjdk\\/azul-zulu11.*src.*.zip$"
+    startsWith: "openjdk/azul-zulu"
+    releasePolicies:
+      - tag: "default"
+        # Everyday weekday at 5am.
+        schedule: "0 0 5 * * Mon-Fri"
+
+  # The debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 Java layer.
+  - name: "JAVA_DEBS_TARBALL"
+    bucket: "container_release_tools_e2e_tests"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^bazel_docker_gcloud_staging/java/debs/\\d{8,}_java_debs\\.tar$"
+    startsWith: "bazel_docker_gcloud_staging/java/debs/"
+    fusMetadataBucket: "container_release_tools_e2e_tests"
+    fusMetadataObject: "bazel_docker_gcloud_staging/java/metadata/debs/metadata.yaml"
+    releasePolicies:
+      - tag: "default"
+        # Everyday weekday at 5am.
+        schedule: "0 0 5 * * Mon-Fri"
+
+  # cacerts.tar file which contains the /etc/ssl/certs/java/cacerts file.
+  # /etc/ssl/certs/java/cacerts is generated when `ca-certificates-java` is installed
+  # or `update-ca-certificates -f` is run. Because of the timestamp embedded, the
+  # file is not deterministic. We commit this file in a GCS bucket and reuse in layer
+  # or container creation so determinism can be achieved.
+  - name: "CACERTS"
+    bucket: "container_release_tools_e2e_tests"
+    versionRegex: "\\d{8,}"
+    fileRegex: "^bazel_docker_gcloud_staging/java/cacerts/\\d{8,}_cacerts\\.tar$"
+    startsWith: "bazel_docker_gcloud_staging/java/cacerts/"
+    releasePolicies:
+      - tag: "default"
+        # Everyday weekday at 5am.
+        schedule: "0 0 5 * * Mon-Fri"

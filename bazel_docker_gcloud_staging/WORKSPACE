@@ -94,6 +94,10 @@ load("//gcloud_layer:deps.bzl", gcloud_deps = "deps")
 
 gcloud_deps()
 
+load("//java_layer:deps.bzl", java8_deps = "deps")
+
+java8_deps()
+
 load("//python_layer:deps.bzl", python_deps = "deps")
 
 python_deps()

@@ -31,13 +31,13 @@ toolchain_container(
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
-        "//clang_layer:clang-ltl",
-    #     "@layer_definitions//layers/ubuntu1604/java:java-ltl",
-    #     "@layer_definitions//layers/ubuntu1604/java:java11-ltl",
-        "//python_layer:python-ltl",
         "//bazel_layer:bazel-ltl",
+        "//clang_layer:clang-ltl",
         "//docker_layer:docker-ltl",
         "//gcloud_layer:gcloud-ltl",
+        "//java_layer:java-ltl",
+        "//java_layer:java11-ltl",
+        "//python_layer:python-ltl",
     ],
 )
 
@@ -50,6 +50,7 @@ metadata_merge(
         "//clang_layer:clang_debs_metadata.csv",
         "//docker_layer:docker_debs_metadata.csv",
         "//gcloud_layer:gcloud_debs_metadata.csv",
+        "//java_layer:java_debs_metadata.csv",
         "//python_layer:python_debs_metadata.csv",
     ],
 )
@@ -63,7 +64,7 @@ container_test(
         "//clang_layer:tests.yaml",
         "//docker_layer:tests.yaml",
         "//gcloud_layer:tests.yaml",
-        # "@layer_definitions//layers/ubuntu1604/java:tests.yaml",
+        "//java_layer:tests.yaml",
         "//python_layer:tests.yaml",
     ],
     image = ":image",
