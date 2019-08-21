@@ -45,12 +45,12 @@ gcsDeps:
 
   # The Debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 Bazel layer.
   - name: "BAZEL_DEBS_TARBALL"
-    bucket: "layer-deps"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    bucket: "container_release_tools_e2e_tests"
     versionRegex: "\\d{8,}"
-    fileRegex: "^ubuntu1604/bazel/debs/\\d{8,}_bazel_debs\\.tar$"
-    startsWith: "ubuntu1604/bazel/debs/"
-    fusMetadataBucket: "layer-deps"
-    fusMetadataObject: "ubuntu1604/bazel/metadata/debs/metadata.yaml"
+    fileRegex: "^bazel_docker_gcloud_staging/bazel/debs/\\d{8,}_bazel_debs\\.tar$"
+    startsWith: "bazel_docker_gcloud_staging/bazel/debs/"
+    fusMetadataBucket: "container_release_tools_e2e_tests"
+    fusMetadataObject: "bazel_docker_gcloud_staging/bazel/metadata/debs/metadata.yaml"
     releasePolicies:
       - tag: "default"
         # Everyday weekday at 5am.
@@ -80,12 +80,12 @@ gcsDeps:
 
   # The debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 Clang layer.
   - name: "CLANG_DEBS_TARBALL"
-    bucket: "layer-deps"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    bucket: "container_release_tools_e2e_tests"
     versionRegex: "\\d{8,}"
-    fileRegex: "^ubuntu1604/clang/debs/\\d{8,}_clang_debs\\.tar$"
-    startsWith: "ubuntu1604/clang/debs/"
-    fusMetadataBucket: "layer-deps"
-    fusMetadataObject: "ubuntu1604/clang/metadata/debs/metadata.yaml"
+    fileRegex: "^bazel_docker_gcloud_staging/clang/debs/\\d{8,}_clang_debs\\.tar$"
+    startsWith: "bazel_docker_gcloud_staging/clang/debs/"
+    fusMetadataBucket: "container_release_tools_e2e_tests"
+    fusMetadataObject: "bazel_docker_gcloud_staging/clang/metadata/debs/metadata.yaml"
     releasePolicies:
       - tag: "default"
         # Everyday weekday at 5am.
