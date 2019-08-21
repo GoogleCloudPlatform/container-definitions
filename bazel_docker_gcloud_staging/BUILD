@@ -85,4 +85,5 @@ container_repro_test(
 configs_test(
     name = "configs_test",
     dependency_update_specs = ["deps_spec.yaml"],
+    file_update_specs = ["file_updates.yaml"],
 )
