@@ -12,7 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Force python targets to run as python 2.
-build --host_force_python=PY2
-run --host_force_python=PY2
-test --host_force_python=PY2
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "curl_version"
+    command: "curl"
+    args: ["-V"]
+    expectedOutput: ["curl \\d"]
+  - name: "file_version"
+    command: "file"
+    args: ["-v"]
+    expectedOutput: ["file-\\d"]
+  - name: "git_version"
+    command: "git"
+    args: ["--version"]
+    expectedOutput: ["git version \\d"]

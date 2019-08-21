@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Force python targets to run as python 2.
-build --host_force_python=PY2
-run --host_force_python=PY2
-test --host_force_python=PY2
+- triggerFile:
+    target: //:basic_debs.tar
+    bucket: container_release_tools_e2e_tests
+    dir: release_policy_update_required_test_copy/basic_debs/debs
