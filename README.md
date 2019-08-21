@@ -5,6 +5,9 @@ definitions and their dependencies. Each folder under this repo is a standalone
 Bazel project which builds deterministic and reproducible containers at every
 commit.
 
+This particular `e2e_tests` branch holds container image projects that test
+various scenarios for the container release tools.
+
 ## Source Code Headers
 
 Every file containing source code must include copyright and license
