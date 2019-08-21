@@ -43,7 +43,7 @@ steps:
 # Step: copy the bazel project into a separate dir to run repro tests in parallel.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "sh"
-    args: ["-c", "cp -a ubuntu1604_bazel_docker_gcloud /repro_test/ubuntu1604_bazel_docker_gcloud"]
+    args: ["-c", "cp -a bazel_docker_gcloud_staging /repro_test/bazel_docker_gcloud_staging"]
     volumes:
       - name: "repro_vol"
         path: "/repro_test"
@@ -56,7 +56,7 @@ steps:
     # This is to make sure Bazel generated files can be accessed by multiple containers.
     args: ["--output_base=/workspace/output_base", "run", "//:image"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
-    dir: "ubuntu1604_bazel_docker_gcloud"
+    dir: "bazel_docker_gcloud_staging"
     id: "container-build"
     waitFor: ["version"]
 
@@ -66,14 +66,14 @@ steps:
   - name: "l.gcr.io/google/bazel"
     args: ["--output_base=/workspace/output_base", "test", "//:image-test", "//:configs_test", "--test_output=errors"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
-    dir: "ubuntu1604_bazel_docker_gcloud"
+    dir: "bazel_docker_gcloud_staging"
     id: "structure-test"
     waitFor: ["pull_validator", "container-build"]
 
 # Step: run reproduction tests on the new image
   - name: "l.gcr.io/google/bazel"
     args: ["--output_base=/repro_test/output_base", "test", "//:img_repro_test", "--test_output=errors"]
-    dir: "/repro_test/ubuntu1604_bazel_docker_gcloud"
+    dir: "/repro_test/bazel_docker_gcloud_staging"
     volumes:
       - name: "repro_vol"
         path: "/repro_test"
