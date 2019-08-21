@@ -17,6 +17,7 @@ workspace(name = "e2e_test_bazel_docker_gcloud_staging")
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
+    "http_file",
 )
 
 http_archive(
@@ -52,6 +53,26 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
+
+# Docker gpg key necessary to run the download_pkgs target (to build the tarball
+# of debian packages) of the docker layer in this repo.
+# This is NOT needed to use the language_tool_layer target of the docker layer.
+http_file(
+    name = "docker_gpg",
+    downloaded_file_path = "docker_gpg",
+    sha256 = "1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570",
+    urls = ["https://download.docker.com/linux/ubuntu/gpg"],
+)
+
+# GCloud gpg key necessary to run the download_pkgs target (to build the tarball
+# of debian packages) of the gcloud layer in this repo.
+# This is NOT needed to use the language_tool_layer target of the gcloud layer.
+http_file(
+    name = "gcloud_gpg",
+    downloaded_file_path = "gcloud_gpg",
+    # TODO (smukherj1): Re-enable sha256 digest once stable.
+    urls = ["https://packages.cloud.google.com/apt/doc/apt-key.gpg"],
+)
 
 load("//base_layer:deps.bzl", ubuntu1604_base_deps = "deps")
 
