@@ -12,9 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-schemaVersion: "2.0.0"
+load(
+    "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
+    "toolchain_container",
+)
 
-fileContentTests:
-  - name: "os_info_file_contains"
-    path: "/etc/os-release"
-    expectedContents: ["VERSION=\"16\\.04\\..* LTS \\(Xenial"]
+toolchain_container(
+    name = "image",
+    base = "@fus_managed_ubuntu1604//image",
+)
