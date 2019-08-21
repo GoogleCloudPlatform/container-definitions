@@ -64,7 +64,7 @@ steps:
 # We use container_test rule, which is a Bazel wrapper of container_structure_test.
 # https://github.com/bazelbuild/rules_docker/blob/master/contrib/test.bzl
   - name: "l.gcr.io/google/bazel"
-    args: ["--output_base=/workspace/output_base", "test", "//:image_test", "//:configs_test", "--test_output=errors"]
+    args: ["--output_base=/workspace/output_base", "run", "//:image_test", "//:configs_test", "--test_output=errors"]
     # This is needed for GCB to correctly build/test targets in the Bazel project.
     dir: "bazel_docker_gcloud_staging"
     id: "structure-test"
