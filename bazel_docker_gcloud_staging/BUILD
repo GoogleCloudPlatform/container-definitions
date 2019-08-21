@@ -46,10 +46,10 @@ toolchain_container(
 metadata_merge(
     name = "metadata",
     srcs = [
-        "bazel_layer:bazel_debs_metadata.csv",
-        "clang_layer:clang_debs_metadata.csv",
-        "docker_layer:docker_debs_metadata.csv",
-        "gcloud_layer:gcloud_debs_metadata.csv",
+        "//bazel_layer:bazel_debs_metadata.csv",
+        "//clang_layer:clang_debs_metadata.csv",
+        "//docker_layer:docker_debs_metadata.csv",
+        "//gcloud_layer:gcloud_debs_metadata.csv",
     ],
 )
 
