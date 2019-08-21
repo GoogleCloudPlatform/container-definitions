@@ -48,6 +48,6 @@ def deps():
             downloaded_file_path = CLANG_DEBS_TARBALL.revision + "_clang_debs.tar",
             sha256 = CLANG_DEBS_TARBALL.sha256,
             urls = [
-                "https://storage.googleapis.com/layer-deps/ubuntu1604/clang/debs/" + CLANG_DEBS_TARBALL.revision + "_clang_debs.tar",
+                "https://storage.googleapis.com/container_release_tools_e2e_tests/bazel_docker_gcloud_staging/clang/debs/" + CLANG_DEBS_TARBALL.revision + "_clang_debs.tar",
             ],
         )

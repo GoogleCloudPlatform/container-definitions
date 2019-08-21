@@ -37,6 +37,6 @@ def deps():
             downloaded_file_path = BAZEL_DEBS_TARBALL.revision + "_bazel_debs.tar",
             sha256 = BAZEL_DEBS_TARBALL.sha256,
             urls = [
-                "https://storage.googleapis.com/layer-deps/ubuntu1604/bazel/debs/" + BAZEL_DEBS_TARBALL.revision + "_bazel_debs.tar",
+                "https://storage.googleapis.com/container_release_tools_e2e_tests/bazel_docker_gcloud_staging/bazel/debs/" + BAZEL_DEBS_TARBALL.revision + "_bazel_debs.tar",
             ],
         )
