@@ -1,0 +1,103 @@
+# Copyright 2018 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+workspace(name = "e2e_test_bazel_docker_gcloud_staging")
+
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive",
+    "http_file",
+)
+
+http_archive(
+    name = "bazel_toolchains",
+    sha256 = "9ee1e5c5f89100adea6656adef7c0137abcab268c2c3d6184e95f5b8264339d0",
+    strip_prefix = "bazel-toolchains-b71837681128e2a834814a3d0bf8c3213a3f2718",
+    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
+)
+
+# Used by FUS to run the metadata rules from bazel-toolchains.
+load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
+
+bazel_toolchains_repos()
+
+load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
+
+bazel_toolchains_go_repos()
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "01f1826346a828410666d69df1a748f3a5a3b33924b9369c25064a7a553b133a",
+    strip_prefix = "rules_docker-f829974af764c60d57ef6630ea4b8499529d0093",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/f829974af764c60d57ef6630ea4b8499529d0093.tar.gz"],
+)
+
+load(
+    "@io_bazel_rules_docker//repositories:repositories.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+
+container_deps()
+
+# Docker gpg key necessary to run the download_pkgs target (to build the tarball
+# of debian packages) of the docker layer in this repo.
+# This is NOT needed to use the language_tool_layer target of the docker layer.
+http_file(
+    name = "docker_gpg",
+    downloaded_file_path = "docker_gpg",
+    sha256 = "1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570",
+    urls = ["https://download.docker.com/linux/ubuntu/gpg"],
+)
+
+# GCloud gpg key necessary to run the download_pkgs target (to build the tarball
+# of debian packages) of the gcloud layer in this repo.
+# This is NOT needed to use the language_tool_layer target of the gcloud layer.
+http_file(
+    name = "gcloud_gpg",
+    downloaded_file_path = "gcloud_gpg",
+    # TODO (smukherj1): Re-enable sha256 digest once stable.
+    urls = ["https://packages.cloud.google.com/apt/doc/apt-key.gpg"],
+)
+
+load("//base_layer:deps.bzl", ubuntu1604_base_deps = "deps")
+
+ubuntu1604_base_deps()
+
+load("//bazel_layer:deps.bzl", bazel_deps = "deps")
+
+bazel_deps()
+
+load("//clang_layer:deps.bzl", clang_deps = "deps")
+
+clang_deps()
+
+load("//docker_layer:deps.bzl", docker_deps = "deps")
+
+docker_deps()
+
+load("//gcloud_layer:deps.bzl", gcloud_deps = "deps")
+
+gcloud_deps()
+
+load("//java_layer:deps.bzl", java8_deps = "deps")
+
+java8_deps()
+
+load("//python_layer:deps.bzl", python_deps = "deps")
+
+python_deps()
