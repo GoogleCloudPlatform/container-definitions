@@ -57,7 +57,7 @@ PYTHON_CLEANUP_COMMANDS = (
 
 language_tool_layer(
     name = "python-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     installables_tar = "@ubuntu1604_python_debs//file",
     installation_cleanup_commands = PYTHON_CLEANUP_COMMANDS,
     symlinks = {

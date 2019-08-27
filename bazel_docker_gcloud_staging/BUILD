@@ -26,7 +26,7 @@ load(
 # Generate the container with Bazel, Docker and basic Gcloud installed.
 toolchain_container(
     name = "image",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     cmd = [
         "/bin/sh",
         "-c",

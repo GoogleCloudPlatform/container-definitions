@@ -54,6 +54,18 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+
+# Pulling this image is required for targets built by FUS, which runs before
+# DUS. Hence FUS cannot rely on dependencies managed by DUS because this test
+# project explicitly sets the pins of such dependencies to invalid values.
+container_pull(
+    name = "ubuntu1604",
+    registry = "gcr.io",
+    repository = "gcp-runtimes/ubuntu_16_0_4",
+    tag = "latest",
+)
+
 # Docker gpg key necessary to run the download_pkgs target (to build the tarball
 # of debian packages) of the docker layer in this repo.
 # This is NOT needed to use the language_tool_layer target of the docker layer.

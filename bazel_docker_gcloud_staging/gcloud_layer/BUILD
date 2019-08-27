@@ -60,6 +60,6 @@ packages_metadata(
 
 language_tool_layer(
     name = "gcloud-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     installables_tar = "@ubuntu1604_gcloud_debs//file",
 )

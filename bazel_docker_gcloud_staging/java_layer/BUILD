@@ -82,7 +82,7 @@ JAVA_CLEANUP_COMMANDS = (
 
 language_tool_layer(
     name = "java-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     env = {
         "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
     },
@@ -116,7 +116,7 @@ pkg_tar(
 
 language_tool_layer(
     name = "java11-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     tars = [
         ":open_jdk_tar",
         ":open_jdk_src_tar",

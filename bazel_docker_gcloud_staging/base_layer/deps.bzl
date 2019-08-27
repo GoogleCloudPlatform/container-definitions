@@ -19,9 +19,9 @@ def deps():
     """Download dependencies required to use this layer."""
     excludes = native.existing_rules().keys()
 
-    if "ubuntu1604" not in excludes:
+    if "fus_managed_ubuntu1604" not in excludes:
         container_pull(
-            name = "ubuntu1604",
+            name = "fus_managed_ubuntu1604",
             digest = IMAGE.sha256,
             registry = "gcr.io",
             repository = "gcp-runtimes/ubuntu_16_0_4",

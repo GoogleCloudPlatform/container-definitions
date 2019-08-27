@@ -63,7 +63,7 @@ packages_metadata(
 # that we use to create the Bazel layer.
 toolchain_container(
     name = "bazel_installer_image",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     files = [
         ":bazel.bazelrc",
         "@ubuntu1604_bazel_installer//file",
@@ -91,7 +91,7 @@ container_run_and_extract(
 # (e.g., CC compiler, JDK) here as we include them in the final container.
 language_tool_layer(
     name = "bazel-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     installables_tar = "@ubuntu1604_bazel_debs//file",
     symlinks = {
         "/usr/local/bin/bazel": "/usr/local/lib/bazel/bin/bazel",

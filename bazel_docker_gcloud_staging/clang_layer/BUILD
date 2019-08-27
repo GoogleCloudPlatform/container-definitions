@@ -71,7 +71,7 @@ pkg_tar(
 
 language_tool_layer(
     name = "clang-ltl",
-    base = "@ubuntu1604//image",
+    base = "@fus_managed_ubuntu1604//image",
     env = clang_env,
     installables_tar = "@ubuntu1604_clang_debs//file",
     tars = [
