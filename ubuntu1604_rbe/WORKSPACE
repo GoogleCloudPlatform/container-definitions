@@ -64,10 +64,6 @@ load("@layer_definitions//layers/ubuntu1604/base:deps.bzl", ubuntu1604_base_deps
 
 ubuntu1604_base_deps()
 
-load("@layer_definitions//layers/ubuntu1604/bazel:deps.bzl", bazel_deps = "deps")
-
-bazel_deps()
-
 load("@layer_definitions//layers/ubuntu1604/clang:deps.bzl", clang_deps = "deps")
 
 clang_deps()
