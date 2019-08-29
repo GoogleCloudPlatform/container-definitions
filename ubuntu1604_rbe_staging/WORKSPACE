@@ -12,12 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-workspace(name = "e2e_test_bazel_docker_gcloud_staging")
+workspace(name = "e2e_test_ubuntu1604_rbe_staging")
 
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
-    "http_file",
 )
 
 http_archive(
@@ -54,62 +53,34 @@ load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_
 
 bazel_toolchains_go_repos()
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-
-# Pulling this image is required for targets built by FUS, which runs before
-# DUS. Hence FUS cannot rely on dependencies managed by DUS because this test
-# project explicitly sets the pins of such dependencies to invalid values.
-container_pull(
-    name = "ubuntu1604",
-    registry = "gcr.io",
-    repository = "gcp-runtimes/ubuntu_16_0_4",
-    tag = "latest",
-)
-
-# Docker gpg key necessary to run the download_pkgs target (to build the tarball
-# of debian packages) of the docker layer in this repo.
-# This is NOT needed to use the language_tool_layer target of the docker layer.
-http_file(
-    name = "docker_gpg",
-    downloaded_file_path = "docker_gpg",
-    sha256 = "1500c1f56fa9e26b9b8f42452a553675796ade0807cdce11975eb98170b3a570",
-    urls = ["https://download.docker.com/linux/ubuntu/gpg"],
-)
-
-# GCloud gpg key necessary to run the download_pkgs target (to build the tarball
-# of debian packages) of the gcloud layer in this repo.
-# This is NOT needed to use the language_tool_layer target of the gcloud layer.
-http_file(
-    name = "gcloud_gpg",
-    downloaded_file_path = "gcloud_gpg",
-    # TODO (smukherj1): Re-enable sha256 digest once stable.
-    urls = ["https://packages.cloud.google.com/apt/doc/apt-key.gpg"],
+http_archive(
+    name = "bazel_skylib",
+    # Commit c00ef493869e2966d47508e8625aae723a4a3054 of 2018-12-10
+    sha256 = "7363ae6721c1648017e23a200013510c9e71ca69f398d52886ee6af7f26af436",
+    strip_prefix = "bazel-skylib-c00ef493869e2966d47508e8625aae723a4a3054",
+    urls = ["https://github.com/bazelbuild/bazel-skylib/archive/c00ef493869e2966d47508e8625aae723a4a3054.tar.gz"],
 )
 
 load("//base_layer:deps.bzl", ubuntu1604_base_deps = "deps")
 
 ubuntu1604_base_deps()
 
-load("//bazel_layer:deps.bzl", bazel_deps = "deps")
-
-bazel_deps()
-
 load("//clang_layer:deps.bzl", clang_deps = "deps")
 
 clang_deps()
-
-load("//docker_layer:deps.bzl", docker_deps = "deps")
-
-docker_deps()
-
-load("//gcloud_layer:deps.bzl", gcloud_deps = "deps")
-
-gcloud_deps()
 
 load("//java_layer:deps.bzl", java8_deps = "deps")
 
 java8_deps()
 
-load("//python_layer:deps.bzl", python_deps = "deps")
+load("//go_layer:deps.bzl", go_deps = "deps")
 
-python_deps()
+go_deps()
+
+load("//python_rbe_layer:deps.bzl", python_rbe_deps = "deps")
+
+python_rbe_deps()
+
+load("//rbe_tools_layer:deps.bzl", rbe_tools_deps = "deps")
+
+rbe_tools_deps()

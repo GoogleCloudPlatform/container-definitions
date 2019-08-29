@@ -23,25 +23,37 @@ load(
     "toolchain_container",
 )
 
-# Generate the container with Bazel, Docker and basic Gcloud installed.
+licenses(["notice"])  # Apache 2.0
+
+package(default_visibility = ["//visibility:public"])
+
+# Generate the container with clang, java, python2, python3, go toolchain and
+# some basic linux tools.
 toolchain_container(
     name = "image",
-    base = "@fus_managed_ubuntu1604//image",
+    base = "@ubuntu1604//image",
     cmd = [
         "/bin/sh",
         "-c",
         "/bin/bash",
     ],
+    env = {
+        "LANG": "C.UTF-8",
+        "LANGUAGE": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+        # PATH envvar is a special case, and currently only the one in the
+        # topmost layer is set. So that we override it here to include all.
+        "PATH": "$$PATH:/opt/python3.6/bin:/usr/local/go/bin",
+    },
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
-        "//bazel_layer:bazel-ltl",
         "//clang_layer:clang-ltl",
-        "//docker_layer:docker-ltl",
-        "//gcloud_layer:gcloud-ltl",
+        "//go_layer:go-ltl",
         "//java_layer:java-ltl",
         "//java_layer:java11-ltl",
-        "//python_layer:python-ltl",
+        "//python_rbe_layer:python-rbe-ltl",
+        "//rbe_tools_layer:rbe-tools-ltl",
     ],
 )
 
@@ -50,12 +62,11 @@ container_test(
     configs = [
         ":tests.yaml",
         "//base_layer:tests.yaml",
-        "//bazel_layer:tests.yaml",
         "//clang_layer:tests.yaml",
-        "//docker_layer:tests.yaml",
-        "//gcloud_layer:tests.yaml",
+        "//go_layer:tests.yaml",
         "//java_layer:tests.yaml",
-        "//python_layer:tests.yaml",
+        "//python_rbe_layer:tests.yaml",
+        "//rbe_tools_layer:tests.yaml",
     ],
     image = ":image",
     verbose = True,
