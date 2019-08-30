@@ -16,59 +16,59 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:ee02edbafda63080ecdea2a62f08104e0c04d51844d136d41c0e54e33feb3cdf",
+    sha256 = "sha256:ee02edbafda63080ecdea2a62f08104e0c04d51844d136d41c0e54e33feb3cd",
 )
 
 PY3_IMAGE = struct(
-    sha256 = "sha256:55096029b76bcc83e6ddff5e2dc4198df657a912982920f12b9977863eae7173",
+    sha256 = "sha256:55096029b76bcc83e6ddff5e2dc4198df657a912982920f12b9977863eae717",
 )
 
 CLANG_INSTALLER = struct(
     revision = "r366207",
-    sha256 = "ab5ca3fa052cd164904bf1c2da143c23ca309194a33b98793f08d11b6c104c5b",
+    sha256 = "ab5ca3fa052cd164904bf1c2da143c23ca309194a33b98793f08d11b6c104c5",
 )
 
 LIBCXX_INSTALLER = struct(
     revision = "r366207",
-    sha256 = "abffabe8993c9de015701c0ae9ef3999a748599145617450001fc80ffc39e2d7",
+    sha256 = "abffabe8993c9de015701c0ae9ef3999a748599145617450001fc80ffc39e2d",
 )
 
 CLANG_DEBS_TARBALL = struct(
     revision = "1566998812",
-    sha256 = "a7317352d7e2cf737567081d11c3302398754a58b51fd15622f8900dc7d4080e",
+    sha256 = "a7317352d7e2cf737567081d11c3302398754a58b51fd15622f8900dc7d4080",
 )
 
 GO_INSTALLER = struct(
     revision = "1.12.9",
-    sha256 = "ac2a6efcc1f5ec8bdc0db0a988bb1d301d64b6d61b7e8d9e42f662fbb75a2b9b",
+    sha256 = "ac2a6efcc1f5ec8bdc0db0a988bb1d301d64b6d61b7e8d9e42f662fbb75a2b9",
 )
 
 OPENJDK_INSTALLER = struct(
     revision = "11.29.3-ca-jdk11.0.2/zulu11.29.3-ca-jdk11.0.2-linux_x64-allmodules-90755145cb6e6418584d8603cd5fa9afbb30aecc-1549209950",
-    sha256 = "460d8a4f0c0204160b48086e341b22943c9cca471b195340e75b38ae9eb33c1c",
+    sha256 = "460d8a4f0c0204160b48086e341b22943c9cca471b195340e75b38ae9eb33c1",
 )
 
 OPENJDK_SRC = struct(
     revision = "11.31.11-ca-jdk11.0.3/zsrc11.31.11-jdk11.0.3",
-    sha256 = "65afc25dd914a094e25b1f804160bb20849f923d9a4b7d989f885558922e8182",
+    sha256 = "65afc25dd914a094e25b1f804160bb20849f923d9a4b7d989f885558922e818",
 )
 
 JAVA_DEBS_TARBALL = struct(
     revision = "1566998812",
-    sha256 = "c87774305ea93862c9a397dfa31a0d8fc386d058b7373610b875bda41aa87d2d",
+    sha256 = "c87774305ea93862c9a397dfa31a0d8fc386d058b7373610b875bda41aa87d2",
 )
 
 CACERTS = struct(
     revision = "1566998812",
-    sha256 = "8f8ddcf91ecdb11b1c7d264884c989b647cb800e81998b53cb26b2c3e1cba798",
+    sha256 = "8f8ddcf91ecdb11b1c7d264884c989b647cb800e81998b53cb26b2c3e1cba79",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
     revision = "1566998812",
-    sha256 = "69bc05a05a7a185e299d008c012626fb44f2389a023acd43b440efb548f25aaf",
+    sha256 = "69bc05a05a7a185e299d008c012626fb44f2389a023acd43b440efb548f25aa",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
     revision = "1566998812",
-    sha256 = "5977cbc52fc5ac5591d472c674831f3110e437364218c6eb51c405247cedee28",
+    sha256 = "5977cbc52fc5ac5591d472c674831f3110e437364218c6eb51c405247cedee2",
 )
