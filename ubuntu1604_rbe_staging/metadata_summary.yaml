@@ -1,0 +1,220 @@
+CLANG_DEBS_TARBALL:
+  packages:
+  - name: gcc-4.9-base
+    version: 4.9.3-13ubuntu2
+  - name: libasan1
+    version: 4.9.3-13ubuntu2
+  - name: libatomic1
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libc-dev-bin
+    version: 2.23-0ubuntu11
+  - name: libc6-dev
+    version: 2.23-0ubuntu11
+  - name: libcilkrts5
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libgcc-4.9-dev
+    version: 4.9.3-13ubuntu2
+  - name: libgomp1
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libitm1
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: liblsan0
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libquadmath0
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libstdc++-4.9-dev
+    version: 4.9.3-13ubuntu2
+  - name: libtsan0
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: libubsan0
+    version: 5.4.0-6ubuntu1~16.04.11
+  - name: linux-libc-dev
+    version: 4.4.0-159.187
+JAVA_DEBS_TARBALL:
+  packages:
+  - name: ca-certificates-java
+    version: 20160321ubuntu1
+  - name: fontconfig-config
+    version: 2.11.94-0ubuntu1.1
+  - name: fonts-dejavu-core
+    version: 2.35-1
+  - name: java-common
+    version: 0.56ubuntu2
+  - name: libavahi-client3
+    version: 0.6.32~rc+dfsg-1ubuntu2.3
+  - name: libavahi-common-data
+    version: 0.6.32~rc+dfsg-1ubuntu2.3
+  - name: libavahi-common3
+    version: 0.6.32~rc+dfsg-1ubuntu2.3
+  - name: libcups2
+    version: 2.1.3-4ubuntu0.10
+  - name: libdbus-1-3
+    version: 1.10.6-1ubuntu3.4
+  - name: libexpat1
+    version: 2.1.0-7ubuntu0.16.04.4
+  - name: libfontconfig1
+    version: 2.11.94-0ubuntu1.1
+  - name: libfreetype6
+    version: 2.6.1-0.1ubuntu2.3
+  - name: libjpeg-turbo8
+    version: 1.4.2-0ubuntu3.1
+  - name: libjpeg8
+    version: 8c-2ubuntu8
+  - name: liblcms2-2
+    version: 2.6-3ubuntu2.1
+  - name: libnspr4
+    version: 2:4.13.1-0ubuntu0.16.04.1
+  - name: libnss3
+    version: 2:3.28.4-0ubuntu0.16.04.6
+  - name: libnss3-nssdb
+    version: 2:3.28.4-0ubuntu0.16.04.6
+  - name: libpcsclite1
+    version: 1.8.14-1ubuntu1.16.04.1
+  - name: libpng12-0
+    version: 1.2.54-1ubuntu1.1
+  - name: libx11-6
+    version: 2:1.6.3-1ubuntu2.1
+  - name: libx11-data
+    version: 2:1.6.3-1ubuntu2.1
+  - name: libxau6
+    version: 1:1.0.8-1
+  - name: libxcb1
+    version: 1.11.1-1ubuntu1
+  - name: libxdmcp6
+    version: 1:1.1.2-1.1
+  - name: libxext6
+    version: 2:1.3.3-1
+  - name: libxi6
+    version: 2:1.7.6-1
+  - name: libxrender1
+    version: 1:0.9.9-0ubuntu1
+  - name: libxtst6
+    version: 2:1.2.2-1
+  - name: openjdk-8-jdk-headless
+    version: 8u222-b10-1ubuntu1~16.04.1
+  - name: openjdk-8-jre-headless
+    version: 8u222-b10-1ubuntu1~16.04.1
+  - name: ucf
+    version: "3.0036"
+  - name: x11-common
+    version: 1:7.7+13ubuntu3.1
+PYTHON_RBE_DEBS_TARBALL:
+  packages:
+  - name: dh-python
+    version: 2.20151103ubuntu1.2
+  - name: libc-dev-bin
+    version: 2.23-0ubuntu11
+  - name: libc6-dev
+    version: 2.23-0ubuntu11
+  - name: libexpat1
+    version: 2.1.0-7ubuntu0.16.04.4
+  - name: libexpat1-dev
+    version: 2.1.0-7ubuntu0.16.04.4
+  - name: libmpdec2
+    version: 2.4.2-1
+  - name: libpython-dev
+    version: 2.7.12-1~16.04
+  - name: libpython-stdlib
+    version: 2.7.12-1~16.04
+  - name: libpython2.7
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: libpython2.7-dev
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: libpython2.7-minimal
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: libpython2.7-stdlib
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: libpython3-dev
+    version: 3.5.1-3
+  - name: libpython3-stdlib
+    version: 3.5.1-3
+  - name: libpython3.5
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: libpython3.5-dev
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: libpython3.5-minimal
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: libpython3.5-stdlib
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: linux-libc-dev
+    version: 4.4.0-159.187
+  - name: mime-support
+    version: 3.59ubuntu1
+  - name: python
+    version: 2.7.12-1~16.04
+  - name: python-dev
+    version: 2.7.12-1~16.04
+  - name: python-minimal
+    version: 2.7.12-1~16.04
+  - name: python-pkg-resources
+    version: 20.7.0-1
+  - name: python-setuptools
+    version: 20.7.0-1
+  - name: python2.7
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: python2.7-dev
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: python2.7-minimal
+    version: 2.7.12-1ubuntu0~16.04.4
+  - name: python3
+    version: 3.5.1-3
+  - name: python3-dev
+    version: 3.5.1-3
+  - name: python3-minimal
+    version: 3.5.1-3
+  - name: python3.5
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: python3.5-dev
+    version: 3.5.2-2ubuntu0~16.04.5
+  - name: python3.5-minimal
+    version: 3.5.2-2ubuntu0~16.04.5
+RBE_TOOLS_DEBS_TARBALL:
+  packages:
+  - name: binutils
+    version: 2.26.1-1ubuntu1~16.04.8
+  - name: ed
+    version: 1.10-2
+  - name: file
+    version: 1:5.25-2ubuntu1.2
+  - name: git
+    version: 1:2.7.4-0ubuntu1.6
+  - name: git-man
+    version: 1:2.7.4-0ubuntu1.6
+  - name: less
+    version: 481-2.1ubuntu0.2
+  - name: libbsd0
+    version: 0.8.2-1
+  - name: libedit2
+    version: 3.1-20150325-1ubuntu2
+  - name: liberror-perl
+    version: 0.17-1.2
+  - name: libexpat1
+    version: 2.1.0-7ubuntu0.16.04.4
+  - name: libgdbm3
+    version: 1.8.3-13.1
+  - name: libmagic1
+    version: 1:5.25-2ubuntu1.2
+  - name: libperl5.22
+    version: 5.22.1-9ubuntu0.6
+  - name: locales
+    version: 2.23-0ubuntu11
+  - name: locales-all
+    version: 2.23-0ubuntu11
+  - name: netcat
+    version: 1.10-41
+  - name: netcat-traditional
+    version: 1.10-41
+  - name: openssh-client
+    version: 1:7.2p2-4ubuntu2.8
+  - name: patch
+    version: 2.7.5-1ubuntu0.16.04.2
+  - name: perl
+    version: 5.22.1-9ubuntu0.6
+  - name: perl-modules-5.22
+    version: 5.22.1-9ubuntu0.6
+  - name: unzip
+    version: 6.0-20ubuntu1
+  - name: wget
+    version: 1.17.1-1ubuntu1.5
+  - name: zip
+    version: 3.0-11
