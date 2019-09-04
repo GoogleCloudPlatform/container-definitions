@@ -39,8 +39,8 @@ CLANG_DEBS_TARBALL = struct(
 )
 
 GO_INSTALLER = struct(
-    revision = "1.12.9",
-    sha256 = "ac2a6efcc1f5ec8bdc0db0a988bb1d301d64b6d61b7e8d9e42f662fbb75a2b9b",
+    revision = "1.13",
+    sha256 = "68a2297eb099d1a76097905a2ce334e3155004ec08cdea85f24527be3c48e856",
 )
 
 OPENJDK_INSTALLER = struct(
