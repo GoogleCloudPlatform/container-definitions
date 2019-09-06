@@ -14,6 +14,10 @@
 
 load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
+    "configs_test",
+)
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
     "@io_bazel_rules_docker//docker/package_managers:download_pkgs.bzl",
@@ -82,4 +86,11 @@ container_test(
     configs = [":tests.yaml"],
     image = ":image",
     verbose = True,
+)
+
+configs_test(
+    name = "configs_test",
+    checker_tag = "test",
+    dependency_update_specs = ["deps_spec.yaml"],
+    file_update_specs = ["file_updates.yaml"],
 )

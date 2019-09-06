@@ -29,22 +29,6 @@ load(
     "http_file",
 )
 
-http_archive(
-    name = "bazel_toolchains",
-    sha256 = "9ee1e5c5f89100adea6656adef7c0137abcab268c2c3d6184e95f5b8264339d0",
-    strip_prefix = "bazel-toolchains-b71837681128e2a834814a3d0bf8c3213a3f2718",
-    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
-)
-
-# Used by FUS to run the metadata rules from bazel-toolchains.
-load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
-
-bazel_toolchains_repos()
-
-load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
-
-bazel_toolchains_go_repos()
-
 # This tests the DUS properly updating a GitHub repo dependency pin.
 # This target becomes valid (buildable) only after the DUS properly sets the
 # pin specified in revisions.bzl
@@ -65,6 +49,22 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
+
+http_archive(
+    name = "bazel_toolchains",
+    sha256 = "9ee1e5c5f89100adea6656adef7c0137abcab268c2c3d6184e95f5b8264339d0",
+    strip_prefix = "bazel-toolchains-b71837681128e2a834814a3d0bf8c3213a3f2718",
+    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
+)
+
+# Used by FUS to run the metadata rules from bazel-toolchains.
+load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
+
+bazel_toolchains_repos()
+
+load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
+
+bazel_toolchains_go_repos()
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 

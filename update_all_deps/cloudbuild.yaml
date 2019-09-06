@@ -15,6 +15,12 @@
 timeout: 1200s
 
 steps:
+  # Pull the semantic checker image used by the //:configs_test target.
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["pull", "gcr.io/asci-toolchain/container_release_tools/dependency_update/validators/semantics:test"]
+    id: "pull_validator"
+    waitFor: ["-"]   # wait for nothing - start immediately
+
   # Step: build the image.
   - name: "l.gcr.io/google/bazel"
     args: ["--output_base=/workspace/output_base", "run", "//:image"]
@@ -23,10 +29,10 @@ steps:
 
   # Step: run structure tests on the built image.
   - name: "l.gcr.io/google/bazel"
-    args: ["--output_base=/workspace/output_base", "test", "//:image_test", "--test_output=errors"]
+    args: ["--output_base=/workspace/output_base", "test", "//:image_test", "//:configs_test", "--test_output=errors"]
     dir: "update_all_deps"
     id: "structure_test"
-    waitFor: ["container_build"]
+    waitFor: ["pull_validator", "container_build"]
 
   # Step: tag the image with `latest` at final location.
   - name: "l.gcr.io/google/bazel"
