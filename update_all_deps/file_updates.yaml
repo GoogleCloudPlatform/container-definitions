@@ -13,7 +13,7 @@
 # limitations under the License.
 
 - triggerFile:
-    target: //:file
+    target: //:file.txt
     bucket: container_release_tools_e2e_tests
     dir: update_all_deps_test_copy/text_files
 
