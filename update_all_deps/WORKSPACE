@@ -63,16 +63,6 @@ load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_
 
 bazel_toolchains_go_repos()
 
-# This tests the DUS properly updating a GitHub repo dependency pin.
-# This target becomes valid (buildable) only after the DUS properly sets the
-# pin specified in revisions.bzl
-http_archive(
-    name = "io_bazel_rules_k8s",
-    sha256 = RULES_K8S.sha256,
-    strip_prefix = "rules_k8s-" + RULES_K8S.commit,
-    urls = ["https://github.com/bazelbuild/rules_k8s/archive/" + RULES_K8S.commit + ".tar.gz"],
-)
-
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 
 container_pull(

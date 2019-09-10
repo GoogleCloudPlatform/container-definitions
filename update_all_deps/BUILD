@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
+load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load(
     "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
@@ -93,4 +93,11 @@ configs_test(
     checker_tag = "test",
     dependency_update_specs = ["deps_spec.yaml"],
     file_update_specs = ["file_updates.yaml"],
+)
+
+# Test to verify that pins to a GitHub repo were updated by DUS.
+sh_test(
+    name = "github_dep_update_test",
+    srcs = ["github_dep_test.sh"],
+    data = ["revisions.bzl"]
 )
