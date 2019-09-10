@@ -54,18 +54,18 @@ OPENJDK_SRC = struct(
 )
 
 JAVA_DEBS_TARBALL = struct(
-    revision = "1566998812",
-    sha256 = "c87774305ea93862c9a397dfa31a0d8fc386d058b7373610b875bda41aa87d2d",
+    revision = "1568098912",
+    sha256 = "9053599b705729ea496da822674f0ef77d746ea55234993e422f5850b22becd1",
 )
 
 CACERTS = struct(
-    revision = "1566998812",
-    sha256 = "8f8ddcf91ecdb11b1c7d264884c989b647cb800e81998b53cb26b2c3e1cba798",
+    revision = "1568098912",
+    sha256 = "a86c423b8c5eefbb2708cb4e4081a0084811d2f966ec53719ba68afaa779441a",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
-    revision = "1567494175",
-    sha256 = "55298f3d4d17025548f6625835e25f857f3b467d2c3b3890acef94ee62e84c5a",
+    revision = "1568098912",
+    sha256 = "a1119408a53fd5c703d68c77bcc2afd239e06872ae855b57581ca7da72c17c56",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
