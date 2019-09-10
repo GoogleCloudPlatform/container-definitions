@@ -34,11 +34,18 @@ steps:
     id: "structure_test"
     waitFor: ["pull_validator", "container_build"]
 
+  # Step: run test to verify GitHub dependency pin was updated by DUS.
+  - name: "l.gcr.io/google/bazel"
+    args: ["--output_base=/workspace/output_base", "test", "//:github_dep_update_test", "--test_output=errors"]
+    dir: "update_all_deps"
+    id: "github_dep_update_test"
+    waitFor: ["structure_test"]
+
   # Step: tag the image with `latest` at final location.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "docker"
     args: ["tag", "bazel:image", "gcr.io/asci-toolchain/container_release_tools_e2e_tests/update_all_deps:latest"]
-    waitFor: ["structure_test"]
+    waitFor: ["github_dep_update_test"]
 
 images:
   - "gcr.io/asci-toolchain/container_release_tools_e2e_tests/update_all_deps:latest"
