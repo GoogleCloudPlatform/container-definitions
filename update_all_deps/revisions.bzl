@@ -34,7 +34,7 @@ DEBS_TARBALL = struct(
     sha256 = "invalid sha256 to be updated by DUS",
 )
 
-RULES_DOCKER = struct(
+RULES_K8S = struct(
     commit = "invalid commit sha to be updated by DUS",
     sha256 = "invalid sha256 to be updated by DUS",
 )

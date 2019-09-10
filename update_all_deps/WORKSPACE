@@ -19,7 +19,7 @@ load(
     "DEBS_TARBALL",
     "GO_INSTALLER",
     "IMAGE",
-    "RULES_DOCKER",
+    "RULES_K8S",
     "TEXT_FILE",
 )
 
@@ -36,14 +36,12 @@ http_archive(
     urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/d25f66cc3ce72e089d1666b02c25cbb7cce65f0d.tar.gz"],
 )
 
-# Used by FUS to run the metadata rules from bazel-toolchains.
-load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
-
-bazel_toolchains_repos()
-
-load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
-
-bazel_toolchains_go_repos()
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "7d453450e1eb70e238eea6b31f4115607ec1200e91afea01c25f9804f37e39c8",
+    strip_prefix = "rules_docker-0.10.0",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.10.0/rules_docker-v0.10.0.tar.gz"],
+)
 
 load(
     "@io_bazel_rules_docker//repositories:repositories.bzl",
@@ -56,26 +54,24 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
+# Used by FUS to run the metadata rules from bazel-toolchains.
+load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
+
+bazel_toolchains_repos()
+
+load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
+
+bazel_toolchains_go_repos()
+
 # This tests the DUS properly updating a GitHub repo dependency pin.
 # This target becomes valid (buildable) only after the DUS properly sets the
 # pin specified in revisions.bzl
 http_archive(
-    name = "fus_managed_io_bazel_rules_docker",
-    sha256 = RULES_DOCKER.sha256,
-    strip_prefix = "rules_docker-" + RULES_DOCKER.commit,
-    urls = ["https://github.com/bazelbuild/rules_docker/archive/" + RULES_DOCKER.commit + ".tar.gz"],
+    name = "io_bazel_rules_k8s",
+    sha256 = RULES_K8S.sha256,
+    strip_prefix = "rules_k8s-" + RULES_K8S.commit,
+    urls = ["https://github.com/bazelbuild/rules_k8s/archive/" + RULES_K8S.commit + ".tar.gz"],
 )
-
-load(
-    "@fus_managed_io_bazel_rules_docker//repositories:repositories.bzl",
-    fus_managed_container_repositories = "repositories",
-)
-
-fus_managed_container_repositories()
-
-load("@fus_managed_io_bazel_rules_docker//repositories:deps.bzl", fus_managed_container_deps = "deps")
-
-fus_managed_container_deps()
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 

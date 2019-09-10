@@ -17,11 +17,11 @@ metadataSummaryFilePath: "update_all_deps/metadata_summary.yaml"
 
 githubRepoDeps:
 
-  # bazelbuild/rules_docker GitHub repo.
-  - name: "RULES_DOCKER"
+  # bazelbuild/rules_k8s GitHub repo.
+  - name: "RULES_K8S"
     repoSpec:
       owner: "bazelbuild"
-      repository: "rules_docker"
+      repository: "rules_k8s"
       branch: "master"
     updateType: "commit"
 
