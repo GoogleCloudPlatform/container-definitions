@@ -16,7 +16,7 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:11c1bc6060236f3dd6c219bba569b887f231e17bd54b0c60b4023dc610863b15",
+    sha256 = "sha256:48e6eb686514d3cb1cbc6dbd874ff93154e8cf15d17123e8f1d521437cd5f93e",
 )
 
 PY3_IMAGE = struct(
@@ -69,6 +69,6 @@ PYTHON_RBE_DEBS_TARBALL = struct(
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
-    revision = "1566998812",
-    sha256 = "5977cbc52fc5ac5591d472c674831f3110e437364218c6eb51c405247cedee28",
+    revision = "1568271705",
+    sha256 = "ead6ee78b6cc6c97d4cf9c924657ff9597e70223327f98728070c231d22f961f",
 )
