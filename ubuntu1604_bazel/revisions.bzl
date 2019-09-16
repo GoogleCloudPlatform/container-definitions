@@ -16,11 +16,11 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 RULES_DOCKER = struct(
-    commit = "c3f19ac75dab69324e9e58b97227cbc51c8bdfe6",
-    sha256 = "e63394f345b2ecd71b5413292f7fa1d00902f18108f664fbc360ca9216c58337",
+    commit = "267cc613f61921caa5540a6a9437d939f953a90b",
+    sha256 = "b08df7ad7abba733bfc279e30f9bd67c5f4af03a3d5e203f1e88626e6ddc7372",
 )
 
 LAYER_DEFINITIONS = struct(
-    commit = "f338113ef69cc2da194b9914758c4bbaf3bba1d5",
-    sha256 = "e731ffd7f4b446449eadce0d4678394dccf2e206af78f573e1f7a32e773deac6",
+    commit = "ff4f73b3bd49c7938713a28b505ba03eed54b170",
+    sha256 = "1fc3e89be9dcfc3b4b41c4faa9934de6fd57578e4a6fad4692257bab5140055a",
 )
