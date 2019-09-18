@@ -24,7 +24,7 @@ steps:
     waitFor: ["-"]   # wait for nothing - start immediately
 
 # Pull the semantic checker image used by the //:configs-test target.
-  - name: gcr.io/cloud-builders/docker
+  - name: "gcr.io/cloud-builders/docker"
     args: ["pull", "gcr.io/asci-toolchain/container_release_tools/dependency_update/validators/semantics:latest"]
     id: "pull_validator"
     waitFor: ["-"]   # wait for nothing - start immediately

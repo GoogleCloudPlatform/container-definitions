@@ -24,20 +24,9 @@ steps:
     waitFor: ["-"]   # wait for nothing - start immediately
 
 # Pull the semantic checker image used by the //:configs-test target.
-  - name: gcr.io/cloud-builders/docker
+  - name: "gcr.io/cloud-builders/docker"
     args: ["pull", "gcr.io/asci-toolchain/container_release_tools/dependency_update/validators/semantics:latest"]
     id: "pull_validator"
-    waitFor: ["-"]   # wait for nothing - start immediately
-
-# Step: Clone a simple project to /project_src folder to be used as the
-# testing project for the new Bazel container.
-  - name: "l.gcr.io/google/bazel"
-    entrypoint: "git"
-    args: ["clone", "https://github.com/bazelbuild/bazel.git", "/project_src"]
-    volumes:
-    - name: "vol1"
-      path: "/project_src"
-    id: "clone-project"
     waitFor: ["-"]   # wait for nothing - start immediately
 
 # Step: copy the bazel project into a separate dir to run repro tests in parallel.
@@ -80,30 +69,20 @@ steps:
     id: "repro-test"
     waitFor: ["version", "copy-to-reproduce"]
 
-# Step: `bazel build` the testing project in the new container.
-  - name: "bazel:image"
-    entrypoint: "bazel"
-    args: ["build", "//src:bazel"]
-    volumes:
-    - name: "vol1"
-      path: "/project_src"
-    dir: "/project_src"
-    id: "integration-test"
-    waitFor: ["container-build", "clone-project"]
-
 # Step: tag the image with `latest` at final location.
   - name: "l.gcr.io/google/bazel"
     entrypoint: "docker"
     args: ["tag", "bazel:image", "${_IMG_DEST}:latest"]
     id: "container-tag-latest"
-    waitFor: ["structure-test", "repro-test", "integration-test"]
+    waitFor: ["structure-test", "repro-test"]
 
 # Step: get the Bazel version from the new container to use as the tag.
+# This also ensures that 'bazel version' runs successfully in the new container.
   - name: "bazel:image"
     entrypoint: "sh"
     args: ["-c", "bazel version | grep 'Build label' | cut -d ':' -f2 | xargs > /workspace/bazel_version"]
     id: "get-version"
-    waitFor: ["structure-test", "repro-test", "integration-test"]
+    waitFor: ["structure-test", "repro-test"]
 
 # Step: tag the image with Bazel version at final location.
   - name: "l.gcr.io/google/bazel"
