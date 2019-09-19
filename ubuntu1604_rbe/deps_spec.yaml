@@ -37,7 +37,5 @@ githubRepoDeps:
     updateType: "commit"
     releasePolicies:
       - tag: "default"
-        # Run every 15 minutes on Mon-Fri
-        # Temporarily setting this so we get a release with clang 10.0.0
-        # TODO(nlopezgi): revert to weekly
-        schedule: "*/15 * * * 1-5"
+        # Every Wednesday at 5am.
+        schedule: "0 0 5 * * Wed"
