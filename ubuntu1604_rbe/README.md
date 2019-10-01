@@ -4,4 +4,4 @@ compilers/interpreters/runtimes for the following languages: C++ (Clang), Java,
 Python 2, Python 3, Go. It also includes the following tools: binutils, curl,
 ed, file, git, openssh client, wget, zip. Note this container does not include Bazel.
 
-The images are published at https://console.cloud.google.com/marketplace/details/google/rbe-ubuntu16-04.
+This image is published at https://console.cloud.google.com/marketplace/details/google/rbe-ubuntu16-04.
