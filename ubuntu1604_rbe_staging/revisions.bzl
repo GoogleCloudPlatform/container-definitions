@@ -54,8 +54,8 @@ CACERTS = struct(
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
-    revision = "1569913431",
-    sha256 = "143423d69341976af55b9153819f66f11c0eb684676c35565674cec7010ee560",
+    revision = "1570643784",
+    sha256 = "b92227bda494310448cec731d366747eb1a3b14eb79f275d6682d3a6c0d4ce0e",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
