@@ -14,11 +14,14 @@
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
 load(
+    "//:jdk_revisions.bzl",
+    "OPENJDK_INSTALLER",
+    "OPENJDK_SRC",
+)
+load(
     "//:revisions.bzl",
     "CACERTS",
     "JAVA_DEBS_TARBALL",
-    "OPENJDK_INSTALLER",
-    "OPENJDK_SRC",
 )
 
 def deps():

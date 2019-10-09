@@ -43,16 +43,6 @@ GO_INSTALLER = struct(
     sha256 = "94f874037b82ea5353f4061e543681a0e79657f787437974214629af8407d124",
 )
 
-OPENJDK_INSTALLER = struct(
-    revision = "11.29.3-ca-jdk11.0.2/zulu11.29.3-ca-jdk11.0.2-linux_x64-allmodules-90755145cb6e6418584d8603cd5fa9afbb30aecc-1549209950",
-    sha256 = "460d8a4f0c0204160b48086e341b22943c9cca471b195340e75b38ae9eb33c1c",
-)
-
-OPENJDK_SRC = struct(
-    revision = "11.31.11-ca-jdk11.0.3/zsrc11.31.11-jdk11.0.3",
-    sha256 = "65afc25dd914a094e25b1f804160bb20849f923d9a4b7d989f885558922e8182",
-)
-
 JAVA_DEBS_TARBALL = struct(
     revision = "1568358209",
     sha256 = "28dcdda08994c74d6b38d16d44dc63bd39416ac199bbf29529494d450fc01924",

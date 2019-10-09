@@ -57,16 +57,6 @@ GCLOUD_DEBS_TARBALL = struct(
     sha256 = "invalid sha256 to be replaced by DUS",
 )
 
-OPENJDK_INSTALLER = struct(
-    revision = "invalid revision to be replaced by DUS",
-    sha256 = "invalid sha256 to be replaced by DUS",
-)
-
-OPENJDK_SRC = struct(
-    revision = "invalid revision to be replaced by DUS",
-    sha256 = "invalid sha256 to be replaced by DUS",
-)
-
 JAVA_DEBS_TARBALL = struct(
     revision = "invalid revision to be replaced by DUS",
     sha256 = "invalid sha256 to be replaced by DUS",

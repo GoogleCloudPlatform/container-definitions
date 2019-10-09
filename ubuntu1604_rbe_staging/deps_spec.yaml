@@ -88,27 +88,29 @@ gcsDeps:
         # Everyday weekday at 5am.
         schedule: "0 0 5 * * Mon-Fri"
 
+# Temporarily disabled OpenJDK dep specs as these are problematic
+# TODO(nlopezgi): reenable these
   # OpenJDK 11 installer.
-  - name: "OPENJDK_INSTALLER"
-    bucket: "bazel-mirror"
-    versionRegex: "11.*linux_x64-allmodules-[a-z0-9]+-\\d+"
-    fileRegex: "^openjdk\\/azul-zulu11.*linux_x64-allmodules.*.tar.gz$"
-    startsWith: "openjdk/azul-zulu"
-    releasePolicies:
-      - tag: "default"
+#  - name: "OPENJDK_INSTALLER"
+#    bucket: "bazel-mirror"
+#    versionRegex: "11.*linux_x64-allmodules-[a-z0-9]+-\\d+"
+#    fileRegex: "^openjdk\\/azul-zulu11.*linux_x64-allmodules.*.tar.gz$"
+#    startsWith: "openjdk/azul-zulu"
+#    releasePolicies:
+#      - tag: "default"
         # Everyday weekday at 5am.
-        schedule: "0 0 5 * * Mon-Fri"
+#        schedule: "0 0 5 * * Mon-Fri"
 
   # OpenJDK 11 source code. (needed for licensing reason)
-  - name: "OPENJDK_SRC"
-    bucket: "bazel-mirror"
-    versionRegex: "11.*zsrc.*11\\.\\d+\\.\\d+"
-    fileRegex: "^openjdk\\/azul-zulu11.*src.*.zip$"
-    startsWith: "openjdk/azul-zulu"
-    releasePolicies:
-      - tag: "default"
+#  - name: "OPENJDK_SRC"
+#    bucket: "bazel-mirror"
+#    versionRegex: "11.*zsrc.*11\\.\\d+\\.\\d+"
+#    fileRegex: "^openjdk\\/azul-zulu11.*src.*.zip$"
+#    startsWith: "openjdk/azul-zulu"
+#    releasePolicies:
+#      - tag: "default"
         # Everyday weekday at 5am.
-        schedule: "0 0 5 * * Mon-Fri"
+#        schedule: "0 0 5 * * Mon-Fri"
 
   # The debian packages tarball pulled from the GCS bucket required for the Ubuntu1604 Java layer.
   - name: "JAVA_DEBS_TARBALL"
