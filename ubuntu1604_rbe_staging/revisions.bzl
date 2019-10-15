@@ -24,12 +24,12 @@ PY3_IMAGE = struct(
 )
 
 CLANG_INSTALLER = struct(
-    revision = "r370808",
+    revision = "370808",
     sha256 = "73006e6341200511f55088efd7a23aeaccdfca9b8f2a6a76db8ee594a1de44a7",
 )
 
 LIBCXX_INSTALLER = struct(
-    revision = "r370808",
+    revision = "370808",
     sha256 = "13bdaafb727ec522878a4276438cf99ad13e47c5624e69e92a3ee3ad9c7737f5",
 )
 
