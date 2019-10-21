@@ -1,0 +1,34 @@
+workspace(name = "chromium_linux_rbe")
+
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive",
+)
+
+# Download the rules_docker repository.
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = "1147288c729db7ae36300aa61a9e52a7334c8a3aacf1bb2e2311be771c7e8545",
+    strip_prefix = "rules_docker-07fa68e6953c50768bb39b4e023383ac760ccfb4",
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/07fa68e6953c50768bb39b4e023383ac760ccfb4.tar.gz"],
+)
+
+load(
+    "@io_bazel_rules_docker//repositories:repositories.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+
+container_deps()
+
+load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+
+container_pull(
+    name = "ubuntu1604",
+    digest = "sha256:844ba095931219cd7a6c5da4c1195905a725d9053bf6a3dd94cb1d9e59531752",
+    registry = "l.gcr.io",
+    repository = "google/ubuntu1604",
+)
