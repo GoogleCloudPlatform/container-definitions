@@ -4,13 +4,25 @@ load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
 )
+load(
+    "//:revisions.bzl",
+    "LAYER_DEFINITIONS",
+    "RULES_DOCKER",
+)
 
 # Download the rules_docker repository.
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "1147288c729db7ae36300aa61a9e52a7334c8a3aacf1bb2e2311be771c7e8545",
-    strip_prefix = "rules_docker-07fa68e6953c50768bb39b4e023383ac760ccfb4",
-    urls = ["https://github.com/bazelbuild/rules_docker/archive/07fa68e6953c50768bb39b4e023383ac760ccfb4.tar.gz"],
+    sha256 = RULES_DOCKER.sha256,
+    strip_prefix = "rules_docker-" + RULES_DOCKER.commit,
+    urls = ["https://github.com/bazelbuild/rules_docker/archive/" + RULES_DOCKER.commit + ".tar.gz"],
+)
+
+http_archive(
+    name = "layer_definitions",
+    sha256 = LAYER_DEFINITIONS.sha256,
+    strip_prefix = "layer-definitions-" + LAYER_DEFINITIONS.commit,
+    urls = ["https://github.com/GoogleCloudPlatform/layer-definitions/archive/" + LAYER_DEFINITIONS.commit + ".tar.gz"],
 )
 
 load(
@@ -24,11 +36,10 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
+load("@layer_definitions//layers/ubuntu1604/base:deps.bzl", ubuntu1604_base_deps = "deps")
 
-container_pull(
-    name = "ubuntu1604",
-    digest = "sha256:844ba095931219cd7a6c5da4c1195905a725d9053bf6a3dd94cb1d9e59531752",
-    registry = "l.gcr.io",
-    repository = "google/ubuntu1604",
-)
+ubuntu1604_base_deps()
+
+load("@layer_definitions//layers/ubuntu1604/docker:deps.bzl", docker_deps = "deps")
+
+docker_deps()

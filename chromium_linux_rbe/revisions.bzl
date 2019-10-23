@@ -19,3 +19,13 @@ GOOGLE_NSJAIL = struct(
     commit = "a78019993fe7cffd9865300036133b8a54a23019",
     sha256 = "ae5f45b5a475cfcf0809c05b6e2eae7ad43b70b2484b1d0461ce49989bc64d4f",
 )
+
+RULES_DOCKER = struct(
+    commit = "07fa68e6953c50768bb39b4e023383ac760ccfb4",
+    sha256 = "1147288c729db7ae36300aa61a9e52a7334c8a3aacf1bb2e2311be771c7e8545",
+)
+
+LAYER_DEFINITIONS = struct(
+    commit = "6ec14fe6dfdb8f0aa02a78b896315d19711e9578",
+    sha256 = "1790368077d075ac0ba9cb07a37cf57f37ad93b1c826622553b23c5065e6203e",
+)

@@ -26,6 +26,10 @@ load(
     "install_pkgs",
 )
 load(
+    "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
+    "toolchain_container",
+)
+load(
     "@io_bazel_rules_docker//docker/util:run.bzl",
     "container_run_and_extract",
 )
@@ -98,11 +102,22 @@ install_pkgs(
     output_image_name = "chromium_image_rbe_base_output",
 )
 
+# Install docker in the Chromium RBE image.
+toolchain_container(
+    name = "chromium_image_with_docker",
+    base = ":chromium_image_rbe_base",
+    # Remove non-deterministic files.
+    installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
+    language_layers = [
+        "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
+    ],
+)
+
 # Package the nsjail binary into the chromium RBE image that has all debian
 # packages need for the RBE image already installed.
 container_image(
     name = "image",
-    base = ":chromium_image_rbe_base.tar",
+    base = ":chromium_image_with_docker",
     directory = "/bin",
     env = {
         "DEBIAN_FRONTEND": "noninteractive",
