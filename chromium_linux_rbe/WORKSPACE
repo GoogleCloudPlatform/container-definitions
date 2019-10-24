@@ -43,3 +43,7 @@ ubuntu1604_base_deps()
 load("@layer_definitions//layers/ubuntu1604/docker:deps.bzl", docker_deps = "deps")
 
 docker_deps()
+
+load("@layer_definitions//layers/ubuntu1604/python:deps.bzl", python_deps = "deps")
+
+python_deps()

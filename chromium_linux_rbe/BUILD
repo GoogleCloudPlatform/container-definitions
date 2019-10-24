@@ -110,6 +110,7 @@ toolchain_container(
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
         "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
+        "@layer_definitions//layers/ubuntu1604/python:python-ltl",
     ],
 )
 
