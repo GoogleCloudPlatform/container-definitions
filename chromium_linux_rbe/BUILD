@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load(
-    "@io_bazel_rules_docker//container:container.bzl",
-    "container_image",
-)
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
     "@io_bazel_rules_docker//docker/package_managers:download_pkgs.bzl",
@@ -102,28 +98,23 @@ install_pkgs(
     output_image_name = "chromium_image_rbe_base_output",
 )
 
-# Install docker in the Chromium RBE image.
+# Build the chromium image by installing python, docker & nsjail.
 toolchain_container(
-    name = "chromium_image_with_docker",
+    name = "image",
     base = ":chromium_image_rbe_base",
+    # Specifies the directory the files specified to the "files"
+    # attribute will be installed in.
+    directory = "/bin",
+    env = {
+        "DEBIAN_FRONTEND": "noninteractive",
+    },
+    files = [":nsjail_image/nsjail/nsjail"],
     # Remove non-deterministic files.
     installation_cleanup_commands = "rm -f /etc/init.d/.depend.boot /etc/init.d/.depend.start /etc/init.d/.depend.stop",
     language_layers = [
         "@layer_definitions//layers/ubuntu1604/docker:docker-ltl",
         "@layer_definitions//layers/ubuntu1604/python:python-ltl",
     ],
-)
-
-# Package the nsjail binary into the chromium RBE image that has all debian
-# packages need for the RBE image already installed.
-container_image(
-    name = "image",
-    base = ":chromium_image_with_docker",
-    directory = "/bin",
-    env = {
-        "DEBIAN_FRONTEND": "noninteractive",
-    },
-    files = [":nsjail_image/nsjail/nsjail"],
 )
 
 # Basic structure tests for the Chromium RBE image.
