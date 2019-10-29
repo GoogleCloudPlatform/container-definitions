@@ -71,8 +71,7 @@ packages_metadata(
 install_pkgs(
     name = "nsjail_image_base",
     image_tar = "@ubuntu1604//image:image.tar",
-    # TODO: Download this from FUS managed GCS bucket.
-    installables_tar = ":download_nsjail_pkgs.tar",
+    installables_tar = "@nsjail_debs//file:packages.tar",
     installation_cleanup_commands = "rm -rf /var/lib/apt/lists/*",
     output_image_name = "nsjail_image_base_output",
 )
@@ -114,8 +113,7 @@ packages_metadata(
 install_pkgs(
     name = "chromium_image_rbe_base",
     image_tar = "@ubuntu1604//image:image.tar",
-    # TODO: Download this from FUS managed GCS bucket.
-    installables_tar = ":download_chromium_rbe_pkgs.tar",
+    installables_tar = "@chromium_rbe_debs//file:packages.tar",
     installation_cleanup_commands = "rm -rf /var/lib/apt/lists/* /etc/apt/apt.conf.d/docker-gzip-indexes",
     output_image_name = "chromium_image_rbe_base_output",
 )

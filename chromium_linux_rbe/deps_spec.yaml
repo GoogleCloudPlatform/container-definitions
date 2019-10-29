@@ -81,13 +81,3 @@ gcsDeps:
         # Weekly release schedule at 5am every Monday.
         schedule: "0 0 5 * * Mon"
 
-gcrDeps:
-
-  # Google managed Ubuntu 16.04 base image.
-  - name: "UBUNTU1604_IMAGE"
-    location: "l.gcr.io/google/ubuntu1604"
-    tag: "latest"
-    releasePolicies:
-      - tag: "default"
-        # Everyday weekday at 5am.
-        schedule: "0 0 5 * * Mon-Fri"

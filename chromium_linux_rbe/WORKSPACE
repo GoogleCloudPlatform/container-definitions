@@ -3,10 +3,13 @@ workspace(name = "chromium_linux_rbe")
 load(
     "@bazel_tools//tools/build_defs/repo:http.bzl",
     "http_archive",
+    "http_file",
 )
 load(
     "//:revisions.bzl",
     "LAYER_DEFINITIONS",
+    "NSJAIL_DEBS",
+    "RBE_IMAGE_DEBS",
     "RULES_DOCKER",
 )
 
@@ -23,6 +26,24 @@ http_archive(
     sha256 = LAYER_DEFINITIONS.sha256,
     strip_prefix = "layer-definitions-" + LAYER_DEFINITIONS.commit,
     urls = ["https://github.com/GoogleCloudPlatform/layer-definitions/archive/" + LAYER_DEFINITIONS.commit + ".tar.gz"],
+)
+
+http_file(
+    name = "nsjail_debs",
+    downloaded_file_path = "packages.tar",
+    sha256 = NSJAIL_DEBS.sha256,
+    urls = [
+        "https://storage.googleapis.com/container-deps/chromium_linux_rbe/nsjail_debs/" + NSJAIL_DEBS.revision + "_download_nsjail_pkgs.tar",
+    ],
+)
+
+http_file(
+    name = "chromium_rbe_debs",
+    downloaded_file_path = "packages.tar",
+    sha256 = RBE_IMAGE_DEBS.sha256,
+    urls = [
+        "https://storage.googleapis.com/container-deps/chromium_linux_rbe/chromium_rbe_debs/" + RBE_IMAGE_DEBS.revision + "_download_chromium_rbe_pkgs.tar",
+    ],
 )
 
 load(
