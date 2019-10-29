@@ -12,6 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
+    "configs_test",
+)
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:packages_metadata.bzl",
+    "packages_metadata",
+)
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(
     "@io_bazel_rules_docker//docker/package_managers:download_pkgs.bzl",
@@ -52,6 +60,13 @@ download_pkgs(
     ],
 )
 
+# Transform the packages metadata csv produced by download_pkgs into a YAML
+# file.
+packages_metadata(
+    name = "nsjail_pkgs_metadata",
+    metadata_csv = ":download_nsjail_pkgs.csv",
+)
+
 # Produce the image with the debian packages needed to build nsjail installed.
 install_pkgs(
     name = "nsjail_image_base",
@@ -85,6 +100,13 @@ download_pkgs(
         "libprotobuf9v5",
         "uidmap",
     ],
+)
+
+# Transform the packages metadata csv produced by download_pkgs into a YAML
+# file.
+packages_metadata(
+    name = "chromium_rbe_pkgs_metadata",
+    metadata_csv = ":download_chromium_rbe_pkgs.csv",
 )
 
 # Produce the image with the debian packages needed for the final RBE Goma
@@ -125,4 +147,14 @@ container_test(
     ],
     image = ":image",
     verbose = True,
+)
+
+configs_test(
+    name = "configs_test",
+    dependency_update_specs = [
+        "deps_spec.yaml",
+    ],
+    file_update_specs = [
+        "file_updates.yaml",
+    ],
 )
