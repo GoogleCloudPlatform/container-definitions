@@ -64,7 +64,7 @@ download_pkgs(
 # file.
 packages_metadata(
     name = "nsjail_pkgs_metadata",
-    metadata_csv = ":download_nsjail_pkgs.csv",
+    metadata_csv = ":download_nsjail_pkgs_metadata.csv",
 )
 
 # Produce the image with the debian packages needed to build nsjail installed.
@@ -106,7 +106,7 @@ download_pkgs(
 # file.
 packages_metadata(
     name = "chromium_rbe_pkgs_metadata",
-    metadata_csv = ":download_chromium_rbe_pkgs.csv",
+    metadata_csv = ":download_chromium_rbe_pkgs_metadata.csv",
 )
 
 # Produce the image with the debian packages needed for the final RBE Goma
