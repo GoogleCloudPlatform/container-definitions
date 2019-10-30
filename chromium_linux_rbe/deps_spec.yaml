@@ -27,8 +27,8 @@ githubRepoDeps:
     updateType: "commit"
     releasePolicies:
       - tag: "default"
-        # Every Wednesday at 5am.
-        schedule: "0 0 5 * * Wed"
+        # Once a quarter at 5am on the first day of the month.
+        schedule: "0 0 5 1 */3 *"
 
   # bazelbuild/rules_docker GitHub repo.
   - name: "RULES_DOCKER"
@@ -38,8 +38,8 @@ githubRepoDeps:
     updateType: "release"
     releasePolicies:
       - tag: "default"
-        # Every Wednesday at 5am.
-        schedule: "0 0 5 * * Wed"
+        # Once a quarter at 5am on the first day of the month.
+        schedule: "0 0 5 1 */3 *"
 
   # GoogleCloudPlatform/layer-definitions GitHub repo.
   - name: "LAYER_DEFINITIONS"
@@ -50,8 +50,8 @@ githubRepoDeps:
     updateType: "commit"
     releasePolicies:
       - tag: "default"
-        # Every Wednesday at 5am.
-        schedule: "0 0 5 * * Wed"
+        # Once a quarter at 5am on the first day of the month.
+        schedule: "0 0 5 1 */3 *"
 
 gcsDeps:
 
@@ -65,8 +65,8 @@ gcsDeps:
     fusMetadataObject: "chromium_linux_rbe/metadata/nsjail_debs/metadata.yaml"
     releasePolicies:
       - tag: "default"
-        # Weekly release schedule at 5am every Monday.
-        schedule: "0 0 5 * * Mon"
+        # Once a quarter at 5am on the first day of the month.
+        schedule: "0 0 5 1 */3 *"
 
   # Debian packages to be installed in the Goma RBE image.
   - name: "RBE_IMAGE_DEBS"
@@ -78,6 +78,6 @@ gcsDeps:
     fusMetadataObject: "chromium_linux_rbe/metadata/chromium_rbe_debs/metadata.yaml"
     releasePolicies:
       - tag: "default"
-        # Weekly release schedule at 5am every Monday.
-        schedule: "0 0 5 * * Mon"
+        # Once a quarter at 5am on the first day of the month.
+        schedule: "0 0 5 1 */3 *"
 
