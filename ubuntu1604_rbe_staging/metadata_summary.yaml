@@ -175,7 +175,7 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: ed
     version: 1.10-2
   - name: file
-    version: 1:5.25-2ubuntu1.2
+    version: 1:5.25-2ubuntu1.3
   - name: git
     version: 1:2.7.4-0ubuntu1.6
   - name: git-man
@@ -193,7 +193,7 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: libgdbm3
     version: 1.8.3-13.1
   - name: libmagic1
-    version: 1:5.25-2ubuntu1.2
+    version: 1:5.25-2ubuntu1.3
   - name: libperl5.22
     version: 5.22.1-9ubuntu0.6
   - name: locales
