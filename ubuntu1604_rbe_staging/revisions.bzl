@@ -39,8 +39,8 @@ CLANG_DEBS_TARBALL = struct(
 )
 
 GO_INSTALLER = struct(
-    revision = "1.13.3",
-    sha256 = "0804bf02020dceaa8a7d7275ee79f7a142f1996bfd0c39216ccb405f93f994c0",
+    revision = "1.13.4",
+    sha256 = "692d17071736f74be04a72a06dab9cac1cd759377bd85316e52b2227604c004c",
 )
 
 JAVA_DEBS_TARBALL = struct(
