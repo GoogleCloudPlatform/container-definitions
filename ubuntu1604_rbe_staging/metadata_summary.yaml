@@ -2,32 +2,36 @@ CLANG_DEBS_TARBALL:
   packages:
   - name: gcc-4.9-base
     version: 4.9.3-13ubuntu2
+  - name: gcc-5-base
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libasan1
     version: 4.9.3-13ubuntu2
   - name: libatomic1
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libc-dev-bin
     version: 2.23-0ubuntu11
   - name: libc6-dev
     version: 2.23-0ubuntu11
   - name: libcilkrts5
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libgcc-4.9-dev
     version: 4.9.3-13ubuntu2
   - name: libgomp1
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libitm1
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: liblsan0
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libquadmath0
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libstdc++-4.9-dev
     version: 4.9.3-13ubuntu2
+  - name: libstdc++6
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libtsan0
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: libubsan0
-    version: 5.4.0-6ubuntu1~16.04.11
+    version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
     version: 4.4.0-166.195
 JAVA_DEBS_TARBALL:

@@ -34,8 +34,8 @@ LIBCXX_INSTALLER = struct(
 )
 
 CLANG_DEBS_TARBALL = struct(
-    revision = "1571727826",
-    sha256 = "aa7f8d857929c0cc9a63b82028a9513fe1c3549e31fde22c45db2294c7cbcb31",
+    revision = "1573027349",
+    sha256 = "71fccf8e904fff3785fbc6f8ae956077f3f1875d388f46f7071823066c11a7c8",
 )
 
 GO_INSTALLER = struct(
