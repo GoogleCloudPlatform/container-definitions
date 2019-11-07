@@ -59,9 +59,8 @@ gcsDeps:
   # Ubuntu1604 Clang tarball pulled from the GCS bucket.
   - name: "CLANG_INSTALLER"
     bucket: "clang-builds-stable"
-    versionRegex: "\\d{6,}"
-    fileRegex: "^clang-ubuntu16_04/clang_r\\d{6,}\\.tar\\.gz$"
-    startsWith: "clang-ubuntu16_04/clang_r"
+    latestPinFile: "clang-ubuntu16_04/latest.txt"
+    pinnedObject: "clang-ubuntu16_04/clang_r{LATEST_PIN}.tar.gz"
     releasePolicies:
       - tag: "default"
         # Everyday weekday at 5am.
@@ -70,9 +69,8 @@ gcsDeps:
   # Ubuntu1604 libcxx tarball pulled from the GCS bucket.
   - name: "LIBCXX_INSTALLER"
     bucket: "clang-builds-stable"
-    versionRegex: "\\d{6,}"
-    fileRegex: "^clang-ubuntu16_04/libcxx-msan_r\\d{6,}\\.tar\\.gz$"
-    startsWith: "clang-ubuntu16_04/libcxx-msan_"
+    latestPinFile: "clang-ubuntu16_04/latest.txt"
+    pinnedObject: "clang-ubuntu16_04/libcxx-msan_r{LATEST_PIN}.tar.gz"
     releasePolicies:
       - tag: "default"
         # Everyday weekday at 5am.
