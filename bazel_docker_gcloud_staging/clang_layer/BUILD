@@ -79,11 +79,3 @@ language_tool_layer(
         ":libcxx_tar",
     ],
 )
-
-# Used by tests only.
-genrule(
-    name = "generate_clang_yaml",
-    srcs = ["tests.yaml.tpl"],
-    outs = ["tests.yaml"],
-    cmd = "sed 's|{_CLANG_REVISION}|" + CLANG_INSTALLER.revision.lstrip("r") + "|' <$< >$@",
-)
