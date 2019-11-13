@@ -2,8 +2,6 @@ CLANG_DEBS_TARBALL:
   packages:
   - name: gcc-4.9-base
     version: 4.9.3-13ubuntu2
-  - name: gcc-5-base
-    version: 5.4.0-6ubuntu1~16.04.12
   - name: libasan1
     version: 4.9.3-13ubuntu2
   - name: libatomic1
@@ -26,14 +24,12 @@ CLANG_DEBS_TARBALL:
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libstdc++-4.9-dev
     version: 4.9.3-13ubuntu2
-  - name: libstdc++6
-    version: 5.4.0-6ubuntu1~16.04.12
   - name: libtsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-166.195
+    version: 4.4.0-168.197
 JAVA_DEBS_TARBALL:
   packages:
   - name: ca-certificates-java
@@ -141,7 +137,7 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython3.5-stdlib
     version: 3.5.2-2ubuntu0~16.04.9
   - name: linux-libc-dev
-    version: 4.4.0-166.195
+    version: 4.4.0-168.197
   - name: mime-support
     version: 3.59ubuntu1
   - name: python
