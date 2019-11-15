@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load(
     "@io_bazel_rules_docker//contrib/automatic_container_release:configs_test.bzl",
     "configs_test",
+)
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:packages_metadata.bzl",
+    "packages_metadata",
 )
 load("@io_bazel_rules_docker//contrib:test.bzl", "container_test")
 load(

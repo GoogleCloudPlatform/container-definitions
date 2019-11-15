@@ -22,9 +22,9 @@ load(
 
 http_archive(
     name = "io_bazel_rules_docker",
-    sha256 = "7d453450e1eb70e238eea6b31f4115607ec1200e91afea01c25f9804f37e39c8",
-    strip_prefix = "rules_docker-0.10.0",
-    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.10.0/rules_docker-v0.10.0.tar.gz"],
+    sha256 = "14ac30773fdb393ddec90e158c9ec7ebb3f8a4fd533ec2abbfd8789ad81a284b",
+    strip_prefix = "rules_docker-0.12.1",
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.12.1/rules_docker-v0.12.1.tar.gz"],
 )
 
 load(
@@ -37,22 +37,6 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
-
-http_archive(
-    name = "bazel_toolchains",
-    sha256 = "9ee1e5c5f89100adea6656adef7c0137abcab268c2c3d6184e95f5b8264339d0",
-    strip_prefix = "bazel-toolchains-b71837681128e2a834814a3d0bf8c3213a3f2718",
-    urls = ["https://github.com/bazelbuild/bazel-toolchains/archive/b71837681128e2a834814a3d0bf8c3213a3f2718.tar.gz"],
-)
-
-# Used by FUS to run the metadata rules from bazel-toolchains.
-load("@bazel_toolchains//repositories:repositories.bzl", bazel_toolchains_repos = "repositories")
-
-bazel_toolchains_repos()
-
-load("@bazel_toolchains//repositories:go_repositories.bzl", bazel_toolchains_go_repos = "go_deps")
-
-bazel_toolchains_go_repos()
 
 load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
 

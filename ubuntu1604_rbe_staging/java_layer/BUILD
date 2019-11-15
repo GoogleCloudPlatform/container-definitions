@@ -13,8 +13,11 @@
 # limitations under the License.
 
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
-load("@bazel_toolchains//rules/container:packages_metadata.bzl", "packages_metadata")
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load(
+    "@io_bazel_rules_docker//contrib/automatic_container_release:packages_metadata.bzl",
+    "packages_metadata",
+)
 load("@io_bazel_rules_docker//docker/package_managers:download_pkgs.bzl", "download_pkgs")
 load(
     "@io_bazel_rules_docker//docker/toolchain_container:toolchain_container.bzl",
