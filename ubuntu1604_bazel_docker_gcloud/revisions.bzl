@@ -21,6 +21,6 @@ RULES_DOCKER = struct(
 )
 
 LAYER_DEFINITIONS = struct(
-    commit = "487c0b70d795285677bc140642e895b3da10e906",
-    sha256 = "391e0a5ccf66bcaa021951c91e0897dc9f60653ed947077c163f73cb92bdcdd2",
+    commit = "8a4db79d70ac4a17399bda896fd16677c507ebb3",
+    sha256 = "64332fdfdda326c54e9df69d4eb3321e0a529357b63e7762bdd15e203de4afbc",
 )
