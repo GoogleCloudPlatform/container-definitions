@@ -177,9 +177,9 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: file
     version: 1:5.25-2ubuntu1.3
   - name: git
-    version: 1:2.7.4-0ubuntu1.6
+    version: 1:2.7.4-0ubuntu1.7
   - name: git-man
-    version: 1:2.7.4-0ubuntu1.6
+    version: 1:2.7.4-0ubuntu1.7
   - name: less
     version: 481-2.1ubuntu0.2
   - name: libbsd0
