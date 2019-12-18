@@ -16,7 +16,7 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:44ea2c444ca7665864c1fc1fab82fd8dd0938a83e181ccbe33e85e4d86f17bff",
+    sha256 = "sha256:2ed7ba9351e38223a170f137790a23105aadd2b9d3a901e49933f9257e80b8c2",
 )
 
 PY3_IMAGE = struct(
@@ -44,13 +44,13 @@ GO_INSTALLER = struct(
 )
 
 JAVA_DEBS_TARBALL = struct(
-    revision = "1575965042",
-    sha256 = "50a7204ca9adaadde74bf65e6377a9f8f674e55461dba0e6c02962b2d6767ad3",
+    revision = "1576656348",
+    sha256 = "b63166d0c803f7665888f8625b9eb93b0a57741495eaeb7cd8c508457e460072",
 )
 
 CACERTS = struct(
-    revision = "1575965042",
-    sha256 = "a548f2adb6107be83c8c6f46a03ae0b413c313b8436de76bf190ff9145992f70",
+    revision = "1576656348",
+    sha256 = "2f37dde2bdb48dfab5ce5c237446f706e283febef4bf916203d1db5789818df8",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
