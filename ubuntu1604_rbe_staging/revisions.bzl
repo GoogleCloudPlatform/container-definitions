@@ -24,13 +24,13 @@ PY3_IMAGE = struct(
 )
 
 CLANG_INSTALLER = struct(
-    revision = "d157a9bc8ba1085cc4808c6941412322a7fd884e",
-    sha256 = "fe79a43c7f0a23865ec0c08d37d83090c15d95a3982cd52044ef7f8fc83815c9",
+    revision = "407ac2eb5f136af5ddd213b8bcca176481ec5198",
+    sha256 = "6cff276b2b67fe42011033ff40abbf4498fa1e6619963d3e642012ef86938abb",
 )
 
 LIBCXX_INSTALLER = struct(
-    revision = "d157a9bc8ba1085cc4808c6941412322a7fd884e",
-    sha256 = "55bd96ad1b067a6d77402a8e2a21aa53b51888dc97505d61447cdac054eca17d",
+    revision = "407ac2eb5f136af5ddd213b8bcca176481ec5198",
+    sha256 = "ff9367e11db111c510070f133dcb6e5cab4c231b38f0068d000c4cadc1669e09",
 )
 
 CLANG_DEBS_TARBALL = struct(
