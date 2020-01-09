@@ -1,1 +1,132 @@
-{}
+NSJAIL_DEBS:
+  packages:
+  - name: autoconf
+    version: 2.69-9
+  - name: autotools-dev
+    version: "20150820.1"
+  - name: binutils
+    version: 2.26.1-1ubuntu1~16.04.8
+  - name: bison
+    version: 2:3.0.4.dfsg-1
+  - name: bzip2
+    version: 1.0.6-8ubuntu0.2
+  - name: cpp
+    version: 4:5.3.1-1ubuntu1
+  - name: cpp-5
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: dpkg-dev
+    version: 1.18.4ubuntu1.6
+  - name: file
+    version: 1:5.25-2ubuntu1.3
+  - name: flex
+    version: 2.6.0-11
+  - name: g++
+    version: 4:5.3.1-1ubuntu1
+  - name: g++-5
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: gcc
+    version: 4:5.3.1-1ubuntu1
+  - name: gcc-5
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: gcc-5-base
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: git
+    version: 1:2.7.4-0ubuntu1.7
+  - name: git-man
+    version: 1:2.7.4-0ubuntu1.7
+  - name: libasan2
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libatomic1
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libbison-dev
+    version: 2:3.0.4.dfsg-1
+  - name: libc-dev-bin
+    version: 2.23-0ubuntu11
+  - name: libc6-dev
+    version: 2.23-0ubuntu11
+  - name: libcc1-0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libcilkrts5
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libdpkg-perl
+    version: 1.18.4ubuntu1.6
+  - name: liberror-perl
+    version: 0.17-1.2
+  - name: libexpat1
+    version: 2.1.0-7ubuntu0.16.04.5
+  - name: libfl-dev
+    version: 2.6.0-11
+  - name: libgcc-5-dev
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libgdbm3
+    version: 1.8.3-13.1
+  - name: libglib2.0-0
+    version: 2.48.2-0ubuntu4.4
+  - name: libgomp1
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libisl15
+    version: 0.16.1-1
+  - name: libitm1
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: liblsan0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libmagic1
+    version: 1:5.25-2ubuntu1.3
+  - name: libmpc3
+    version: 1.0.3-1
+  - name: libmpfr4
+    version: 3.1.4-1
+  - name: libmpx0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libnl-3-200
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libnl-3-dev
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libnl-route-3-200
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libnl-route-3-dev
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libperl5.22
+    version: 5.22.1-9ubuntu0.6
+  - name: libprotobuf-dev
+    version: 2.6.1-1.3
+  - name: libprotobuf-lite9v5
+    version: 2.6.1-1.3
+  - name: libprotobuf9v5
+    version: 2.6.1-1.3
+  - name: libprotoc9v5
+    version: 2.6.1-1.3
+  - name: libquadmath0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libsigsegv2
+    version: 2.10-4
+  - name: libstdc++-5-dev
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libstdc++6
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libtool
+    version: 2.4.6-0.1
+  - name: libtsan0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: libubsan0
+    version: 5.4.0-6ubuntu1~16.04.12
+  - name: linux-libc-dev
+    version: 4.4.0-171.200
+  - name: m4
+    version: 1.4.17-5
+  - name: make
+    version: 4.1-6
+  - name: patch
+    version: 2.7.5-1ubuntu0.16.04.2
+  - name: perl
+    version: 5.22.1-9ubuntu0.6
+  - name: perl-modules-5.22
+    version: 5.22.1-9ubuntu0.6
+  - name: pkg-config
+    version: 0.29.1-0ubuntu1
+  - name: protobuf-compiler
+    version: 2.6.1-1.3
+  - name: xz-utils
+    version: 5.1.1alpha+20120614-2ubuntu2
+  - name: zlib1g-dev
+    version: 1:1.2.8.dfsg-2ubuntu4.1
