@@ -98,6 +98,7 @@ download_pkgs(
         "libnl-route-3-200",
         "libprotobuf9v5",
         "uidmap",
+        "libc6-i386",
     ],
 )
 
