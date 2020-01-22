@@ -94,11 +94,12 @@ download_pkgs(
     name = "download_chromium_rbe_pkgs",
     image_tar = "@ubuntu1604//image:image.tar",
     packages = [
+        "lib32gcc1",
+        "libc6-i386",
         "libcap2",
         "libnl-route-3-200",
         "libprotobuf9v5",
         "uidmap",
-        "libc6-i386",
     ],
 )
 
