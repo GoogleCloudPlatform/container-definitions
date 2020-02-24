@@ -16,7 +16,7 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:5dd024f911d7498403f4c1c16a47c0002260e0b97b70cd53b41c2296b5cc7c2a",
+    sha256 = "sha256:0f2fe4de24efa346c6c861e0a869f84838a16e1ce8f3686feb8e74753d7c4340",
 )
 
 PY3_IMAGE = struct(
@@ -24,18 +24,18 @@ PY3_IMAGE = struct(
 )
 
 CLANG_INSTALLER = struct(
-    revision = "a21beccea2020f950845cbb68db663d0737e174c",
-    sha256 = "cf44c5aebfc39379eea9ae1a84c801df858bd6bf8cc6571722257556ecb00066",
+    revision = "48acece15dcf63cb4fee043a4e66ddf3917a359a",
+    sha256 = "518a36d09748d7221fd6ee4c1d422f5590cd727fd365701ca57e49624b178b5d",
 )
 
 LIBCXX_INSTALLER = struct(
-    revision = "a21beccea2020f950845cbb68db663d0737e174c",
-    sha256 = "4dc01274ed900cfd2e5f6bcc961ce58b28815276d7ba1426d16cc99084ec404d",
+    revision = "48acece15dcf63cb4fee043a4e66ddf3917a359a",
+    sha256 = "1a1e9e0071aee7c15253615c42d1690fb7e6a409d46879c7b683cb3f7fba1a64",
 )
 
 CLANG_DEBS_TARBALL = struct(
-    revision = "1580198514",
-    sha256 = "c7dd94b7fa7de32c006b4bdbf84c9d0365b198b492e1172c93543ac09e838539",
+    revision = "1582013021",
+    sha256 = "6257b22394cdaa6331c899db15a6b227b6942cab62aea1cb7247eba8c9a98cd3",
 )
 
 GO_INSTALLER = struct(
@@ -54,8 +54,8 @@ CACERTS = struct(
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
-    revision = "1580198514",
-    sha256 = "f9c3cb87bd87c679daa14bfd5d879c0c4d3380b267d801232ff6a13d47b50bcb",
+    revision = "1582013021",
+    sha256 = "e1a79fd1e769a4358155de01f029841c149a539e3034ed2217afa2720594fdd8",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
