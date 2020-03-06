@@ -20,7 +20,7 @@ IMAGE = struct(
 )
 
 PY3_IMAGE = struct(
-    sha256 = "sha256:ac3293568e31f831a247a4437c995156b268abda2f0fa739a14063f07c6088b6",
+    sha256 = "sha256:74135d4c6031bbc4107ccb57914a918a590cbbd29ceefb82217f09022875fd87",
 )
 
 CLANG_INSTALLER = struct(
