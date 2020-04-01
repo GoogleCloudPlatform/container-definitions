@@ -16,21 +16,21 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:75e0685ad0d0bcdbf27344cdf855a10d7584c35f48ffb428c45003c7ad434c17",
+    sha256 = "sha256:c685c61909fef347c1896b269e2886083c04776698522aefff52c680d6bfe14a",
 )
 
 PY3_IMAGE = struct(
-    sha256 = "sha256:74135d4c6031bbc4107ccb57914a918a590cbbd29ceefb82217f09022875fd87",
+    sha256 = "sha256:10aa536017a65779b5e6c27bde4f89c7de4516152c4caf56a7379252720548d4",
 )
 
 CLANG_INSTALLER = struct(
-    revision = "42cab985fd95ba4f3f290e7bb26b93805edb447d",
-    sha256 = "c1e6d81828286b2823cfd4ce37de9a3691ed5aa9b1f7bafd9b885acc06816cfd",
+    revision = "c47f971694be0159ffddfee8a75ae515eba91439",
+    sha256 = "88a88af3c0e7474ef7ff2ff04b15b46bb3ac97001149e00257bea376e234f411",
 )
 
 LIBCXX_INSTALLER = struct(
-    revision = "42cab985fd95ba4f3f290e7bb26b93805edb447d",
-    sha256 = "202ea74c83dde9dda066bee9bc7b08b7934bd0c86306995f4d4c55e22e45b62b",
+    revision = "c47f971694be0159ffddfee8a75ae515eba91439",
+    sha256 = "f9f4758163e9c05245bbc16e7bddb907c83973fb0c540fa93178a2c7119dea63",
 )
 
 CLANG_DEBS_TARBALL = struct(
