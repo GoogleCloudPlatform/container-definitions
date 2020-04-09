@@ -28,8 +28,6 @@ NSJAIL_DEBS:
     version: 4:5.3.1-1ubuntu1
   - name: gcc-5
     version: 5.4.0-6ubuntu1~16.04.12
-  - name: gcc-5-base
-    version: 5.4.0-6ubuntu1~16.04.12
   - name: git
     version: 1:2.7.4-0ubuntu1.7
   - name: git-man
@@ -61,7 +59,7 @@ NSJAIL_DEBS:
   - name: libgdbm3
     version: 1.8.3-13.1
   - name: libglib2.0-0
-    version: 2.48.2-0ubuntu4.4
+    version: 2.48.2-0ubuntu4.6
   - name: libgomp1
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libisl15
@@ -102,8 +100,6 @@ NSJAIL_DEBS:
     version: 2.10-4
   - name: libstdc++-5-dev
     version: 5.4.0-6ubuntu1~16.04.12
-  - name: libstdc++6
-    version: 5.4.0-6ubuntu1~16.04.12
   - name: libtool
     version: 2.4.6-0.1
   - name: libtsan0
@@ -111,7 +107,7 @@ NSJAIL_DEBS:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-171.200
+    version: 4.4.0-177.207
   - name: m4
     version: 1.4.17-5
   - name: make
@@ -128,5 +124,21 @@ NSJAIL_DEBS:
     version: 2.6.1-1.3
   - name: xz-utils
     version: 5.1.1alpha+20120614-2ubuntu2
+  - name: zlib1g
+    version: 1:1.2.8.dfsg-2ubuntu4.3
   - name: zlib1g-dev
-    version: 1:1.2.8.dfsg-2ubuntu4.1
+    version: 1:1.2.8.dfsg-2ubuntu4.3
+RBE_IMAGE_DEBS:
+  packages:
+  - name: lib32gcc1
+    version: 1:6.0.1-0ubuntu1
+  - name: libc6-i386
+    version: 2.23-0ubuntu11
+  - name: libnl-3-200
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libnl-route-3-200
+    version: 3.2.27-1ubuntu0.16.04.1
+  - name: libprotobuf9v5
+    version: 2.6.1-1.3
+  - name: uidmap
+    version: 1:4.2-3.1ubuntu5.4

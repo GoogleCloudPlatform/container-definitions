@@ -16,21 +16,21 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 NSJAIL_DEBS = struct(
-    revision = "1578324891",
-    sha256 = "caa31859d3520ad82749fa539c01553c5829527829b0c2d3a652db9aa8057d57",
+    revision = "1586183516",
+    sha256 = "5d4682d26754e3687cddb6f619f3e2e5f5562014a8922baf80ff6ab0e54e008f",
 )
 
 RBE_IMAGE_DEBS = struct(
-    revision = "1572370336",
-    sha256 = "d1b38af6de19745750b45de1dcd09aba7912a52db5d5b40b286a8c88dd46617e",
+    revision = "1579710806",
+    sha256 = "24d13f17f1387e133dad937edf3283eabaec828e609bdb49f5e375bc4e160981",
 )
 
 RULES_DOCKER = struct(
-    commit = "47cd9f9821a24df5df227e5c2876dd11dc1171bf",
-    sha256 = "4a9a86f1a7137e96854f08eb1107b886e95c2ea55b3831b3472eaf23f212ce0f",
+    commit = "3772262910d1ac63563e5f1758f07df1f7857442",
+    sha256 = "53adff9ab61c7722a8ab8695437493b7bb85bc8ea89bb164b67d965864fadc13",
 )
 
 LAYER_DEFINITIONS = struct(
-    commit = "4e58eaeaa032d473ff42c17f078da11c0ad7a9c5",
-    sha256 = "c75b073ab28e641760a7b82dd1b9717215e939036a91a71e4f61849ca2655348",
+    commit = "8de8cd27471d4cc143fbd0fcc2a613f26bba1063",
+    sha256 = "010c175c3141ff10f25191e12bbb0410be627f0215af9a772b3035a9428caf8a",
 )
