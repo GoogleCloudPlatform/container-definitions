@@ -23,8 +23,7 @@ githubRepoDeps:
     repoSpec:
       owner: "google"
       repository: "nsjail"
-      branch: "master"
-    updateType: "commit"
+    updateType: "release"
     releasePolicies:
       - tag: "default"
         # Once a quarter at 5am on the first day of the month.
