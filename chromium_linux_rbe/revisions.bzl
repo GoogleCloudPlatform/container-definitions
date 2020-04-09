@@ -25,11 +25,6 @@ RBE_IMAGE_DEBS = struct(
     sha256 = "d1b38af6de19745750b45de1dcd09aba7912a52db5d5b40b286a8c88dd46617e",
 )
 
-GOOGLE_NSJAIL = struct(
-    commit = "04e5fae0e3e0efd3e68a11e2d5b5e3e1a42811ac",
-    sha256 = "c62eb79371e18eb1cb37dca3c8484434221f17bd93c6194e08bfc82f0032fa07",
-)
-
 RULES_DOCKER = struct(
     commit = "47cd9f9821a24df5df227e5c2876dd11dc1171bf",
     sha256 = "4a9a86f1a7137e96854f08eb1107b886e95c2ea55b3831b3472eaf23f212ce0f",

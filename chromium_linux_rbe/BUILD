@@ -37,7 +37,6 @@ load(
     "@io_bazel_rules_docker//docker/util:run.bzl",
     "container_run_and_extract",
 )
-load(":revisions.bzl", "GOOGLE_NSJAIL")
 
 # Download the packages needed to build nsjail.
 download_pkgs(
@@ -81,7 +80,8 @@ container_run_and_extract(
     name = "nsjail_image",
     commands = [
         "git clone https://github.com/google/nsjail.git",
-        "cd nsjail && git checkout {}".format(GOOGLE_NSJAIL.commit),
+        # checkout the commit of the latest 2.9 release
+        "cd nsjail && git checkout 3612c2a0b855a0a3ec57c7bb63c1443d0c944e8f",
         "make",
     ],
     docker_run_flags = ["--privileged"],
