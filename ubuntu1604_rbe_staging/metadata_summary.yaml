@@ -91,9 +91,9 @@ JAVA_DEBS_TARBALL:
   - name: libxtst6
     version: 2:1.2.2-1
   - name: openjdk-8-jdk-headless
-    version: 8u242-b08-0ubuntu3~16.04
+    version: 8u252-b09-1~16.04
   - name: openjdk-8-jre-headless
-    version: 8u242-b08-0ubuntu3~16.04
+    version: 8u252-b09-1~16.04
   - name: ucf
     version: "3.0036"
   - name: x11-common
@@ -117,25 +117,25 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython-stdlib
     version: 2.7.12-1~16.04
   - name: libpython2.7
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: libpython2.7-dev
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: libpython2.7-minimal
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: libpython2.7-stdlib
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: libpython3-dev
     version: 3.5.1-3
   - name: libpython3-stdlib
     version: 3.5.1-3
   - name: libpython3.5
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: libpython3.5-dev
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: libpython3.5-minimal
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: libpython3.5-stdlib
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: linux-libc-dev
     version: 4.4.0-177.207
   - name: mime-support
@@ -151,11 +151,11 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: python-setuptools
     version: 20.7.0-1
   - name: python2.7
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: python2.7-dev
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: python2.7-minimal
-    version: 2.7.12-1ubuntu0~16.04.9
+    version: 2.7.12-1ubuntu0~16.04.11
   - name: python3
     version: 3.5.1-3
   - name: python3-dev
@@ -163,11 +163,11 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: python3-minimal
     version: 3.5.1-3
   - name: python3.5
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: python3.5-dev
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
   - name: python3.5-minimal
-    version: 3.5.2-2ubuntu0~16.04.9
+    version: 3.5.2-2ubuntu0~16.04.10
 RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
@@ -177,9 +177,9 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: file
     version: 1:5.25-2ubuntu1.3
   - name: git
-    version: 1:2.7.4-0ubuntu1.8
+    version: 1:2.7.4-0ubuntu1.9
   - name: git-man
-    version: 1:2.7.4-0ubuntu1.8
+    version: 1:2.7.4-0ubuntu1.9
   - name: less
     version: 481-2.1ubuntu0.2
   - name: libbsd0
