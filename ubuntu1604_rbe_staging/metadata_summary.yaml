@@ -47,7 +47,7 @@ JAVA_DEBS_TARBALL:
   - name: libavahi-common3
     version: 0.6.32~rc+dfsg-1ubuntu2.3
   - name: libcups2
-    version: 2.1.3-4ubuntu0.10
+    version: 2.1.3-4ubuntu0.11
   - name: libdbus-1-3
     version: 1.10.6-1ubuntu3.5
   - name: libexpat1
