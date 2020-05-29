@@ -16,7 +16,7 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 IMAGE = struct(
-    sha256 = "sha256:c685c61909fef347c1896b269e2886083c04776698522aefff52c680d6bfe14a",
+    sha256 = "sha256:1ab701ff406ff2003d8fb09bfd5c4baa39b39d642c562ba976b6c5dd60a09703",
 )
 
 PY3_IMAGE = struct(
