@@ -172,6 +172,8 @@ RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
     version: 2.26.1-1ubuntu1~16.04.8
+  - name: ca-certificates
+    version: 20190110~16.04.1
   - name: ed
     version: 1.10-2
   - name: file

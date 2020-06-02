@@ -39,8 +39,8 @@ CLANG_DEBS_TARBALL = struct(
 )
 
 GO_INSTALLER = struct(
-    revision = "1.14.3",
-    sha256 = "1c39eac4ae95781b066c144c58e45d6859652247f7515f0d2cba7be7d57d2226",
+    revision = "1.14.4",
+    sha256 = "aed845e4185a0b2a3c3d5e1d0a35491702c55889192bb9c30e67a3de6849c067",
 )
 
 JAVA_DEBS_TARBALL = struct(
@@ -59,6 +59,6 @@ PYTHON_RBE_DEBS_TARBALL = struct(
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
-    revision = "1589439741",
-    sha256 = "e91258d10ff42b772ac1bf372b74f92f158726df0582f407bc86ff4b2c5b3b01",
+    revision = "1591081330",
+    sha256 = "5253df884b1a3e25d00f382f535f50eb296273f6cec6d445c9b13986848b8970",
 )
