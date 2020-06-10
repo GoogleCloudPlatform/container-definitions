@@ -29,7 +29,7 @@ CLANG_DEBS_TARBALL:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-179.209
+    version: 4.4.0-184.214
 JAVA_DEBS_TARBALL:
   packages:
   - name: ca-certificates-java
@@ -57,7 +57,7 @@ JAVA_DEBS_TARBALL:
   - name: libfreetype6
     version: 2.6.1-0.1ubuntu2.4
   - name: libjpeg-turbo8
-    version: 1.4.2-0ubuntu3.3
+    version: 1.4.2-0ubuntu3.4
   - name: libjpeg8
     version: 8c-2ubuntu8
   - name: liblcms2-2
@@ -137,7 +137,7 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython3.5-stdlib
     version: 3.5.2-2ubuntu0~16.04.10
   - name: linux-libc-dev
-    version: 4.4.0-179.209
+    version: 4.4.0-184.214
   - name: mime-support
     version: 3.59ubuntu1
   - name: python
@@ -172,8 +172,6 @@ RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
     version: 2.26.1-1ubuntu1~16.04.8
-  - name: ca-certificates
-    version: 20190110~16.04.1
   - name: ed
     version: 1.10-2
   - name: file

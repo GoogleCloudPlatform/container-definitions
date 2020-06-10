@@ -34,8 +34,8 @@ LIBCXX_INSTALLER = struct(
 )
 
 CLANG_DEBS_TARBALL = struct(
-    revision = "1589871732",
-    sha256 = "84c3d94e717bfa599a507a1c9435d261a6f50e2276f5a7b0ea63aec5be2e0a96",
+    revision = "1591772617",
+    sha256 = "0c144200103dd80358ed1cebabdcadd583b3b2360f8edca2e9c855ad43abc99d",
 )
 
 GO_INSTALLER = struct(
@@ -44,21 +44,21 @@ GO_INSTALLER = struct(
 )
 
 JAVA_DEBS_TARBALL = struct(
-    revision = "1588057450",
-    sha256 = "4f842efc5190bfa1d576b5094fedfdef9ac17cfe214ffe5e43a0e0b4e2a4a3a3",
+    revision = "1591772617",
+    sha256 = "f3220ab6f3ae5186f1240d1d4fa8d1cf04f60ebe9e44a5de3c5aabc160c69c18",
 )
 
 CACERTS = struct(
-    revision = "1588057450",
-    sha256 = "182f0a945c896db5394b9df2b6d36e83e12af4cf59628f058cbca5a8f9c3852d",
+    revision = "1591772617",
+    sha256 = "b541bb68de298e0317aace761aa620a9fc5236ff9c2df77e7b20ba40a09d891f",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
-    revision = "1589871732",
-    sha256 = "857c93d093650263c6dbe47cfdc9396093e35f9a891de5eed25724dc0f55556d",
+    revision = "1591772617",
+    sha256 = "9cdb7fbaa5d52f7da70912ad9b34c8cf5ea5382b3df52d043dd100144afe3b5b",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
-    revision = "1591081330",
-    sha256 = "5253df884b1a3e25d00f382f535f50eb296273f6cec6d445c9b13986848b8970",
+    revision = "1591772617",
+    sha256 = "e91258d10ff42b772ac1bf372b74f92f158726df0582f407bc86ff4b2c5b3b01",
 )
