@@ -49,7 +49,7 @@ JAVA_DEBS_TARBALL:
   - name: libcups2
     version: 2.1.3-4ubuntu0.11
   - name: libdbus-1-3
-    version: 1.10.6-1ubuntu3.5
+    version: 1.10.6-1ubuntu3.6
   - name: libexpat1
     version: 2.1.0-7ubuntu0.16.04.5
   - name: libfontconfig1
@@ -65,9 +65,9 @@ JAVA_DEBS_TARBALL:
   - name: libnspr4
     version: 2:4.13.1-0ubuntu0.16.04.1
   - name: libnss3
-    version: 2:3.28.4-0ubuntu0.16.04.10
+    version: 2:3.28.4-0ubuntu0.16.04.11
   - name: libnss3-nssdb
-    version: 2:3.28.4-0ubuntu0.16.04.10
+    version: 2:3.28.4-0ubuntu0.16.04.11
   - name: libpcsclite1
     version: 1.8.14-1ubuntu1.16.04.1
   - name: libpng12-0
