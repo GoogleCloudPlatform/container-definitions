@@ -10,6 +10,8 @@ NSJAIL_DEBS:
     version: 2:3.0.4.dfsg-1
   - name: bzip2
     version: 1.0.6-8ubuntu0.2
+  - name: ca-certificates
+    version: 20190110~16.04.1
   - name: cpp
     version: 4:5.3.1-1ubuntu1
   - name: cpp-5
@@ -17,7 +19,7 @@ NSJAIL_DEBS:
   - name: dpkg-dev
     version: 1.18.4ubuntu1.6
   - name: file
-    version: 1:5.25-2ubuntu1.3
+    version: 1:5.25-2ubuntu1.4
   - name: flex
     version: 2.6.0-11
   - name: g++
@@ -29,9 +31,9 @@ NSJAIL_DEBS:
   - name: gcc-5
     version: 5.4.0-6ubuntu1~16.04.12
   - name: git
-    version: 1:2.7.4-0ubuntu1.7
+    version: 1:2.7.4-0ubuntu1.9
   - name: git-man
-    version: 1:2.7.4-0ubuntu1.7
+    version: 1:2.7.4-0ubuntu1.9
   - name: libasan2
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libatomic1
@@ -69,7 +71,7 @@ NSJAIL_DEBS:
   - name: liblsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libmagic1
-    version: 1:5.25-2ubuntu1.3
+    version: 1:5.25-2ubuntu1.4
   - name: libmpc3
     version: 1.0.3-1
   - name: libmpfr4
@@ -107,7 +109,7 @@ NSJAIL_DEBS:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-177.207
+    version: 4.4.0-184.214
   - name: m4
     version: 1.4.17-5
   - name: make
@@ -124,8 +126,6 @@ NSJAIL_DEBS:
     version: 2.6.1-1.3
   - name: xz-utils
     version: 5.1.1alpha+20120614-2ubuntu2
-  - name: zlib1g
-    version: 1:1.2.8.dfsg-2ubuntu4.3
   - name: zlib1g-dev
     version: 1:1.2.8.dfsg-2ubuntu4.3
 RBE_IMAGE_DEBS:
