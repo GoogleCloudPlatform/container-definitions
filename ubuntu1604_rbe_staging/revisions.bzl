@@ -59,6 +59,6 @@ PYTHON_RBE_DEBS_TARBALL = struct(
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
-    revision = "1593068530",
-    sha256 = "310ca2cdbcf18022a642e4de0a1f800a3bb0a3af987d35d69a75b816e84cba7e",
+    revision = "1593759819",
+    sha256 = "a5a4923bd792ff4d96f3258f775c61e47ad999b25ee46765f92aadcc5e179a93",
 )
