@@ -7,9 +7,11 @@ CLANG_DEBS_TARBALL:
   - name: libatomic1
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libc-dev-bin
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
+  - name: libc6
+    version: 2.23-0ubuntu11.2
   - name: libc6-dev
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: libcilkrts5
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libgcc-4.9-dev
@@ -29,7 +31,7 @@ CLANG_DEBS_TARBALL:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-184.214
+    version: 4.4.0-185.215
 JAVA_DEBS_TARBALL:
   packages:
   - name: ca-certificates-java
@@ -65,9 +67,9 @@ JAVA_DEBS_TARBALL:
   - name: libnspr4
     version: 2:4.13.1-0ubuntu0.16.04.1
   - name: libnss3
-    version: 2:3.28.4-0ubuntu0.16.04.11
+    version: 2:3.28.4-0ubuntu0.16.04.12
   - name: libnss3-nssdb
-    version: 2:3.28.4-0ubuntu0.16.04.11
+    version: 2:3.28.4-0ubuntu0.16.04.12
   - name: libpcsclite1
     version: 1.8.14-1ubuntu1.16.04.1
   - name: libpng12-0
@@ -103,9 +105,11 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: dh-python
     version: 2.20151103ubuntu1.2
   - name: libc-dev-bin
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
+  - name: libc6
+    version: 2.23-0ubuntu11.2
   - name: libc6-dev
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: libexpat1
     version: 2.1.0-7ubuntu0.16.04.5
   - name: libexpat1-dev
@@ -137,7 +141,7 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython3.5-stdlib
     version: 3.5.2-2ubuntu0~16.04.10
   - name: linux-libc-dev
-    version: 4.4.0-184.214
+    version: 4.4.0-185.215
   - name: mime-support
     version: 3.59ubuntu1
   - name: python
@@ -201,9 +205,9 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: libperl5.22
     version: 5.22.1-9ubuntu0.6
   - name: locales
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: locales-all
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: netcat
     version: 1.10-41
   - name: netcat-traditional
