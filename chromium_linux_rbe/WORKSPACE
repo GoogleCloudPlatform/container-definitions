@@ -57,6 +57,10 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
+load("@io_bazel_rules_docker//repositories:pip_repositories.bzl", "pip_deps")
+
+pip_deps()
+
 load("@layer_definitions//layers/ubuntu1604/base:deps.bzl", ubuntu1604_base_deps = "deps")
 
 ubuntu1604_base_deps()
