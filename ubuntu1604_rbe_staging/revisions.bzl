@@ -44,13 +44,13 @@ GO_INSTALLER = struct(
 )
 
 JAVA_DEBS_TARBALL = struct(
-    revision = "1594105333",
-    sha256 = "7382d8f3570de2d0ace7dd514746514bd38f0ab74e59e3eba3db09b86437ac0a",
+    revision = "1596697329",
+    sha256 = "451e981a486803647eaf42e16e6fbad56074b68130a3ea99840db5b2636ef562",
 )
 
 CACERTS = struct(
-    revision = "1594105333",
-    sha256 = "915b6eddbfdfd06a17a93c5d337d58cfdc3966b34709d1c4a9d27ee61e8dc8cf",
+    revision = "1596697329",
+    sha256 = "b0f61b6229a22acdfff61ac6024ba5c6d8d44e473c517f006943f0ae4fb67a74",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
