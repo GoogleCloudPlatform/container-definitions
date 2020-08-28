@@ -67,9 +67,9 @@ JAVA_DEBS_TARBALL:
   - name: libnspr4
     version: 2:4.13.1-0ubuntu0.16.04.1
   - name: libnss3
-    version: 2:3.28.4-0ubuntu0.16.04.13
+    version: 2:3.28.4-0ubuntu0.16.04.14
   - name: libnss3-nssdb
-    version: 2:3.28.4-0ubuntu0.16.04.13
+    version: 2:3.28.4-0ubuntu0.16.04.14
   - name: libpcsclite1
     version: 1.8.14-1ubuntu1.16.04.1
   - name: libpng12-0
