@@ -34,8 +34,8 @@ LIBCXX_INSTALLER = struct(
 )
 
 CLANG_DEBS_TARBALL = struct(
-    revision = "1597388648",
-    sha256 = "254a672165650e2689d0d49e1268f637613039c13023cd8cee87a3883f698745",
+    revision = "1598943835",
+    sha256 = "9ff8f21ae4c5f1970cbbd97da9b93d01e03a367534effb7e0f1a4eeee37dc955",
 )
 
 GO_INSTALLER = struct(
@@ -54,8 +54,8 @@ CACERTS = struct(
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
-    revision = "1597388648",
-    sha256 = "aaea8b5a8d9f3aa1aff84ed55d77b8347118b6c6ed65880a02a4e4429d1a9b09",
+    revision = "1598943835",
+    sha256 = "918d0d83bc147bf482899dd89e252664efdea4cec8b84ff84fb309675f8fd81c",
 )
 
 RBE_TOOLS_DEBS_TARBALL = struct(
