@@ -75,9 +75,9 @@ JAVA_DEBS_TARBALL:
   - name: libpng12-0
     version: 1.2.54-1ubuntu1.1
   - name: libx11-6
-    version: 2:1.6.3-1ubuntu2.1
+    version: 2:1.6.3-1ubuntu2.2
   - name: libx11-data
-    version: 2:1.6.3-1ubuntu2.1
+    version: 2:1.6.3-1ubuntu2.2
   - name: libxau6
     version: 1:1.0.8-1
   - name: libxcb1
