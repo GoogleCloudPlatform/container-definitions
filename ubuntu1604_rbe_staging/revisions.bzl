@@ -20,7 +20,7 @@ IMAGE = struct(
 )
 
 PY3_IMAGE = struct(
-    sha256 = "sha256:961564fb159c8db5ac9553290033296a9f46998a17c5233574a5b77750a46448",
+    sha256 = "sha256:fc9d9f429bf75b8369f7894b7eb24098418050557b889f4b02aa4c93fdb5e161",
 )
 
 CLANG_INSTALLER = struct(
@@ -39,8 +39,8 @@ CLANG_DEBS_TARBALL = struct(
 )
 
 GO_INSTALLER = struct(
-    revision = "1.15.1",
-    sha256 = "70ac0dbf60a8ee9236f337ed0daa7a4c3b98f6186d4497826f68e97c0c0413f6",
+    revision = "1.15.2",
+    sha256 = "b49fda1ca29a1946d6bb2a5a6982cf07ccd2aba849289508ee0f9918f6bb4552",
 )
 
 JAVA_DEBS_TARBALL = struct(
