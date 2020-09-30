@@ -8,8 +8,6 @@ CLANG_DEBS_TARBALL:
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libc-dev-bin
     version: 2.23-0ubuntu11.2
-  - name: libc6
-    version: 2.23-0ubuntu11.2
   - name: libc6-dev
     version: 2.23-0ubuntu11.2
   - name: libcilkrts5
@@ -106,8 +104,6 @@ PYTHON_RBE_DEBS_TARBALL:
     version: 2.20151103ubuntu1.2
   - name: libc-dev-bin
     version: 2.23-0ubuntu11.2
-  - name: libc6
-    version: 2.23-0ubuntu11.2
   - name: libc6-dev
     version: 2.23-0ubuntu11.2
   - name: libexpat1
@@ -176,8 +172,6 @@ RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
     version: 2.26.1-1ubuntu1~16.04.8
-  - name: curl
-    version: 7.47.0-1ubuntu2.16
   - name: ed
     version: 1.10-2
   - name: file
@@ -190,8 +184,6 @@ RBE_TOOLS_DEBS_TARBALL:
     version: 481-2.1ubuntu0.2
   - name: libbsd0
     version: 0.8.2-1ubuntu0.1
-  - name: libcurl3-gnutls
-    version: 7.47.0-1ubuntu2.16
   - name: libedit2
     version: 3.1-20150325-1ubuntu2
   - name: liberror-perl
