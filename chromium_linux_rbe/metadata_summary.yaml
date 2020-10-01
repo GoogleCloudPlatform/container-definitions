@@ -10,8 +10,6 @@ NSJAIL_DEBS:
     version: 2:3.0.4.dfsg-1
   - name: bzip2
     version: 1.0.6-8ubuntu0.2
-  - name: ca-certificates
-    version: 20190110~16.04.1
   - name: cpp
     version: 4:5.3.1-1ubuntu1
   - name: cpp-5
@@ -41,9 +39,11 @@ NSJAIL_DEBS:
   - name: libbison-dev
     version: 2:3.0.4.dfsg-1
   - name: libc-dev-bin
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
+  - name: libc6
+    version: 2.23-0ubuntu11.2
   - name: libc6-dev
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: libcc1-0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: libcilkrts5
@@ -109,7 +109,7 @@ NSJAIL_DEBS:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-184.214
+    version: 4.4.0-190.220
   - name: m4
     version: 1.4.17-5
   - name: make
@@ -132,8 +132,10 @@ RBE_IMAGE_DEBS:
   packages:
   - name: lib32gcc1
     version: 1:6.0.1-0ubuntu1
+  - name: libc6
+    version: 2.23-0ubuntu11.2
   - name: libc6-i386
-    version: 2.23-0ubuntu11
+    version: 2.23-0ubuntu11.2
   - name: libnl-3-200
     version: 3.2.27-1ubuntu0.16.04.1
   - name: libnl-route-3-200
