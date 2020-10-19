@@ -29,7 +29,7 @@ CLANG_DEBS_TARBALL:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-190.220
+    version: 4.4.0-193.224
 JAVA_DEBS_TARBALL:
   packages:
   - name: ca-certificates-java
@@ -117,27 +117,27 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython-stdlib
     version: 2.7.12-1~16.04
   - name: libpython2.7
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: libpython2.7-dev
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: libpython2.7-minimal
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: libpython2.7-stdlib
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: libpython3-dev
     version: 3.5.1-3
   - name: libpython3-stdlib
     version: 3.5.1-3
   - name: libpython3.5
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: libpython3.5-dev
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: libpython3.5-minimal
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: libpython3.5-stdlib
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-190.220
+    version: 4.4.0-193.224
   - name: mime-support
     version: 3.59ubuntu1
   - name: python
@@ -151,11 +151,11 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: python-setuptools
     version: 20.7.0-1
   - name: python2.7
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: python2.7-dev
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: python2.7-minimal
-    version: 2.7.12-1ubuntu0~16.04.12
+    version: 2.7.12-1ubuntu0~16.04.13
   - name: python3
     version: 3.5.1-3
   - name: python3-dev
@@ -163,11 +163,11 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: python3-minimal
     version: 3.5.1-3
   - name: python3.5
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: python3.5-dev
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
   - name: python3.5-minimal
-    version: 3.5.2-2ubuntu0~16.04.11
+    version: 3.5.2-2ubuntu0~16.04.12
 RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
