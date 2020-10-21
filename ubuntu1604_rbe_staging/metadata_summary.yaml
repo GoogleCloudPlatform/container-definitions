@@ -55,7 +55,7 @@ JAVA_DEBS_TARBALL:
   - name: libfontconfig1
     version: 2.11.94-0ubuntu1.1
   - name: libfreetype6
-    version: 2.6.1-0.1ubuntu2.4
+    version: 2.6.1-0.1ubuntu2.5
   - name: libjpeg-turbo8
     version: 1.4.2-0ubuntu3.4
   - name: libjpeg8
