@@ -195,7 +195,7 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: libmagic1
     version: 1:5.25-2ubuntu1.4
   - name: libperl5.22
-    version: 5.22.1-9ubuntu0.6
+    version: 5.22.1-9ubuntu0.9
   - name: locales
     version: 2.23-0ubuntu11.2
   - name: locales-all
@@ -209,9 +209,11 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: patch
     version: 2.7.5-1ubuntu0.16.04.2
   - name: perl
-    version: 5.22.1-9ubuntu0.6
+    version: 5.22.1-9ubuntu0.9
+  - name: perl-base
+    version: 5.22.1-9ubuntu0.9
   - name: perl-modules-5.22
-    version: 5.22.1-9ubuntu0.6
+    version: 5.22.1-9ubuntu0.9
   - name: unzip
     version: 6.0-20ubuntu1
   - name: wget
