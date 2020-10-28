@@ -91,9 +91,9 @@ JAVA_DEBS_TARBALL:
   - name: libxtst6
     version: 2:1.2.2-1
   - name: openjdk-8-jdk-headless
-    version: 8u265-b01-0ubuntu2~16.04
+    version: 8u272-b10-0ubuntu1~16.04
   - name: openjdk-8-jre-headless
-    version: 8u265-b01-0ubuntu2~16.04
+    version: 8u272-b10-0ubuntu1~16.04
   - name: ucf
     version: "3.0036"
   - name: x11-common
