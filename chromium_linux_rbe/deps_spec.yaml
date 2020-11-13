@@ -32,16 +32,16 @@ githubRepoDeps:
   #       # Once a quarter at 5am on the first day of the month.
   #       schedule: "0 0 5 1 */3 *"
 
-  # bazelbuild/rules_docker GitHub repo.
-  - name: "RULES_DOCKER"
-    repoSpec:
-      owner: "bazelbuild"
-      repository: "rules_docker"
-    updateType: "release"
-    releasePolicies:
-      - tag: "default"
-        # Once a quarter at 5am on the first day of the month.
-        schedule: "0 0 5 1 */3 *"
+#  # bazelbuild/rules_docker GitHub repo.
+#  - name: "RULES_DOCKER"
+#    repoSpec:
+#      owner: "bazelbuild"
+#      repository: "rules_docker"
+#    updateType: "release"
+#    releasePolicies:
+#      - tag: "default"
+#        # Once a quarter at 5am on the first day of the month.
+#        schedule: "0 0 5 1 */3 *"
 
   # GoogleCloudPlatform/layer-definitions GitHub repo.
   - name: "LAYER_DEFINITIONS"
