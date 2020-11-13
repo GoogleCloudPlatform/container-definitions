@@ -39,18 +39,18 @@ CLANG_DEBS_TARBALL = struct(
 )
 
 GO_INSTALLER = struct(
-    revision = "1.15.4",
-    sha256 = "eb61005f0b932c93b424a3a4eaa67d72196c79129d9a3ea8578047683e2c80d5",
+    revision = "1.15.5",
+    sha256 = "9a58494e8da722c3aef248c9227b0e9c528c7318309827780f16220998180a0d",
 )
 
 JAVA_DEBS_TARBALL = struct(
-    revision = "1603868548",
-    sha256 = "24b4f750e16d340140aa249f66f97958e0cc8c9e60349781cdf8cca00980bb82",
+    revision = "1605254818",
+    sha256 = "75b08ce5db6c4522f6a66d192a1a5a2c4d576f378945c9ff22a46f828122f549",
 )
 
 CACERTS = struct(
-    revision = "1603868548",
-    sha256 = "2e72dbb4c6dfbccf3e122afc79b2ab580e7425ba649137cfba438417e9150aea",
+    revision = "1605254818",
+    sha256 = "e0a2f8a78ff8765046b44583c27fd9e4b1de3734b3d8dc4c86cd33d36cfe2fed",
 )
 
 PYTHON_RBE_DEBS_TARBALL = struct(
