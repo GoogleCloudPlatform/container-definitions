@@ -217,7 +217,7 @@ RBE_TOOLS_DEBS_TARBALL:
   - name: perl-modules-5.22
     version: 5.22.1-9ubuntu0.9
   - name: unzip
-    version: 6.0-20ubuntu1
+    version: 6.0-20ubuntu1.1
   - name: wget
     version: 1.17.1-1ubuntu1.5
   - name: zip
