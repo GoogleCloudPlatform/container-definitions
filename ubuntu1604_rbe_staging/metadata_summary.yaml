@@ -172,8 +172,6 @@ RBE_TOOLS_DEBS_TARBALL:
   packages:
   - name: binutils
     version: 2.26.1-1ubuntu1~16.04.8
-  - name: curl
-    version: 7.47.0-1ubuntu2.18
   - name: ed
     version: 1.10-2
   - name: file
@@ -186,8 +184,6 @@ RBE_TOOLS_DEBS_TARBALL:
     version: 481-2.1ubuntu0.2
   - name: libbsd0
     version: 0.8.2-1ubuntu0.1
-  - name: libcurl3-gnutls
-    version: 7.47.0-1ubuntu2.18
   - name: libedit2
     version: 3.1-20150325-1ubuntu2
   - name: liberror-perl
