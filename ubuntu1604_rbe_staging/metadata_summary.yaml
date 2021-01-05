@@ -29,7 +29,7 @@ CLANG_DEBS_TARBALL:
   - name: libubsan0
     version: 5.4.0-6ubuntu1~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-197.229
+    version: 4.4.0-198.230
 JAVA_DEBS_TARBALL:
   packages:
   - name: ca-certificates-java
@@ -137,7 +137,7 @@ PYTHON_RBE_DEBS_TARBALL:
   - name: libpython3.5-stdlib
     version: 3.5.2-2ubuntu0~16.04.12
   - name: linux-libc-dev
-    version: 4.4.0-197.229
+    version: 4.4.0-198.230
   - name: mime-support
     version: 3.59ubuntu1
   - name: python
