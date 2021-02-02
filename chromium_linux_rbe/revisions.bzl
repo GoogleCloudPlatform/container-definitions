@@ -16,21 +16,16 @@
 # For more details, check the deps_spec.yaml file in the current folder.
 
 NSJAIL_DEBS = struct(
-    revision = "1600698800",
-    sha256 = "4b78f7b97e5a64e50f5f86bb830928136c6eca7d3deaa6764281af1aea316b92",
+    revision = "1612294290",
+    sha256 = "b05fda9ca54752ef639cb6f73efb0a9f74abc61e52b078c9b998269626a133da",
 )
 
 RBE_IMAGE_DEBS = struct(
-    revision = "1594060432",
-    sha256 = "04c9e498b1e6b046fc539cf967f008e09ec68eeba50e2d4ba5e906d6cc28bb6d",
-)
-
-RULES_DOCKER = struct(
-    commit = "faaa10a72fa9abde070e2a20d6046e9f9b849e9a",
-    sha256 = "feb53c560be2f97b7d02b23a1738a3154ba89fe630f09a7a838dcad38731b0b8",
+    revision = "1601562782",
+    sha256 = "07e6fab2033dcda7b188a8034e3101df2bb05b74cd79f1da60b8e02bbcd8f293",
 )
 
 LAYER_DEFINITIONS = struct(
-    commit = "51b2240979058d11dedde6d4f78bdb079fdeb57f",
-    sha256 = "ada4535cb687605d6cb2aa9e2b70e715f6b7125a86702584fb1ef10e87d4e836",
+    commit = "ef7ab83fe8f7813ceeef5bb8dc283a08bed47151",
+    sha256 = "4a14653b5db4759100b02e472cf8083003a67fe16d56c8b711d7fa942b13ba1b",
 )
